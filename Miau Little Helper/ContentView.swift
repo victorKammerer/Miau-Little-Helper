@@ -6,16 +6,19 @@
 //
 
 import SwiftUI
+import SpriteKit
+
+var scene: SKScene {
+    let scene = GameScene()
+    scene.size = CGSize(width: 1920, height: 1280)
+    scene.scaleMode = .aspectFit
+    return scene
+}
+
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        SpriteView(scene: scene)
     }
 }
 

@@ -11,6 +11,7 @@
 		6C19473729C88F930067C180 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C19473629C88F930067C180 /* ContentView.swift */; };
 		6C19473929C88F940067C180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C19473829C88F940067C180 /* Assets.xcassets */; };
 		6C19473D29C88F940067C180 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C19473C29C88F940067C180 /* Preview Assets.xcassets */; };
+		D34492FA29C895DE00C80685 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34492F929C895DE00C80685 /* GameScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		6C19473829C88F940067C180 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C19473A29C88F940067C180 /* Miau_Little_Helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Miau_Little_Helper.entitlements; sourceTree = "<group>"; };
 		6C19473C29C88F940067C180 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D34492F929C895DE00C80685 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				6C19473429C88F930067C180 /* Miau_Little_HelperApp.swift */,
 				6C19473629C88F930067C180 /* ContentView.swift */,
+				D34492F929C895DE00C80685 /* GameScene.swift */,
 				6C19473829C88F940067C180 /* Assets.xcassets */,
 				6C19473A29C88F940067C180 /* Miau_Little_Helper.entitlements */,
 				6C19473B29C88F940067C180 /* Preview Content */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D34492FA29C895DE00C80685 /* GameScene.swift in Sources */,
 				6C19473729C88F930067C180 /* ContentView.swift in Sources */,
 				6C19473529C88F930067C180 /* Miau_Little_HelperApp.swift in Sources */,
 			);
