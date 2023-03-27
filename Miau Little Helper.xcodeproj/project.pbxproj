@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64C9F59D29D1C27B0066CC51 /* VoiceRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9F59C29D1C27B0066CC51 /* VoiceRecognizer.swift */; };
 		6C19473529C88F930067C180 /* Miau_Little_HelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C19473429C88F930067C180 /* Miau_Little_HelperApp.swift */; };
 		6C19473729C88F930067C180 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C19473629C88F930067C180 /* ContentView.swift */; };
 		6C19473929C88F940067C180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C19473829C88F940067C180 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64C9F59C29D1C27B0066CC51 /* VoiceRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecognizer.swift; sourceTree = "<group>"; };
 		6C19473129C88F930067C180 /* Miau Little Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Miau Little Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C19473429C88F930067C180 /* Miau_Little_HelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miau_Little_HelperApp.swift; sourceTree = "<group>"; };
 		6C19473629C88F930067C180 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				6C19473429C88F930067C180 /* Miau_Little_HelperApp.swift */,
 				6C19473629C88F930067C180 /* ContentView.swift */,
 				D34492F929C895DE00C80685 /* GameScene.swift */,
+				64C9F59C29D1C27B0066CC51 /* VoiceRecognizer.swift */,
 				6C19473829C88F940067C180 /* Assets.xcassets */,
 				6C19473A29C88F940067C180 /* Miau_Little_Helper.entitlements */,
 				6C19473B29C88F940067C180 /* Preview Content */,
@@ -144,6 +147,7 @@
 			files = (
 				D34492FA29C895DE00C80685 /* GameScene.swift in Sources */,
 				6C19473729C88F930067C180 /* ContentView.swift in Sources */,
+				64C9F59D29D1C27B0066CC51 /* VoiceRecognizer.swift in Sources */,
 				6C19473529C88F930067C180 /* Miau_Little_HelperApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,10 +273,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Miau Little Helper/Preview Content\"";
-				DEVELOPMENT_TEAM = C5CA8XQ4HG;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -307,10 +313,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Miau Little Helper/Preview Content\"";
-				DEVELOPMENT_TEAM = C5CA8XQ4HG;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
