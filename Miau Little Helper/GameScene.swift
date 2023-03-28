@@ -8,20 +8,28 @@
 import SpriteKit
 import Speech
 
-class GameScene: SKScene, SFSpeechRecognizerDelegate {
+class GameScene: SKScene {
     
-    var voiceRecognizer = VoiceRecognizer()
+    var nina: SKSpriteNode!
     
     override func didMove(to view: SKView) {
         print("colocou cena")
-        voiceRecognizer.requestPermission()
         
+        setupNina()
     }
     
-    override func update(_ currentTime: TimeInterval) {
-//        exemplo de aplicação:
-//        if voiceRecognizer.command == "comando esperado" {
-//            insere aqui a ação
-//        }
+    func setupNina() {
+        
+        let textureAnimation = SKAction.animate(with: ninaMovementTexture, timePerFrame: 0.1)
+        let walk = SKAction.repeatForever(textureAnimation)
+        
+        nina = SKSpriteNode(imageNamed: "nina1")
+        nina.size = CGSize(width: 200, height: 150)
+        nina.position = CGPoint(x: 400, y: 300)
+        
+        nina.run(walk)
+        
+        addChild(nina)
+        
     }
 }
