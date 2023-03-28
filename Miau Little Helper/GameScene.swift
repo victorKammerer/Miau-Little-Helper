@@ -23,9 +23,14 @@ class GameScene: SKScene {
         }()
     
     override func didMove(to view: SKView) {
-        print("colocou cena")
         voiceRecognizer.requestPermission()
+        
+        setupCamera()
         setupBackground()
+        setupNina()
+    }
+    
+    func setupCamera() {
         
         camera = cameraNode
         
@@ -33,9 +38,7 @@ class GameScene: SKScene {
         let bounds = self.calculateAccumulatedFrame().width/2 - cameraBounds
         let cameraConstraints = SKConstraint.positionX(.init(lowerLimit: bounds/2, upperLimit: bounds*2.5))
         self.camera?.constraints = [cameraConstraints]
-        // Para mexer a posição da camera eh só fazer cameraBounds.position =
         addChild(cameraNode)
-        setupNina()
     }
     
     func setupBackground() {
