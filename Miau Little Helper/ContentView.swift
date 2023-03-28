@@ -10,8 +10,8 @@ import SpriteKit
 
 var scene: SKScene {
     let scene = GameScene()
-    scene.size = CGSize(width: 1920, height: 1280)
-    scene.scaleMode = .aspectFit
+    scene.size = CGSize(width: 4000, height: 3000)
+    scene.scaleMode = .aspectFill //or .aspectFill
     return scene
 }
 
@@ -19,6 +19,7 @@ var scene: SKScene {
 struct ContentView: View {
     var body: some View {
         SpriteView(scene: scene)
+            .ignoresSafeArea()
     }
 }
 
