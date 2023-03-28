@@ -14,6 +14,7 @@ class GameScene: SKScene {
     var backgroundQuarto = SKSpriteNode()
     var backgroundSala = SKSpriteNode()
     var backgroundCozinha = SKSpriteNode()
+    var nina = SKSpriteNode()
     
     private lazy var cameraNode: Camera = {
             let cameraNode = Camera()
@@ -24,7 +25,7 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         print("colocou cena")
         voiceRecognizer.requestPermission()
-        setup()
+        setupBackground()
         
         camera = cameraNode
         
@@ -34,9 +35,10 @@ class GameScene: SKScene {
         self.camera?.constraints = [cameraConstraints]
         // Para mexer a posição da camera eh só fazer cameraBounds.position =
         addChild(cameraNode)
+        setupNina()
     }
     
-    func setup() {
+    func setupBackground() {
         backgroundQuarto = SKSpriteNode(color: .red, size: CGSize(width: self.frame.height * 4 / 3, height: self.frame.height))
         backgroundSala = SKSpriteNode(color: .blue, size: CGSize(width: self.frame.height * 4 / 3, height: self.frame.height))
         backgroundCozinha = SKSpriteNode(color: .green, size: CGSize(width: self.frame.height * 4 / 3, height: self.frame.height))
