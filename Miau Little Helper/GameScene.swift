@@ -15,12 +15,8 @@ class GameScene: SKScene {
     var backgroundSala = SKSpriteNode()
     var backgroundCozinha = SKSpriteNode()
     var nina = SKSpriteNode()
-    
-    private lazy var cameraNode: Camera = {
-            let cameraNode = Camera()
-        cameraNode.position = CGPoint(x:self.frame.midX, y: self.frame.midY)
-            return cameraNode
-        }()
+    var currentRoom = 1
+    var cameraNode = Camera()
     
     override func didMove(to view: SKView) {
         voiceRecognizer.requestPermission()
@@ -28,17 +24,6 @@ class GameScene: SKScene {
         setupCamera()
         setupBackground()
         setupNina()
-    }
-    
-    func setupCamera() {
-        
-        camera = cameraNode
-        
-        let cameraBounds = self.frame.width/2
-        let bounds = self.calculateAccumulatedFrame().width/2 - cameraBounds
-        let cameraConstraints = SKConstraint.positionX(.init(lowerLimit: bounds/2, upperLimit: bounds*2.5))
-        self.camera?.constraints = [cameraConstraints]
-        addChild(cameraNode)
     }
     
     func setupBackground() {
@@ -69,8 +54,5 @@ class GameScene: SKScene {
         addChild(nina)
         
     }
-}
-
-class Camera: SKCameraNode {
-
+    
 }
