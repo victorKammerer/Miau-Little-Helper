@@ -6,9 +6,22 @@
 //
 
 import SpriteKit
+import Speech
 
-class GameScene: SKScene {
+class GameScene: SKScene, SFSpeechRecognizerDelegate {
+    
+    var voiceRecognizer = VoiceRecognizer()
+    
     override func didMove(to view: SKView) {
         print("colocou cena")
+        voiceRecognizer.requestPermission()
+        
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+//        exemplo de aplicação:
+//        if voiceRecognizer.command == "comando esperado" {
+//            insere aqui a ação
+//        }
     }
 }
