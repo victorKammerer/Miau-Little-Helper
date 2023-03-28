@@ -56,8 +56,6 @@
 		6C19473329C88F930067C180 /* Miau Little Helper */ = {
 			isa = PBXGroup;
 			children = (
-				6C19474629C89A810067C180 /* API */,
-				6C19474529C894D90067C180 /* Model */,
 				6C19473429C88F930067C180 /* Miau_Little_HelperApp.swift */,
 				6C19473629C88F930067C180 /* ContentView.swift */,
 				D34492F929C895DE00C80685 /* GameScene.swift */,
@@ -75,20 +73,6 @@
 				6C19473C29C88F940067C180 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		6C19474529C894D90067C180 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		6C19474629C89A810067C180 /* API */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
