@@ -6,6 +6,7 @@
 //
 
 import SpriteKit
+import Speech
 
 class GameScene: SKScene {
     
