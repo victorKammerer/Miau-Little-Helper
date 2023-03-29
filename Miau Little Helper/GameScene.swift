@@ -15,12 +15,16 @@ class GameScene: SKScene {
     var backgroundSala = SKSpriteNode()
     var backgroundCozinha = SKSpriteNode()
     var nina = SKSpriteNode()
+
+    var ninaPosition = "shelfWall"
+    var textureAnimation = SKAction()
+    var walk = SKAction()
+    var interationDisabled = false
+    var voiceCommandAllowed = false
     
-    private lazy var cameraNode: Camera = {
-            let cameraNode = Camera()
-        cameraNode.position = CGPoint(x:self.frame.midX, y: self.frame.midY)
-            return cameraNode
-        }()
+    var currentRoom = 1
+    var cameraNode = Camera()
+
     
     override func didMove(to view: SKView) {
         voiceRecognizer.requestPermission()
@@ -28,17 +32,11 @@ class GameScene: SKScene {
         setupCamera()
         setupBackground()
         setupNina()
+        setupRoom()
     }
     
-    func setupCamera() {
-        
-        camera = cameraNode
-        
-        let cameraBounds = self.frame.width/2
-        let bounds = self.calculateAccumulatedFrame().width/2 - cameraBounds
-        let cameraConstraints = SKConstraint.positionX(.init(lowerLimit: bounds/2, upperLimit: bounds*2.5))
-        self.camera?.constraints = [cameraConstraints]
-        addChild(cameraNode)
+    override func update(_ currentTime: TimeInterval) {
+        voiceCommand()
     }
     
     func setupBackground() {
@@ -57,20 +55,19 @@ class GameScene: SKScene {
     
     func setupNina() {
         
-        let textureAnimation = SKAction.animate(with: ninaMovementTexture, timePerFrame: 0.1)
-        let walk = SKAction.repeatForever(textureAnimation)
+        textureAnimation = SKAction.animate(with: ninaMovementTexture, timePerFrame: 0.1)
+        walk = SKAction.repeatForever(textureAnimation)
         
         nina = SKSpriteNode(imageNamed: "nina1")
-        nina.size = CGSize(width: 200, height: 150)
-        nina.position = CGPoint(x: 400, y: 300)
+        nina.size = CGSize(width: 400, height: 300)
+        nina.position = CGPoint(x: 400, y: shelfWall.position.y + shelfWall.frame.height/2 + nina.frame.height/2)
         
-        nina.run(walk)
+//        nina.run(walk)
         
         addChild(nina)
+        nina.zPosition = 100
+        
         
     }
-}
-
-class Camera: SKCameraNode {
-
+    
 }
