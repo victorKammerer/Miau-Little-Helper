@@ -79,6 +79,7 @@ class VoiceRecognizer : NSObject, SFSpeechRecognizerDelegate {
                 self.command = String(message[indexTo...]).lowercased()
             }
             message = ""
+            print(self.command)
         })
     }
     

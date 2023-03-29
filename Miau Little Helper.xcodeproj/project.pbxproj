@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		64C9F59D29D1C27B0066CC51 /* VoiceRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9F59C29D1C27B0066CC51 /* VoiceRecognizer.swift */; };
+		64C9F5A729D3491E0066CC51 /* Bedroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9F5A629D3491E0066CC51 /* Bedroom.swift */; };
+		64C9F5AB29D375A80066CC51 /* SKActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9F5AA29D375A80066CC51 /* SKActions.swift */; };
+		64C9F5AD29D3D4530066CC51 /* MovementFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9F5AC29D3D4530066CC51 /* MovementFunctions.swift */; };
+		64C9F5AF29D3D5710066CC51 /* touchCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9F5AE29D3D5710066CC51 /* touchCommand.swift */; };
+		64C9F5B129D3D6750066CC51 /* voiceCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9F5B029D3D6750066CC51 /* voiceCommands.swift */; };
 		6C19473529C88F930067C180 /* Miau_Little_HelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C19473429C88F930067C180 /* Miau_Little_HelperApp.swift */; };
 		6C19473729C88F930067C180 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C19473629C88F930067C180 /* ContentView.swift */; };
 		6C19473929C88F940067C180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C19473829C88F940067C180 /* Assets.xcassets */; };
@@ -18,6 +23,11 @@
 
 /* Begin PBXFileReference section */
 		64C9F59C29D1C27B0066CC51 /* VoiceRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecognizer.swift; sourceTree = "<group>"; };
+		64C9F5A629D3491E0066CC51 /* Bedroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bedroom.swift; sourceTree = "<group>"; };
+		64C9F5AA29D375A80066CC51 /* SKActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKActions.swift; sourceTree = "<group>"; };
+		64C9F5AC29D3D4530066CC51 /* MovementFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementFunctions.swift; sourceTree = "<group>"; };
+		64C9F5AE29D3D5710066CC51 /* touchCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = touchCommand.swift; sourceTree = "<group>"; };
+		64C9F5B029D3D6750066CC51 /* voiceCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = voiceCommands.swift; sourceTree = "<group>"; };
 		6C19473129C88F930067C180 /* Miau Little Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Miau Little Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C19473429C88F930067C180 /* Miau_Little_HelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miau_Little_HelperApp.swift; sourceTree = "<group>"; };
 		6C19473629C88F930067C180 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +71,11 @@
 				6C19473429C88F930067C180 /* Miau_Little_HelperApp.swift */,
 				6C19473629C88F930067C180 /* ContentView.swift */,
 				D34492F929C895DE00C80685 /* GameScene.swift */,
+				64C9F5AA29D375A80066CC51 /* SKActions.swift */,
+				64C9F5B029D3D6750066CC51 /* voiceCommands.swift */,
+				64C9F5AE29D3D5710066CC51 /* touchCommand.swift */,
+				64C9F5AC29D3D4530066CC51 /* MovementFunctions.swift */,
+				64C9F5A629D3491E0066CC51 /* Bedroom.swift */,
 				6C19474829D322460067C180 /* Sprites.swift */,
 				64C9F59C29D1C27B0066CC51 /* VoiceRecognizer.swift */,
 				6C19473829C88F940067C180 /* Assets.xcassets */,
@@ -148,11 +163,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64C9F5B129D3D6750066CC51 /* voiceCommands.swift in Sources */,
 				D34492FA29C895DE00C80685 /* GameScene.swift in Sources */,
+				64C9F5AB29D375A80066CC51 /* SKActions.swift in Sources */,
+				64C9F5A729D3491E0066CC51 /* Bedroom.swift in Sources */,
 				6C19473729C88F930067C180 /* ContentView.swift in Sources */,
 				6C19474929D322460067C180 /* Sprites.swift in Sources */,
 				64C9F59D29D1C27B0066CC51 /* VoiceRecognizer.swift in Sources */,
+				64C9F5AD29D3D4530066CC51 /* MovementFunctions.swift in Sources */,
 				6C19473529C88F930067C180 /* Miau_Little_HelperApp.swift in Sources */,
+				64C9F5AF29D3D5710066CC51 /* touchCommand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
