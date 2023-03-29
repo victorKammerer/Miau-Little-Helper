@@ -11,6 +11,7 @@ import Speech
 class GameScene: SKScene {
     
     var voiceRecognizer = VoiceRecognizer()
+    var backgroundCompleto = SKSpriteNode()
     var backgroundQuarto = SKSpriteNode()
     var backgroundSala = SKSpriteNode()
     var backgroundCozinha = SKSpriteNode()
@@ -33,6 +34,7 @@ class GameScene: SKScene {
         setupBackground()
         setupNina()
         setupRoom()
+        setupKitchen()
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -51,6 +53,12 @@ class GameScene: SKScene {
         addChild(backgroundQuarto)
         addChild(backgroundSala)
         addChild(backgroundCozinha)
+        
+        backgroundCompleto = SKSpriteNode(imageNamed: "background")
+        backgroundCompleto.texture!.filteringMode = SKTextureFilteringMode.nearest
+        backgroundCompleto.size = CGSize(width: self.frame.height * 4, height: self.frame.height)
+        backgroundCompleto.position = backgroundSala.position
+        addChild(backgroundCompleto)
     }
     
     func setupNina() {
