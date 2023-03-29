@@ -17,8 +17,6 @@ extension GameScene {
                      goToBed()
                  } else if touchedNode.name == "floor" {
                      goToFloor()
-                 } else if touchedNode.name == "window" {
-                     goToWindow()
                  }
             }
     }
