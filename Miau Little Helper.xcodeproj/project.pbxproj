@@ -21,6 +21,8 @@
 		D34492FA29C895DE00C80685 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34492F929C895DE00C80685 /* GameScene.swift */; };
 		D3AF28DF29D3602E000780D3 /* GameScene+camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF28DE29D3602E000780D3 /* GameScene+camera.swift */; };
 		D3AF28E129D36725000780D3 /* GameScene+touches.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF28E029D36725000780D3 /* GameScene+touches.swift */; };
+		D3AF28E329D47A9D000780D3 /* Kitchen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF28E229D47A9D000780D3 /* Kitchen.swift */; };
+		D3AF28E529D47AC2000780D3 /* LivingRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF28E429D47AC2000780D3 /* LivingRoom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		D34492F929C895DE00C80685 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		D3AF28DE29D3602E000780D3 /* GameScene+camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+camera.swift"; sourceTree = "<group>"; };
 		D3AF28E029D36725000780D3 /* GameScene+touches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+touches.swift"; sourceTree = "<group>"; };
+		D3AF28E229D47A9D000780D3 /* Kitchen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kitchen.swift; sourceTree = "<group>"; };
+		D3AF28E429D47AC2000780D3 /* LivingRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingRoom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 				64C9F5AE29D3D5710066CC51 /* touchCommand.swift */,
 				64C9F5AC29D3D4530066CC51 /* MovementFunctions.swift */,
 				64C9F5A629D3491E0066CC51 /* Bedroom.swift */,
+				D3AF28E229D47A9D000780D3 /* Kitchen.swift */,
+				D3AF28E429D47AC2000780D3 /* LivingRoom.swift */,
 				D3AF28E029D36725000780D3 /* GameScene+touches.swift */,
 				D3AF28DE29D3602E000780D3 /* GameScene+camera.swift */,
 				6C19474829D322460067C180 /* Sprites.swift */,
@@ -179,8 +185,10 @@
 				6C19473729C88F930067C180 /* ContentView.swift in Sources */,
 				6C19474929D322460067C180 /* Sprites.swift in Sources */,
 				64C9F59D29D1C27B0066CC51 /* VoiceRecognizer.swift in Sources */,
+				D3AF28E529D47AC2000780D3 /* LivingRoom.swift in Sources */,
 				64C9F5AD29D3D4530066CC51 /* MovementFunctions.swift in Sources */,
 				6C19473529C88F930067C180 /* Miau_Little_HelperApp.swift in Sources */,
+				D3AF28E329D47A9D000780D3 /* Kitchen.swift in Sources */,
 				64C9F5AF29D3D5710066CC51 /* touchCommand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
