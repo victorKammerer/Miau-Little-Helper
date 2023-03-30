@@ -17,10 +17,10 @@ extension GameScene {
     func nextLevelCamera(currentRoom: Int) {
         var nextPosition = CGPoint()
         if currentRoom == 1 {
-            nextPosition = CGPoint(x: backgroundSala.frame.midX, y: self.frame.midY)
+            nextPosition = CGPoint(x: background2.frame.midX, y: self.frame.midY)
         }
         else if currentRoom == 2 {
-            nextPosition = CGPoint(x: backgroundCozinha.frame.midX, y: self.frame.midY)
+            nextPosition = CGPoint(x: background3.frame.midX, y: self.frame.midY)
         }
         cameraNode.run(SKAction.move(to: nextPosition , duration: 1))
     }
@@ -28,11 +28,13 @@ extension GameScene {
     func previousLevelCamera(currentRoom: Int) {
         var nextPosition = CGPoint()
         if currentRoom == 3 {
-            nextPosition = CGPoint(x: backgroundSala.frame.midX, y: self.frame.midY)
+            nextPosition = CGPoint(x: background2.frame.midX, y: self.frame.midY)
         }
-        else if currentRoom == 2 {
-            nextPosition = CGPoint(x: backgroundQuarto.frame.midX, y: self.frame.midY)
+        else
+        if currentRoom == 2 {
+            nextPosition = CGPoint(x: background1.frame.midX, y: self.frame.midY)
         }
         cameraNode.run(SKAction.move(to: nextPosition , duration: 1))
     }
+    
 }
