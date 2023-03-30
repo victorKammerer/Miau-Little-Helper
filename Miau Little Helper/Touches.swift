@@ -1,3 +1,10 @@
+//
+//  Touches.swift
+//  Miau Little Helper
+//
+//  Created by rsbj on 30/03/23.
+//
+
 import SpriteKit
 
 extension GameScene {
@@ -18,6 +25,17 @@ extension GameScene {
                     previousLevelCamera(currentRoom: currentRoom)
                     currentRoom -= 1
                 }
+            }
+            
+            let touchedNode = atPoint(location)
+            if touchedNode.name == "bed" {
+                goToBed()
+            } else if touchedNode.name == "floor" {
+                goToFloor()
+            } else if touchedNode.name == "shelfWall" {
+                goToShelfWall()
+            } else if touchedNode.name == "obstacle" {
+                goToObstacle()
             }
         }
     }

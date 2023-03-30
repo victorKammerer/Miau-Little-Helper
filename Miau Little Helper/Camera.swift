@@ -1,3 +1,10 @@
+//
+//  Camera.swift
+//  Miau Little Helper
+//
+//  Created by rsbj on 30/03/23.
+//
+
 import SpriteKit
 
 class Camera: SKCameraNode {}
@@ -38,3 +45,4 @@ extension GameScene {
     }
     
 }
+
