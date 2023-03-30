@@ -11,9 +11,6 @@ extension GameScene {
                     // Vai ajudar na hora de fazer os ifs
                     nextLevelCamera(currentRoom: currentRoom)
                     currentRoom += 1
-                    if ninaPosition != "floor" {
-                        goToFloor()
-                    }
                 }
             }
             else {

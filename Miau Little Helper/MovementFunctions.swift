@@ -69,14 +69,6 @@ extension GameScene {
                     bedToFloor,
                     SKAction.run {
                         self.interationDisabled = false
-                    }, SKAction.run {
-                        self.nina.xScale = 1.0
-                        self.nina.run(self.walk, withKey: "ninaMoveAnimation")
-                    },
-                    SKAction.moveTo(x: background2.position.x, duration: 1),
-                    SKAction.run {
-                        self.nina.removeAction(forKey: "ninaMoveAnimation")
-                        //jump animation?
                     }
                 ]))
                 ninaPosition = "floor"
