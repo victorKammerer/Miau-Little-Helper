@@ -24,6 +24,7 @@ class GameScene: SKScene {
     
     var currentRoom = 1
     var cameraNode = Camera()
+    var clothesObstacle = SKSpriteNode(color: .cyan, size: CGSize(width: 400, height: 400))
 
     
     override func didMove(to view: SKView) {
