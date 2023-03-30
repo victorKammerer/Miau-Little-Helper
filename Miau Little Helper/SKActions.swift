@@ -179,7 +179,7 @@ extension GameScene {
     
     var floorToBed : SKAction {
         let floorToBed = SKAction.sequence([
-            rightBorder(of: floor, offset: 700, duration: 1),
+            rightBorder(of: floor, offset: 8700, duration: 1),
             goLeftandJumpUpward(of: floor, offset: 2700, duration: 1, jumpHeight: 300, destination: bed, distance: 1300, slider: 20)
         ])
         return floorToBed
