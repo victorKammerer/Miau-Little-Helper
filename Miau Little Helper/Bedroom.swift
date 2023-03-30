@@ -8,10 +8,7 @@
 import SpriteKit
 
 extension GameScene {
-    
-    var numero : Int {
-        return 1
-    }
+
     
     var floor : SKSpriteNode {
         let floor = SKSpriteNode(color: .green, size: CGSize(width: 12000, height: 100))
@@ -43,21 +40,21 @@ extension GameScene {
     
     var shelfWall : SKSpriteNode {
         let shelfWall = SKSpriteNode(color: .cyan, size: CGSize(width: 720, height: 100))
-        shelfWall.position = CGPoint(x: shelfWall.frame.width/2 + 200, y: shelfWall.frame.width/2 + 2050)
+        shelfWall.position = CGPoint(x: shelfWall.frame.width/2 + 200, y: shelfWall.frame.height/2 + 2050)
         shelfWall.name = "shelfWall"
         return shelfWall
     }
     
     var shelfWall2 : SKSpriteNode {
         let shelfWall = SKSpriteNode(color: .cyan, size: CGSize(width: 720, height: 100))
-        shelfWall.position = CGPoint(x: shelfWall.frame.width/2 + 600, y: shelfWall.frame.width/2 + 1600)
+        shelfWall.position = CGPoint(x: shelfWall.frame.width/2 + 600, y: shelfWall.frame.height/2 + 1600)
         shelfWall.name = "shelfWall2"
         return shelfWall
     }
     
     var shelfWall3 : SKSpriteNode {
         let shelfWall = SKSpriteNode(color: .cyan, size: CGSize(width: 720, height: 100))
-        shelfWall.position = CGPoint(x: shelfWall.frame.width/2 + 200, y: shelfWall.frame.width/2 + 1150)
+        shelfWall.position = CGPoint(x: shelfWall.frame.width/2 + 200, y: shelfWall.frame.height/2 + 1150)
         shelfWall.name = "shelfWall3"
         return shelfWall
     }
@@ -66,9 +63,12 @@ extension GameScene {
         return SKSpriteNode(color: .cyan, size: CGSize(width: 200, height: 200))
     }
     
-    var clothesObstacle : SKSpriteNode {
-        return SKSpriteNode(color: .cyan, size: CGSize(width: 200, height: 200))
-    }
+//    var clothesObstacle : SKSpriteNode {
+//        let clothesObstacle = SKSpriteNode(color: .cyan, size: CGSize(width: 400, height: 400))
+//        clothesObstacle.position = CGPoint(x: clothesObstacle.frame.width/2 + 3300, y: clothesObstacle.frame.height/2 + 100)
+//        clothesObstacle.name = "obstacle"
+//        return clothesObstacle
+//    }
     
     var window : SKSpriteNode {
         let window = SKSpriteNode(color: .gray, size: CGSize(width: 1000, height: 1000))
@@ -80,6 +80,8 @@ extension GameScene {
     
     func setupRoom() {
 //        bed.position = CGPoint(x: CGRectGetMaxX(self.frame), y: CGRectGetMaxY(self.frame))
+        clothesObstacle.position = CGPoint(x: clothesObstacle.frame.width/2 + 3300, y: clothesObstacle.frame.height/2 + 100)
+        clothesObstacle.name = "obstacle"
         addChild(bed)
         addChild(shelfWall)
         addChild(shelfWall2)
@@ -88,5 +90,6 @@ extension GameScene {
         addChild(shelf)
         addChild(door)
         addChild(floor)
+        addChild(clothesObstacle)
     }
 }

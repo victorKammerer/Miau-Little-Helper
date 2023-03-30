@@ -5,20 +5,25 @@
 //  Created by Jpsmor on 28/03/23.
 //
 
-//import SpriteKit
-//
-//extension GameScene {
-//
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        for touch in touches {
-//                 let location = touch.location(in: self)
-//                 let touchedNode = atPoint(location)
-//                 if touchedNode.name == "bed" {
-//                     goToBed()
-//                 } else if touchedNode.name == "floor" {
-//                     goToFloor()
-//                 }
-//            }
-//    }
-//
-//}
+import SpriteKit
+
+extension GameScene {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            let location = touch.location(in: self)
+            let touchedNode = atPoint(location)
+            if touchedNode.name == "bed" {
+                goToBed()
+            } else if touchedNode.name == "floor" {
+                goToFloor()
+            } else if touchedNode.name == "shelfWall" {
+                goToShelfWall()
+            } else if touchedNode.name == "obstacle" {
+                goToObstacle()
+            }
+        }
+        
+    }
+}
+

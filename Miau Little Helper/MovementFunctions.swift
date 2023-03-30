@@ -19,6 +19,15 @@ extension GameScene {
             }
             ]))
             ninaPosition = "bed"
+        } else if ninaPosition == "floor" {
+            self.interationDisabled = true
+            nina.run(SKAction.sequence([
+            floorToBed,
+            SKAction.run {
+                self.interationDisabled = false
+            }
+            ]))
+            ninaPosition = "bed"
         }
     }
     func goToFloor() {
@@ -72,6 +81,79 @@ extension GameScene {
                     }
                 ]))
                 ninaPosition = "floor"
+            }
+        }
+    }
+    
+    func goToShelfWall() {
+        if ninaPosition == "floor" {
+            nina.run(SKAction.sequence([
+                floorToBed,
+                bedToShelfWall,
+                SKAction.run {
+                    self.interationDisabled = false
+                }
+            ]))
+            ninaPosition = "shelfWall"
+        } else if ninaPosition == "bed" {
+            self.interationDisabled = true
+            nina.run(SKAction.sequence([
+                bedToShelfWall,
+                SKAction.run {
+                    self.interationDisabled = false
+                }
+            ]))
+            ninaPosition = "shelfWall"
+        }
+    }
+    
+    func goToObstacle() {
+        if ninaPosition == "floor" {
+            self.interationDisabled = true
+            nina.run(SKAction.sequence([
+                floorToObstacle,
+                SKAction.run {
+                    self.interationDisabled = false
+                    self.clothesObstacle.removeFromParent()
+                    self.clothesObstacle.name = "solved"
+                }
+            ]))
+            ninaPosition =  "floor"
+        }
+    }
+    
+    func goToDoorRoom() {
+        if clothesObstacle.name == "solved" {
+            self.interationDisabled = true
+            if ninaPosition == "shelfWall" {
+                nina.run(SKAction.sequence([
+                    shelfWallToBed,
+                    bedToFloor,
+                    floorToObstacle,
+                    obstacleToDoor,
+                    SKAction.run {
+                        self.interationDisabled = false
+                    }
+
+                ]))
+                //ninaPosition = ?
+            } else if ninaPosition == "bed" {
+                nina.run(SKAction.sequence([
+                    bedToFloor,
+                    obstacleToDoor,
+                    SKAction.run {
+                        self.interationDisabled = false
+                    }
+
+                ]))
+                //ninaPosition = ?
+            } else if ninaPosition == "floor" {
+                nina.run(SKAction.sequence([
+                    obstacleToDoor,
+                    SKAction.run {
+                        self.interationDisabled = false
+                    }
+                ]))
             }
         }
     }
