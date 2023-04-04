@@ -8,6 +8,7 @@
 import SpriteKit
 import Speech
 
+
 class GameScene: SKScene {
     
     var voiceRecognizer = VoiceRecognizer()
@@ -18,14 +19,18 @@ class GameScene: SKScene {
     var nina = SKSpriteNode()
 
     var ninaPosition = "shelfWall"
-    var textureAnimation = SKAction()
-    var walk = SKAction()
     var interationDisabled = false
     var voiceCommandAllowed = false
     
     var currentRoom = 1
     var cameraNode = Camera()
     var clothesObstacle = SKSpriteNode(color: .cyan, size: CGSize(width: 400, height: 400))
+    
+    var backgroundMusic = SKAudioNode(fileNamed: "backgroundMusic.wav")
+    var stepsSound1 = SKAudioNode(fileNamed: "steps.wav")
+    var stepsSound2 = SKAudioNode(fileNamed:"steps.wav")
+    var jumpSound = SKAudioNode(fileNamed: "jump.wav")
+    var landedSound = SKAudioNode(fileNamed: "landed.wav")
 
     
     override func didMove(to view: SKView) {
@@ -37,6 +42,7 @@ class GameScene: SKScene {
         setupRoom()
         setupLivingRoom()
         setupKitchen()
+        setupSounds()
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -67,20 +73,32 @@ class GameScene: SKScene {
     }
     
     func setupNina() {
-        
-        textureAnimation = SKAction.animate(with: ninaMovementTexture, timePerFrame: 0.1)
-        walk = SKAction.repeatForever(textureAnimation)
-        
         nina = SKSpriteNode(imageNamed: "nina1")
         nina.size = CGSize(width: 400, height: 300)
         nina.position = CGPoint(x: 400, y: shelfWall.position.y + shelfWall.frame.height/2 + nina.frame.height/2)
-        
-//        nina.run(walk)
-        
         addChild(nina)
         nina.zPosition = 100
-        
-        
     }
     
+    func setupSounds() {
+        backgroundMusic.autoplayLooped = true
+        backgroundMusic.isPositional = false
+        addChild(backgroundMusic)
+        
+        stepsSound1.run(SKAction.changeVolume(to: 0.5, duration: 0.0))
+        stepsSound2.run(SKAction.changeVolume(to: 0.5, duration: 0.0))
+        stepsSound1.autoplayLooped = false
+        stepsSound2.autoplayLooped = false
+        nina.addChild(stepsSound1)
+        nina.addChild(stepsSound2)
+        
+        jumpSound.run(SKAction.changeVolume(to: 0.5, duration: 0.0))
+        jumpSound.autoplayLooped = false
+        nina.addChild(jumpSound)
+        
+        landedSound.run(SKAction.changeVolume(to: 0.5, duration: 0.0))
+        landedSound.autoplayLooped = false
+        nina.addChild(landedSound)
+        
+    }
 }
