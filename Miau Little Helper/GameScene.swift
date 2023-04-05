@@ -5,17 +5,27 @@
 //  Created by rsbj on 20/03/23.
 //
 
+import SwiftUI
 import SpriteKit
 import Speech
 
 class GameScene: SKScene {
+    
+    @Published var viewModel : WeatherViewModel?
     
     var voiceRecognizer = VoiceRecognizer()
     var backgroundCompleto = SKSpriteNode()
     var background1 = SKSpriteNode()
     var background2 = SKSpriteNode()
     var background3 = SKSpriteNode()
+    var window1 = SKSpriteNode()
+    var window2 = SKSpriteNode()
+    var window3 = SKSpriteNode()
     var nina = SKSpriteNode()
+    
+    var test = SKLabelNode()
+    
+    var refresh = SKAction()
 
     var ninaPosition = "shelfWall"
     var textureAnimation = SKAction()
@@ -26,13 +36,11 @@ class GameScene: SKScene {
     var currentRoom = 1
     var cameraNode = Camera()
     var clothesObstacle = SKSpriteNode(color: .cyan, size: CGSize(width: 400, height: 400))
-
-    
     override func didMove(to view: SKView) {
         voiceRecognizer.requestPermission()
-        
         setupCamera()
         setupBackground()
+       // setupWindow()
         setupNina()
         setupRoom()
         setupLivingRoom()
@@ -41,6 +49,7 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         voiceCommand()
+        windowRefresh()
 //        if currentRoom == 3 {
 //            cameraNode.position.x = nina.position.x
 //        }
@@ -66,6 +75,10 @@ class GameScene: SKScene {
         addChild(backgroundCompleto)
     }
     
+//    func setupWindow() {
+//
+//    }
+    
     func setupNina() {
         
         textureAnimation = SKAction.animate(with: ninaMovementTexture, timePerFrame: 0.1)
@@ -74,7 +87,6 @@ class GameScene: SKScene {
         nina = SKSpriteNode(imageNamed: "nina1")
         nina.size = CGSize(width: 400, height: 300)
         nina.position = CGPoint(x: 400, y: shelfWall.position.y + shelfWall.frame.height/2 + nina.frame.height/2)
-        
 //        nina.run(walk)
         
         addChild(nina)

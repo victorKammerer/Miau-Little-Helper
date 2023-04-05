@@ -13,6 +13,7 @@ extension GameScene {
         let machine = SKSpriteNode(color: .brown, size: CGSize(width: 900, height: 950))
         machine.position = CGPoint(x: 10780 + machine.frame.width/2, y: machine.frame.height/2 + 260)
         machine.name = "washMachine"
+        
         return machine
     }
     

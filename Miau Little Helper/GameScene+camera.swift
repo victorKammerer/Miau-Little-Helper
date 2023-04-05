@@ -7,6 +7,7 @@ extension GameScene {
         cameraNode.position = CGPoint(x:self.frame.midX, y: self.frame.midY)
         camera = cameraNode
         
+        
         let cameraBounds = self.frame.width/2
         let bounds = self.calculateAccumulatedFrame().width/2 + cameraBounds
         let cameraConstraints = SKConstraint.positionX(.init(lowerLimit: bounds/2, upperLimit: bounds*2.5))

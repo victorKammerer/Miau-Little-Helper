@@ -18,6 +18,7 @@ class VoiceRecognizer : NSObject, SFSpeechRecognizerDelegate {
     
     
     
+    
     func requestPermission() {
         SFSpeechRecognizer.requestAuthorization {  (authState) in
             OperationQueue.main.addOperation {
