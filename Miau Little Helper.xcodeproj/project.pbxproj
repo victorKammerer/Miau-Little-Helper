@@ -12,7 +12,6 @@
 		64C9F5AD29D3D4530066CC51 /* BedroomFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9F5AC29D3D4530066CC51 /* BedroomFunctions.swift */; };
 		64C9F5B129D3D6750066CC51 /* voiceCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9F5B029D3D6750066CC51 /* voiceCommands.swift */; };
 		64C9F5B729D776690066CC51 /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = 64C9F5B329D776690066CC51 /* jump.wav */; };
-		64C9F5B829D776690066CC51 /* landed.wav in Resources */ = {isa = PBXBuildFile; fileRef = 64C9F5B429D776690066CC51 /* landed.wav */; };
 		64C9F5B929D776690066CC51 /* steps.wav in Resources */ = {isa = PBXBuildFile; fileRef = 64C9F5B529D776690066CC51 /* steps.wav */; };
 		64C9F5BC29D9CCD00066CC51 /* backgroundMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = 64C9F5BB29D9CCD00066CC51 /* backgroundMusic.wav */; };
 		64C9F5BE29DA184C0066CC51 /* SKActionsSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9F5BD29DA184C0066CC51 /* SKActionsSounds.swift */; };
@@ -32,6 +31,11 @@
 		D3384DE829D6089800C0CB8C /* Touches.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3384DE729D6089800C0CB8C /* Touches.swift */; };
 		D3384DEB29D6097900C0CB8C /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3384DEA29D6097900C0CB8C /* Camera.swift */; };
 		D34492FA29C895DE00C80685 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34492F929C895DE00C80685 /* GameScene.swift */; };
+		D34EB69E29DE102400914CC7 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34EB69D29DE102400914CC7 /* StartView.swift */; };
+		D34EB6A029DE105400914CC7 /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34EB69F29DE105400914CC7 /* PauseView.swift */; };
+		D34EB6A229DE106000914CC7 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34EB6A129DE106000914CC7 /* CreditsView.swift */; };
+		D34EB6A429DE10A500914CC7 /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34EB6A329DE10A500914CC7 /* ConfigurationView.swift */; };
+		D34EB6A629DE128300914CC7 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34EB6A529DE128300914CC7 /* HelpView.swift */; };
 		D3AF28E329D47A9D000780D3 /* Kitchen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF28E229D47A9D000780D3 /* Kitchen.swift */; };
 		D3AF28E529D47AC2000780D3 /* LivingRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF28E429D47AC2000780D3 /* LivingRoom.swift */; };
 /* End PBXBuildFile section */
@@ -42,7 +46,6 @@
 		64C9F5AC29D3D4530066CC51 /* BedroomFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedroomFunctions.swift; sourceTree = "<group>"; };
 		64C9F5B029D3D6750066CC51 /* voiceCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = voiceCommands.swift; sourceTree = "<group>"; };
 		64C9F5B329D776690066CC51 /* jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump.wav; sourceTree = "<group>"; };
-		64C9F5B429D776690066CC51 /* landed.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = landed.wav; sourceTree = "<group>"; };
 		64C9F5B529D776690066CC51 /* steps.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = steps.wav; sourceTree = "<group>"; };
 		64C9F5BB29D9CCD00066CC51 /* backgroundMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = backgroundMusic.wav; sourceTree = "<group>"; };
 		64C9F5BD29DA184C0066CC51 /* SKActionsSounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKActionsSounds.swift; sourceTree = "<group>"; };
@@ -64,6 +67,11 @@
 		D3384DE729D6089800C0CB8C /* Touches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Touches.swift; sourceTree = "<group>"; };
 		D3384DEA29D6097900C0CB8C /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		D34492F929C895DE00C80685 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		D34EB69D29DE102400914CC7 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		D34EB69F29DE105400914CC7 /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
+		D34EB6A129DE106000914CC7 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
+		D34EB6A329DE10A500914CC7 /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
+		D34EB6A529DE128300914CC7 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		D3AF28E229D47A9D000780D3 /* Kitchen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kitchen.swift; sourceTree = "<group>"; };
 		D3AF28E429D47AC2000780D3 /* LivingRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingRoom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,7 +90,6 @@
 		64C9F5BA29D776710066CC51 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				64C9F5B429D776690066CC51 /* landed.wav */,
 				64C9F5B529D776690066CC51 /* steps.wav */,
 				64C9F5B329D776690066CC51 /* jump.wav */,
 				64C9F5BB29D9CCD00066CC51 /* backgroundMusic.wav */,
@@ -112,6 +119,11 @@
 				6C19473A29C88F940067C180 /* Miau_Little_Helper.entitlements */,
 				6C19473429C88F930067C180 /* Miau_Little_HelperApp.swift */,
 				6C19473629C88F930067C180 /* ContentView.swift */,
+				D34EB69D29DE102400914CC7 /* StartView.swift */,
+				D34EB6A529DE128300914CC7 /* HelpView.swift */,
+				D34EB69F29DE105400914CC7 /* PauseView.swift */,
+				D34EB6A129DE106000914CC7 /* CreditsView.swift */,
+				D34EB6A329DE10A500914CC7 /* ConfigurationView.swift */,
 				D34492F929C895DE00C80685 /* GameScene.swift */,
 				D3384DE729D6089800C0CB8C /* Touches.swift */,
 				D3384DEA29D6097900C0CB8C /* Camera.swift */,
@@ -240,7 +252,6 @@
 				6C19473D29C88F940067C180 /* Preview Assets.xcassets in Resources */,
 				64C9F5BC29D9CCD00066CC51 /* backgroundMusic.wav in Resources */,
 				6C19473929C88F940067C180 /* Assets.xcassets in Resources */,
-				64C9F5B829D776690066CC51 /* landed.wav in Resources */,
 				64C9F5B929D776690066CC51 /* steps.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,11 +266,14 @@
 				64C9F5B129D3D6750066CC51 /* voiceCommands.swift in Sources */,
 				64C9F5C429DA19430066CC51 /* SKActions2D.swift in Sources */,
 				D34492FA29C895DE00C80685 /* GameScene.swift in Sources */,
+				D34EB6A429DE10A500914CC7 /* ConfigurationView.swift in Sources */,
+				D34EB6A029DE105400914CC7 /* PauseView.swift in Sources */,
 				64C9F5CC29DA1C7E0066CC51 /* LivingRoomFunctions.swift in Sources */,
 				D3384DE829D6089800C0CB8C /* Touches.swift in Sources */,
 				64C9F5A729D3491E0066CC51 /* Bedroom.swift in Sources */,
 				64C9F5CE29DA1C8A0066CC51 /* KitchenFunctions.swift in Sources */,
 				D34492FA29C895DE00C80685 /* GameScene.swift in Sources */,
+				D34EB69E29DE102400914CC7 /* StartView.swift in Sources */,
 				64C9F5CA29DA1C540066CC51 /* SKActionsKitchen.swift in Sources */,
 				64C9F5C029DA18970066CC51 /* SKActionsAnimations.swift in Sources */,
 				6C19473729C88F930067C180 /* ContentView.swift in Sources */,
@@ -271,8 +285,10 @@
 				64C9F5C629DA1B480066CC51 /* SKActionsBedroom.swift in Sources */,
 				D3384DEB29D6097900C0CB8C /* Camera.swift in Sources */,
 				64C9F5AD29D3D4530066CC51 /* BedroomFunctions.swift in Sources */,
+				D34EB6A629DE128300914CC7 /* HelpView.swift in Sources */,
 				64C9F5C829DA1BED0066CC51 /* SKActionsLivingRoom.swift in Sources */,
 				6C19473529C88F930067C180 /* Miau_Little_HelperApp.swift in Sources */,
+				D34EB6A229DE106000914CC7 /* CreditsView.swift in Sources */,
 				D3AF28E329D47A9D000780D3 /* Kitchen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
