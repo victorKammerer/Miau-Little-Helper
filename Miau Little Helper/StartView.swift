@@ -11,9 +11,64 @@ struct StartView: View {
     var body: some View {
         if #available(iOS 16.0, *) {
             // if IPad has the current version updated
-            NavigationStack{
-                // Faz aqui dentro oq vai aparecer na tela
-                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            GeometryReader{
+                geo in
+                NavigationStack{
+                    // Faz aqui dentro oq vai aparecer na tela
+                    ZStack{
+                        Image("background")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .ignoresSafeArea()
+                            .frame(height: geo.size.height)
+                        VStack{
+                            NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true)) {
+                                Text("Jogar")
+                                    .font(.custom("Greybeard22pxBold", size: geo.size.width/20))
+                                    .minimumScaleFactor(0.01)
+                                    .foregroundColor(.white)
+                            }
+                            .frame(width: geo.size.width/3, height: geo.size.height/7)
+                            .background(.blue)
+                            .cornerRadius(12)
+                            .padding(10)
+                            
+                            HStack {
+                                NavigationLink(destination: HelpView().navigationBarBackButtonHidden(true)) {
+                                    Text("?")
+                                        .font(.custom("Greybeard22pxBold", size: geo.size.width/25))
+                                        .foregroundColor(.white)
+                                        .minimumScaleFactor(0.01)
+                                }
+                                .frame(width: geo.size.width/14, height: geo.size.height/10)
+                                .background(.blue)
+                                .cornerRadius(12)
+                                
+                                NavigationLink(destination: CreditsView().navigationBarBackButtonHidden(true)) {
+                                    Text("Creditos")
+                                        .font(.custom("Greybeard22pxBold", size: geo.size.width/30))
+                                        .foregroundColor(.white)
+                                        .minimumScaleFactor(0.01)
+                                }
+                                .frame(width: geo.size.width/6, height: geo.size.height/10)
+                                .background(.blue)
+                                .cornerRadius(12)
+                                .padding(10)
+                                
+                                
+                                NavigationLink(destination: ConfigurationView().navigationBarBackButtonHidden(true)) {
+                                    Text("X")
+                                        .font(.custom("Greybeard22pxBold", size: geo.size.width/25))
+                                        .foregroundColor(.white)
+                                        .minimumScaleFactor(0.01)
+                                }
+                                .frame(width: geo.size.width/14, height: geo.size.height/10)
+                                .background(.blue)
+                                .cornerRadius(12)
+                            }
+                        }
+                    }
+                }
             }
         }
         else {
@@ -23,6 +78,7 @@ struct StartView: View {
                 Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
             }
         }
+        
     }
 }
 
