@@ -22,6 +22,17 @@ struct StartView: View {
                             .ignoresSafeArea()
                             .frame(height: geo.size.height)
                         VStack{
+                            ZStack{
+                                Text("Miau Little Helper")
+                                    .font(.custom("Greybeard22pxBold", size: geo.size.width/14.7))
+                                    .foregroundColor(.black)
+                                
+                                Text("Miau Little Helper")
+                                    .font(.custom("Greybeard22pxBold", size: geo.size.width/15))
+                                    .foregroundColor(.white)
+                                
+                            }
+                            
                             NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true)) {
                                 Text("Jogar")
                                     .font(.custom("Greybeard22pxBold", size: geo.size.width/20))

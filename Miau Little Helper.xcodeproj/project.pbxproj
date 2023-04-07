@@ -132,7 +132,6 @@
 				D3384DE729D6089800C0CB8C /* Touches.swift */,
 				D3384DEA29D6097900C0CB8C /* Camera.swift */,
 				6C19474829D322460067C180 /* Sprites.swift */,
-				D3D6E82029E0CFEC00582054 /* Greybeard-22px-Bold.ttf */,
 				D3384DE929D6091D00C0CB8C /* Moves */,
 				D3384DE429D6078500C0CB8C /* Rooms */,
 				D3384DE629D6087F00C0CB8C /* Voice */,
@@ -164,6 +163,7 @@
 		D3384DE529D6081E00C0CB8C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D3D6E82029E0CFEC00582054 /* Greybeard-22px-Bold.ttf */,
 				6C19473829C88F940067C180 /* Assets.xcassets */,
 			);
 			path = Resources;
