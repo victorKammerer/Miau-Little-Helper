@@ -10,8 +10,8 @@ import SwiftUI
 struct UISliderView: UIViewRepresentable {
     @Binding var value: Double
     
-    var minValue = 1.0
-    var maxValue = 100.0
+    var minValue = 0.0
+    var maxValue = 1.0
     var thumbColor: UIColor = .white
     var minTrackColor: UIColor = .blue
     var maxTrackColor: UIColor = .lightGray
@@ -55,3 +55,4 @@ struct UISliderView: UIViewRepresentable {
     }
 }
 
+// Credits: https://swdevnotes.com/swift/2021/how-to-customise-the-slider-in-swiftui/

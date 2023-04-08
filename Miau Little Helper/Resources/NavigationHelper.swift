@@ -25,3 +25,5 @@ for childViewController in viewController.children {
 return nil
     }
 }
+
+// Credits: https://rekerrsive.medium.com/three-ways-to-pop-to-the-root-view-in-a-swiftui-navigationview-430aee720c9a
