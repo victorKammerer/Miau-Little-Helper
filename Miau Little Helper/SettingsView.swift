@@ -33,7 +33,7 @@ struct SettingsView: View {
                                  thumbColor: .white,
                                  minTrackColor: UIColor(named: "greenMLH")!,
                                  maxTrackColor: UIColor(named: "darkGreenMLH")!)
-                    .padding(.bottom,geo.size.width/12)
+                    .padding(.bottom,geo.size.width/20)
                     
                     
                     Text("Efeitos")
@@ -47,7 +47,7 @@ struct SettingsView: View {
                                  thumbColor: .white,
                                  minTrackColor: UIColor(named: "greenMLH")!,
                                  maxTrackColor: UIColor(named: "darkGreenMLH")!)
-                    .padding(.bottom,geo.size.width/12)
+                    .padding(.bottom,geo.size.width/20)
 
                     
                     
