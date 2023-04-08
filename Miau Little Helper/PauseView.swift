@@ -29,8 +29,12 @@ struct PauseView: View {
                         .font(.custom("Greybeard22pxBold", size: geo.size.width/22))
                         .multilineTextAlignment(.leading)
                         .padding(.bottom,-geo.size.width/160)
-                    Slider(value: $volumeMusic, in: 0...1)
-                        .tint(Color(UIColor(named: "greenMLH")!))
+                    UISliderView(value: $volumeMusic,
+                                 minValue: 0.0,
+                                 maxValue: 1.0,
+                                 thumbColor: .white,
+                                 minTrackColor: UIColor(named: "greenMLH")!,
+                                 maxTrackColor: UIColor(named: "darkGreenMLH")!)
                         .padding(.bottom,geo.size.width/30)
                     
                     
@@ -39,8 +43,12 @@ struct PauseView: View {
                         .font(.custom("Greybeard22pxBold", size: geo.size.width/22))
                         .multilineTextAlignment(.leading)
                         .padding(.bottom,-geo.size.width/160)
-                    Slider(value: $volumeEffects, in: 0...1)
-                        .tint(Color(UIColor(named: "greenMLH")!))
+                    UISliderView(value: $volumeEffects,
+                                 minValue: 0.0,
+                                 maxValue: 1.0,
+                                 thumbColor: .white,
+                                 minTrackColor: UIColor(named: "greenMLH")!,
+                                 maxTrackColor: UIColor(named: "darkGreenMLH")!)
                         .padding(.bottom,geo.size.width/20)
                     
                     

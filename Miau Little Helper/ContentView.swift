@@ -30,7 +30,7 @@ struct ContentView: View {
                             ZStack {
                                 Image("buttonBg")
                                     .resizable()
-                                Image("settings")
+                                Image("pause")
                                     .resizable()
                                     .frame(width: geo.size.width/28, height: geo.size.width/28)
                             }

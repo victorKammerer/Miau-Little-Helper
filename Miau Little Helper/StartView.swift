@@ -25,6 +25,9 @@ struct StartView: View {
                             .aspectRatio(contentMode: .fill)
                             .ignoresSafeArea()
                             .frame(height: geo.size.height)
+                        Color(.black)
+                            .ignoresSafeArea()
+                            .opacity(0.5)
                         VStack{
                             Text("Miau Little Helper")
                                 .font(.custom("Pixhobo", size: geo.size.width/18))
