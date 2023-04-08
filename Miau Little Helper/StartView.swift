@@ -23,61 +23,66 @@ struct StartView: View {
                             .frame(height: geo.size.height)
                         VStack{
                             ZStack{
-                                Text("Miau Little Helper")
-                                    .font(.custom("Greybeard22pxBold", size: geo.size.width/14.7))
-                                    .foregroundColor(.black)
+//                                Text("Miau Little Helper")
+//                                    .font(.custom("Pixhobo", size: geo.size.width/16.8))
+//                                    .foregroundColor(.black)
                                 
                                 Text("Miau Little Helper")
-                                    .font(.custom("Greybeard22pxBold", size: geo.size.width/15))
+                                    .font(.custom("Pixhobo", size: geo.size.width/18))
                                     .foregroundColor(.white)
                                 
                             }
-                            
                             NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true)) {
-                                Text("Jogar")
-                                    .font(.custom("Greybeard22pxBold", size: geo.size.width/20))
-                                    .minimumScaleFactor(0.01)
-                                    .foregroundColor(.white)
+                                ZStack {
+                                    Image("buttonBgWide")
+                                        .resizable()
+                                    Text("Jogar")
+                                        .font(.custom("Greybeard22pxBold", size: geo.size.width/16))
+                                        .minimumScaleFactor(0.01)
+                                        .foregroundColor(.white)
+                                }
                             }
-                            .frame(width: geo.size.width/3, height: geo.size.height/7)
-                            .background(.blue)
-                            .cornerRadius(12)
-                            .padding(10)
+                            .frame(width: geo.size.width/2.7, height: geo.size.height/7)
                             
                             HStack {
                                 NavigationLink(destination: HelpView().navigationBarBackButtonHidden(true)) {
-                                    Text("?")
-                                        .font(.custom("Greybeard22pxBold", size: geo.size.width/25))
-                                        .foregroundColor(.white)
-                                        .minimumScaleFactor(0.01)
+                                    ZStack {
+                                        Image("buttonBg")
+                                            .resizable()
+                                        Text("?")
+                                            .font(.custom("Greybeard22pxBold", size: geo.size.width/25))
+                                            .foregroundColor(.white)
+                                            .minimumScaleFactor(0.01)
+                                    }
                                 }
                                 .frame(width: geo.size.width/14, height: geo.size.height/10)
-                                .background(.blue)
-                                .cornerRadius(12)
                                 
                                 NavigationLink(destination: CreditsView().navigationBarBackButtonHidden(true)) {
-                                    Text("Creditos")
-                                        .font(.custom("Greybeard22pxBold", size: geo.size.width/30))
-                                        .foregroundColor(.white)
-                                        .minimumScaleFactor(0.01)
+                                    ZStack {
+                                        Image("buttonBgWide")
+                                            .resizable()
+                                        Text("Creditos")
+                                            .font(.custom("Greybeard22pxBold", size: geo.size.width/25))
+                                            .foregroundColor(.white)
+                                            .minimumScaleFactor(0.01)
+                                    }
                                 }
-                                .frame(width: geo.size.width/6, height: geo.size.height/10)
-                                .background(.blue)
-                                .cornerRadius(12)
-                                .padding(10)
+                                .frame(width: geo.size.width/4.6, height: geo.size.height/10)
                                 
                                 
                                 NavigationLink(destination: ConfigurationView().navigationBarBackButtonHidden(true)) {
-                                    Text("X")
-                                        .font(.custom("Greybeard22pxBold", size: geo.size.width/25))
-                                        .foregroundColor(.white)
-                                        .minimumScaleFactor(0.01)
+                                    ZStack {
+                                        Image("buttonBg")
+                                            .resizable()
+                                        Image("settings")
+                                            .resizable()
+                                            .frame(width: geo.size.width/28, height: geo.size.width/28)
+                                    }
                                 }
                                 .frame(width: geo.size.width/14, height: geo.size.height/10)
-                                .background(.blue)
-                                .cornerRadius(12)
+
                             }
-                        }
+                        }.padding(.bottom,geo.size.width/30)
                     }
                 }
             }
@@ -90,6 +95,15 @@ struct StartView: View {
             }
         }
         
+    }
+    init() {
+        for familyName in UIFont.familyNames {
+            print(familyName)
+
+            for fontName in UIFont.fontNames(forFamilyName: familyName){
+                print("-- \(fontName)")
+            }
+        }
     }
 }
 

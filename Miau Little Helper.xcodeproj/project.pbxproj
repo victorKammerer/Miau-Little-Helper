@@ -39,6 +39,9 @@
 		D3AF28E329D47A9D000780D3 /* Kitchen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF28E229D47A9D000780D3 /* Kitchen.swift */; };
 		D3AF28E529D47AC2000780D3 /* LivingRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF28E429D47AC2000780D3 /* LivingRoom.swift */; };
 		D3D6E82129E0CFEC00582054 /* Greybeard-22px-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3D6E82029E0CFEC00582054 /* Greybeard-22px-Bold.ttf */; };
+		D3D6E82D29E1B5EE00582054 /* pixhobo.otf in Resources */ = {isa = PBXBuildFile; fileRef = D3D6E82C29E1B5EE00582054 /* pixhobo.otf */; };
+		D3D6E82F29E1B9B600582054 /* Greybeard-22px-Bold(LICENSE).txt in Resources */ = {isa = PBXBuildFile; fileRef = D3D6E82E29E1B9B600582054 /* Greybeard-22px-Bold(LICENSE).txt */; };
+		D3D6E83129E1B9D500582054 /* pixhobo(LICENSE).txt in Resources */ = {isa = PBXBuildFile; fileRef = D3D6E83029E1B9D500582054 /* pixhobo(LICENSE).txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +80,9 @@
 		D3AF28E429D47AC2000780D3 /* LivingRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingRoom.swift; sourceTree = "<group>"; };
 		D3D6E81D29E0CEC200582054 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = "Miau-Little-Helper/Info.plist"; sourceTree = SOURCE_ROOT; };
 		D3D6E82029E0CFEC00582054 /* Greybeard-22px-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Greybeard-22px-Bold.ttf"; sourceTree = "<group>"; };
+		D3D6E82C29E1B5EE00582054 /* pixhobo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pixhobo.otf; sourceTree = "<group>"; };
+		D3D6E82E29E1B9B600582054 /* Greybeard-22px-Bold(LICENSE).txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Greybeard-22px-Bold(LICENSE).txt"; sourceTree = "<group>"; };
+		D3D6E83029E1B9D500582054 /* pixhobo(LICENSE).txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pixhobo(LICENSE).txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +169,7 @@
 		D3384DE529D6081E00C0CB8C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D3D6E82029E0CFEC00582054 /* Greybeard-22px-Bold.ttf */,
+				D3D6E83229E1B9EC00582054 /* Fonts */,
 				6C19473829C88F940067C180 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -193,6 +199,17 @@
 				64C9F5CD29DA1C8A0066CC51 /* KitchenFunctions.swift */,
 			);
 			path = Moves;
+			sourceTree = "<group>";
+		};
+		D3D6E83229E1B9EC00582054 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D3D6E82C29E1B5EE00582054 /* pixhobo.otf */,
+				D3D6E83029E1B9D500582054 /* pixhobo(LICENSE).txt */,
+				D3D6E82029E0CFEC00582054 /* Greybeard-22px-Bold.ttf */,
+				D3D6E82E29E1B9B600582054 /* Greybeard-22px-Bold(LICENSE).txt */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +273,9 @@
 				64C9F5B729D776690066CC51 /* jump.wav in Resources */,
 				6C19473D29C88F940067C180 /* Preview Assets.xcassets in Resources */,
 				64C9F5BC29D9CCD00066CC51 /* backgroundMusic.wav in Resources */,
+				D3D6E83129E1B9D500582054 /* pixhobo(LICENSE).txt in Resources */,
+				D3D6E82D29E1B5EE00582054 /* pixhobo.otf in Resources */,
+				D3D6E82F29E1B9B600582054 /* Greybeard-22px-Bold(LICENSE).txt in Resources */,
 				D3D6E82129E0CFEC00582054 /* Greybeard-22px-Bold.ttf in Resources */,
 				6C19473929C88F940067C180 /* Assets.xcassets in Resources */,
 				64C9F5B929D776690066CC51 /* steps.wav in Resources */,
