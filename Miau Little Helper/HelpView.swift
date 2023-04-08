@@ -34,11 +34,11 @@ struct HelpView: View {
                             }
                         }
                         .frame(width: geo.size.width/14, height: geo.size.height/10)
-                        .padding(.trailing, geo.size.width/40)
-                        .padding(.top, geo.size.width/40)
+                        .padding(.trailing, geo.size.width/20)
+                        .padding(.top, geo.size.width/20)
                     }
                     Spacer()
-                }
+                }.ignoresSafeArea()
                 
                 VStack {
                     Text("Ajuda")

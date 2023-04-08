@@ -58,7 +58,7 @@ struct StartView: View {
                                 }
                                 .frame(width: geo.size.width/14, height: geo.size.height/10)
                                 
-                                NavigationLink(destination: CreditsView()) {
+                                NavigationLink(destination: CreditsView().navigationBarBackButtonHidden(true)) {
                                     ZStack {
                                         Image("buttonBgWide")
                                             .resizable()
@@ -137,7 +137,7 @@ struct StartView: View {
                                 }
                                 .frame(width: geo.size.width/14, height: geo.size.height/10)
                                 
-                                NavigationLink(destination: CreditsView()) {
+                                NavigationLink(destination: CreditsView().navigationBarBackButtonHidden(true)) {
                                     ZStack {
                                         Image("buttonBgWide")
                                             .resizable()
