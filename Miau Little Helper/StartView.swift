@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct StartView: View {
+    @AppStorage("pause") var pause: Bool = false
+    @AppStorage("volumeMusic") var volumeMusic: Double = 1.0
+    @AppStorage("volumeEffects") var volumeEffects: Double = 1.0
+
     var body: some View {
         if #available(iOS 16.0, *) {
             // if IPad has the current version updated
@@ -22,16 +26,10 @@ struct StartView: View {
                             .ignoresSafeArea()
                             .frame(height: geo.size.height)
                         VStack{
-                            ZStack{
-//                                Text("Miau Little Helper")
-//                                    .font(.custom("Pixhobo", size: geo.size.width/16.8))
-//                                    .foregroundColor(.black)
-                                
-                                Text("Miau Little Helper")
-                                    .font(.custom("Pixhobo", size: geo.size.width/18))
-                                    .foregroundColor(.white)
-                                
-                            }
+                            Text("Miau Little Helper")
+                                .font(.custom("Pixhobo", size: geo.size.width/18))
+                                .foregroundColor(.white)
+                            
                             NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true)) {
                                 ZStack {
                                     Image("buttonBgWide")
@@ -70,7 +68,7 @@ struct StartView: View {
                                 .frame(width: geo.size.width/4.6, height: geo.size.height/10)
                                 
                                 
-                                NavigationLink(destination: ConfigurationView().navigationBarBackButtonHidden(true)) {
+                                NavigationLink(destination: SettingsView().navigationBarBackButtonHidden(true)) {
                                     ZStack {
                                         Image("buttonBg")
                                             .resizable()
@@ -79,32 +77,33 @@ struct StartView: View {
                                             .frame(width: geo.size.width/28, height: geo.size.width/28)
                                     }
                                 }
+                                .isDetailLink(false)
                                 .frame(width: geo.size.width/14, height: geo.size.height/10)
-
+                                
                             }
                         }.padding(.bottom,geo.size.width/30)
                     }
+                }
+                .onAppear() {
+                    pause = false
                 }
             }
         }
         else {
             // Fallback on earlier versions
-            NavigationView{
-                // Copia aqui dentro oq vai aparecer na tela (mesma coisa que tem dentro do NavigationStack)
-                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            }
-        }
-        
-    }
-    init() {
-        for familyName in UIFont.familyNames {
-            print(familyName)
-
-            for fontName in UIFont.fontNames(forFamilyName: familyName){
-                print("-- \(fontName)")
-            }
+            Text("Hello")
         }
     }
+    
+//    init() {
+//        for familyName in UIFont.familyNames {
+//            print(familyName)
+//
+//            for fontName in UIFont.fontNames(forFamilyName: familyName){
+//                print("-- \(fontName)")
+//            }
+//        }
+//    }
 }
 
 struct StartView_Previews: PreviewProvider {

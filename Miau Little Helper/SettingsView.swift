@@ -1,5 +1,5 @@
 //
-//  PauseView.swift
+//  ConfigurationView.swift
 //  Miau Little Helper
 //
 //  Created by rsbj on 05/04/23.
@@ -7,9 +7,7 @@
 
 import SwiftUI
 
-struct PauseView: View {
-    
-    @AppStorage("pause") var pause: Bool = false
+struct SettingsView: View {
     @AppStorage("volumeMusic") var volumeMusic: Double = 1.0
     @AppStorage("volumeEffects") var volumeEffects: Double = 1.0
     @Environment(\.presentationMode) var presentation
@@ -31,7 +29,7 @@ struct PauseView: View {
                         .padding(.bottom,-geo.size.width/160)
                     Slider(value: $volumeMusic, in: 0...1)
                         .tint(Color(UIColor(named: "greenMLH")!))
-                        .padding(.bottom,geo.size.width/30)
+                        .padding(.bottom,geo.size.width/12)
                     
                     
                     Text("Efeitos")
@@ -41,32 +39,14 @@ struct PauseView: View {
                         .padding(.bottom,-geo.size.width/160)
                     Slider(value: $volumeEffects, in: 0...1)
                         .tint(Color(UIColor(named: "greenMLH")!))
-                        .padding(.bottom,geo.size.width/20)
+                        .padding(.bottom,geo.size.width/12)
                     
                     
-                    Button (action: {
-                        presentation.wrappedValue.dismiss()
-                        pause = false
-                    }) {
+                    Button (action: { presentation.wrappedValue.dismiss() } ){
                         ZStack {
                             Image("buttonBgWide")
                                 .resizable()
-                            Text("Voltar")
-                                .font(.custom("Greybeard22pxBold", size: geo.size.width/22))
-                                .minimumScaleFactor(0.01)
-                                .foregroundColor(.white)
-                        }
-                    }
-                    .frame(width: geo.size.width/2.7, height: geo.size.height/7)
-                    
-                    Button (action: {
-                        NavigationUtil.popToRootView()
-                        pause = false
-                    }) {
-                        ZStack {
-                            Image("buttonBgWide")
-                                .resizable()
-                            Text("Sair do Jogo")
+                            Text("Salvar")
                                 .font(.custom("Greybeard22pxBold", size: geo.size.width/22))
                                 .minimumScaleFactor(0.01)
                                 .foregroundColor(.white)
@@ -78,14 +58,11 @@ struct PauseView: View {
                     .padding(.trailing,geo.size.width/3.2)
             }
         }
-        .onAppear() {
-            pause = true
-        }
     }
 }
 
-struct PauseView_Previews: PreviewProvider {
+struct ConfigurationView_Previews: PreviewProvider {
     static var previews: some View {
-        PauseView().previewInterfaceOrientation(.landscapeRight)
+        SettingsView().previewInterfaceOrientation(.landscapeRight)
     }
 }

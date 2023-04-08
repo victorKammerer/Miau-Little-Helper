@@ -7,10 +7,14 @@
 
 import SpriteKit
 import Speech
+import SwiftUI
 
 
 class GameScene: SKScene {
-    
+    @AppStorage("pause") var pause: Bool = false
+    @AppStorage("volumeMusic") var volumeMusic: Double = 1.0
+    @AppStorage("volumeEffects") var volumeEffects: Double = 1.0
+
     var voiceRecognizer = VoiceRecognizer()
     var backgroundCompleto = SKSpriteNode()
     var background1 = SKSpriteNode()
@@ -35,7 +39,6 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         voiceRecognizer.requestPermission()
-        
         setupCamera()
         setupBackground()
         setupNina()
@@ -46,10 +49,21 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        voiceCommand()
-//        if currentRoom == 3 {
-//            cameraNode.position.x = nina.position.x
-//        }
+        if pause {
+            backgroundMusic.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
+            stepsSound1.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
+            stepsSound2.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
+            jumpSound.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
+            landedSound.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
+        }
+        else {
+            voiceCommand()
+            backgroundMusic.run(SKAction.changeVolume(to: Float(volumeMusic), duration: 0.0))
+            stepsSound1.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
+            stepsSound2.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
+            jumpSound.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
+            landedSound.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
+        }
     }
     
     func setupBackground() {
@@ -83,20 +97,21 @@ class GameScene: SKScene {
     func setupSounds() {
         backgroundMusic.autoplayLooped = true
         backgroundMusic.isPositional = false
+        backgroundMusic.run(SKAction.changeVolume(to: Float(volumeMusic), duration: 0.0))
         addChild(backgroundMusic)
         
-        stepsSound1.run(SKAction.changeVolume(to: 0.5, duration: 0.0))
-        stepsSound2.run(SKAction.changeVolume(to: 0.5, duration: 0.0))
+        stepsSound1.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
+        stepsSound2.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
         stepsSound1.autoplayLooped = false
         stepsSound2.autoplayLooped = false
         nina.addChild(stepsSound1)
         nina.addChild(stepsSound2)
         
-        jumpSound.run(SKAction.changeVolume(to: 0.5, duration: 0.0))
+        jumpSound.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
         jumpSound.autoplayLooped = false
         nina.addChild(jumpSound)
         
-        landedSound.run(SKAction.changeVolume(to: 0.5, duration: 0.0))
+        landedSound.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
         landedSound.autoplayLooped = false
         nina.addChild(landedSound)
         
