@@ -37,7 +37,6 @@
 		D34EB6A629DE128300914CC7 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34EB6A529DE128300914CC7 /* HelpView.swift */; };
 		D356D3D029E1FEC600FDE473 /* UISliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D356D3CF29E1FEC600FDE473 /* UISliderView.swift */; };
 		D356D3D229E1FEEF00FDE473 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D356D3D129E1FEEF00FDE473 /* NavigationHelper.swift */; };
-		D356D3D629E206BB00FDE473 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3D6E81D29E0CEC200582054 /* Info.plist */; };
 		D36AB6CB29E1E3EA005C0B88 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36AB6CA29E1E3EA005C0B88 /* SettingsView.swift */; };
 		D3AF28E329D47A9D000780D3 /* Kitchen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF28E229D47A9D000780D3 /* Kitchen.swift */; };
 		D3AF28E529D47AC2000780D3 /* LivingRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3AF28E429D47AC2000780D3 /* LivingRoom.swift */; };
@@ -296,7 +295,6 @@
 				D3D6E82D29E1B5EE00582054 /* pixhobo.otf in Resources */,
 				D3D6E82F29E1B9B600582054 /* Greybeard-22px-Bold(LICENSE).txt in Resources */,
 				D3D6E82129E0CFEC00582054 /* Greybeard-22px-Bold.ttf in Resources */,
-				D356D3D629E206BB00FDE473 /* Info.plist in Resources */,
 				6C19473929C88F940067C180 /* Assets.xcassets in Resources */,
 				64C9F5B929D776690066CC51 /* steps.wav in Resources */,
 			);
