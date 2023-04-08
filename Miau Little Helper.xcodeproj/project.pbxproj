@@ -42,6 +42,7 @@
 		D3D6E82D29E1B5EE00582054 /* pixhobo.otf in Resources */ = {isa = PBXBuildFile; fileRef = D3D6E82C29E1B5EE00582054 /* pixhobo.otf */; };
 		D3D6E82F29E1B9B600582054 /* Greybeard-22px-Bold(LICENSE).txt in Resources */ = {isa = PBXBuildFile; fileRef = D3D6E82E29E1B9B600582054 /* Greybeard-22px-Bold(LICENSE).txt */; };
 		D3D6E83129E1B9D500582054 /* pixhobo(LICENSE).txt in Resources */ = {isa = PBXBuildFile; fileRef = D3D6E83029E1B9D500582054 /* pixhobo(LICENSE).txt */; };
+		D3D6E83429E1BA6500582054 /* landed.wav in Resources */ = {isa = PBXBuildFile; fileRef = D3D6E83329E1BA6500582054 /* landed.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		D3D6E82C29E1B5EE00582054 /* pixhobo.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pixhobo.otf; sourceTree = "<group>"; };
 		D3D6E82E29E1B9B600582054 /* Greybeard-22px-Bold(LICENSE).txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Greybeard-22px-Bold(LICENSE).txt"; sourceTree = "<group>"; };
 		D3D6E83029E1B9D500582054 /* pixhobo(LICENSE).txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "pixhobo(LICENSE).txt"; sourceTree = "<group>"; };
+		D3D6E83329E1BA6500582054 /* landed.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = landed.wav; path = "../../../../../../Downloads/gatito pretito/landed.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		64C9F5BA29D776710066CC51 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				D3D6E83329E1BA6500582054 /* landed.wav */,
 				64C9F5B529D776690066CC51 /* steps.wav */,
 				64C9F5B329D776690066CC51 /* jump.wav */,
 				64C9F5BB29D9CCD00066CC51 /* backgroundMusic.wav */,
@@ -274,6 +277,7 @@
 				6C19473D29C88F940067C180 /* Preview Assets.xcassets in Resources */,
 				64C9F5BC29D9CCD00066CC51 /* backgroundMusic.wav in Resources */,
 				D3D6E83129E1B9D500582054 /* pixhobo(LICENSE).txt in Resources */,
+				D3D6E83429E1BA6500582054 /* landed.wav in Resources */,
 				D3D6E82D29E1B5EE00582054 /* pixhobo.otf in Resources */,
 				D3D6E82F29E1B9B600582054 /* Greybeard-22px-Bold(LICENSE).txt in Resources */,
 				D3D6E82129E0CFEC00582054 /* Greybeard-22px-Bold.ttf in Resources */,
