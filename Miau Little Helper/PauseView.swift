@@ -29,13 +29,17 @@ struct PauseView: View {
                         .font(.custom("Greybeard22pxBold", size: geo.size.width/22))
                         .multilineTextAlignment(.leading)
                         .padding(.bottom,-geo.size.width/160)
-                    UISliderView(value: $volumeMusic,
-                                 minValue: 0.0,
-                                 maxValue: 1.0,
-                                 thumbColor: .white,
-                                 minTrackColor: UIColor(named: "greenMLH")!,
-                                 maxTrackColor: UIColor(named: "darkGreenMLH")!)
-                        .padding(.bottom,geo.size.width/30)
+                    HStack{
+                        Image("noMusic")
+                        UISliderView(value: $volumeMusic,
+                                     minValue: 0.0,
+                                     maxValue: 1.0,
+                                     thumbColor: .white,
+                                     minTrackColor: UIColor(named: "greenMLH")!,
+                                     maxTrackColor: UIColor(named: "darkGreenMLH")!)
+                        Image("music")
+                    }
+                    .padding(.bottom,geo.size.width/30)
                     
                     
                     Text("Efeitos")
@@ -43,13 +47,17 @@ struct PauseView: View {
                         .font(.custom("Greybeard22pxBold", size: geo.size.width/22))
                         .multilineTextAlignment(.leading)
                         .padding(.bottom,-geo.size.width/160)
-                    UISliderView(value: $volumeEffects,
-                                 minValue: 0.0,
-                                 maxValue: 1.0,
-                                 thumbColor: .white,
-                                 minTrackColor: UIColor(named: "greenMLH")!,
-                                 maxTrackColor: UIColor(named: "darkGreenMLH")!)
-                        .padding(.bottom,geo.size.width/20)
+                    HStack{
+                        Image("noMusic")
+                        UISliderView(value: $volumeEffects,
+                                     minValue: 0.0,
+                                     maxValue: 1.0,
+                                     thumbColor: .white,
+                                     minTrackColor: UIColor(named: "greenMLH")!,
+                                     maxTrackColor: UIColor(named: "darkGreenMLH")!)
+                        Image("music")
+                    }
+                    .padding(.bottom,geo.size.width/20)
                     
                     
                     Button (action: {

@@ -27,12 +27,16 @@ struct SettingsView: View {
                         .font(.custom("Greybeard22pxBold", size: geo.size.width/22))
                         .multilineTextAlignment(.leading)
                         .padding(.bottom,-geo.size.width/160)
+                    HStack{
+                        Image("noMusic")
                     UISliderView(value: $volumeMusic,
                                  minValue: 0.0,
                                  maxValue: 1.0,
                                  thumbColor: .white,
                                  minTrackColor: UIColor(named: "greenMLH")!,
                                  maxTrackColor: UIColor(named: "darkGreenMLH")!)
+                        Image("music")
+                    }
                     .padding(.bottom,geo.size.width/20)
                     
                     
@@ -41,12 +45,16 @@ struct SettingsView: View {
                         .font(.custom("Greybeard22pxBold", size: geo.size.width/22))
                         .multilineTextAlignment(.leading)
                         .padding(.bottom,-geo.size.width/160)
+                    HStack{
+                        Image("noMusic")
                     UISliderView(value: $volumeEffects,
                                  minValue: 0.0,
                                  maxValue: 1.0,
                                  thumbColor: .white,
                                  minTrackColor: UIColor(named: "greenMLH")!,
                                  maxTrackColor: UIColor(named: "darkGreenMLH")!)
+                        Image("music")
+                    }
                     .padding(.bottom,geo.size.width/20)
 
                     
