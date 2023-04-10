@@ -40,13 +40,11 @@ extension GameScene {
                 } else if touchedNode.name == "door" {
                     goToDoorRoom()
                 } else if touchedNode.name == "sofa" {
-                    nina.run(SKAction.sequence([
-                    floorToSofa,
-                    SKAction.wait(forDuration: 2),
-                    sofaToFloor,
-                    SKAction.wait(forDuration: 2),
-                    floorToKitchen
-                    ]))
+                    goToSofa()
+                } else if touchedNode.name == "kitchenNode" {
+                    goToKitchen()
+                } else if touchedNode.name == "kitchenShelf" {
+                    goToStove()
                 }
             }
         }

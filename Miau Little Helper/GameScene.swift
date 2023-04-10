@@ -43,7 +43,7 @@ class GameScene: SKScene {
         setupDonna()
         setupRoom()
         setupLivingRoom()
-//        setupKitchen()
+        setupKitchen()
         setupSounds()
     }
     
@@ -77,7 +77,7 @@ class GameScene: SKScene {
     func setupNina() {
         nina = SKSpriteNode(imageNamed: "nina1")
         nina.size = CGSize(width: 400, height: 300)
-        nina.position = CGPoint(x: 400, y: shelfWall.position.y + shelfWall.frame.height/2 + nina.frame.height/2)
+        nina.position = CGPoint(x: 400, y: shelfWall3.position.y + shelfWall3.frame.height/2 + nina.frame.height/2)
         addChild(nina)
         nina.zPosition = 100
     }

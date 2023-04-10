@@ -19,6 +19,7 @@ class VoiceRecognizer : NSObject, SFSpeechRecognizerDelegate {
     
     
     func requestPermission() {
+        audioEngine.inputNode.removeTap(onBus: 0)
         SFSpeechRecognizer.requestAuthorization {  (authState) in
             OperationQueue.main.addOperation {
                 if authState == .authorized {
@@ -38,7 +39,6 @@ class VoiceRecognizer : NSObject, SFSpeechRecognizerDelegate {
     func startSpeechRecognization() {
         let node = audioEngine.inputNode
         let recordingFormat = node.outputFormat(forBus: 0)
-        
         
         node.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, _) in
             self.request.append(buffer)

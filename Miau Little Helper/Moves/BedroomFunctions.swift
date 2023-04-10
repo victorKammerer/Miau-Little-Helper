@@ -31,58 +31,6 @@ extension GameScene {
         }
     }
     
-    func goToFloor() {
-        if currentRoom == 1 {
-            if ninaPosition == "shelfWall" {
-                self.interationDisabled = true
-                nina.run(SKAction.sequence([
-                    shelfWallToBed,
-                    bedToFloor,
-                    SKAction.run {
-                        self.interationDisabled = false
-                    }
-                ]))
-                ninaPosition = "floor"
-            } else if ninaPosition == "bed" {
-                self.interationDisabled = true
-                nina.run(SKAction.sequence([
-                    bedToFloor,
-                    SKAction.run {
-                        self.interationDisabled = false
-                    }
-                ]))
-                ninaPosition = "floor"
-            }
-        }
-        else {
-            if ninaPosition == "shelfWall" {
-                self.interationDisabled = true
-                nina.run(SKAction.sequence([
-                    shelfWallToBed,
-                    bedToFloor,
-                    SKAction.run {
-                        self.interationDisabled = false
-                    }, SKAction.run {
-                        self.nina.xScale = 1.0
-                        self.nina.run(self.walk, withKey: "ninaMoveAnimation")
-                    },
-                    SKAction.moveTo(x: background2.position.x, duration: 1),
-                    stop
-                ]))
-                ninaPosition = "floor"
-            } else if ninaPosition == "bed" {
-                self.interationDisabled = true
-                nina.run(SKAction.sequence([
-                    bedToFloor,
-                    SKAction.run {
-                        self.interationDisabled = false
-                    }
-                ]))
-                ninaPosition = "floor"
-            }
-        }
-    }
-    
     func goToShelfWall() {
         if ninaPosition == "floor" {
             nina.run(SKAction.sequence([
@@ -134,7 +82,7 @@ extension GameScene {
                     }
 
                 ]))
-                //ninaPosition = ?
+                ninaPosition = "floor2"
             } else if ninaPosition == "bed" {
                 nina.run(SKAction.sequence([
                     bedToFloor,
@@ -144,7 +92,7 @@ extension GameScene {
                     }
 
                 ]))
-                //ninaPosition = ?
+                ninaPosition = "floor2"
             } else if ninaPosition == "floor" {
                 nina.run(SKAction.sequence([
                     obstacleToDoor,
@@ -152,6 +100,7 @@ extension GameScene {
                         self.interationDisabled = false
                     }
                 ]))
+                ninaPosition = "floor2"
             }
         }
     }

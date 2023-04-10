@@ -29,6 +29,7 @@ extension GameScene {
                 self.nina.run(self.land(on: destination, duration: 0.5))
                 self.nina.run(SKAction.moveBy(x: distance/5, y: 0, duration: 0.5))
             },
+            SKAction.wait(forDuration: 0.5)
         ])
     }
     
@@ -54,7 +55,8 @@ extension GameScene {
                 self.nina.run(SKAction.moveBy(x: distance/20, y: 0, duration: 0.05))
             },
             SKAction.wait(forDuration: 0.05),
-            SKAction.moveBy(x: slider, y: 0, duration: 0.5)
+            SKAction.moveBy(x: slider, y: 0, duration: 0.5),
+            SKAction.wait(forDuration: 0.5)
         ])
     }
     
