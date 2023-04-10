@@ -19,6 +19,7 @@ class VoiceRecognizer : NSObject, SFSpeechRecognizerDelegate {
     
     
     func requestPermission() {
+        audioEngine.inputNode.removeTap(onBus: 0)
         SFSpeechRecognizer.requestAuthorization {  (authState) in
             OperationQueue.main.addOperation {
                 if authState == .authorized {
