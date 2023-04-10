@@ -21,6 +21,8 @@ class GameScene: SKScene {
     var background2 = SKSpriteNode()
     var background3 = SKSpriteNode()
     var nina = SKSpriteNode()
+    var chatBox = SKSpriteNode()
+    var chatLabel = SKLabelNode()
 
     var ninaPosition = "shelfWall"
     var interationDisabled = false
