@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+extension GameScene {
+    
+    func goToStove() {
+    }
+    
+}

@@ -43,5 +43,18 @@ extension GameScene {
             ninaJumpAtlas.textureNamed("jump10")
             ]
     }
+    
+    var donnaAtlas : SKTextureAtlas {
+        return SKTextureAtlas(named: "donna")
+    }
+    
+    var donnaMovementTexture : [SKTexture] {
+        return [
+            donnaAtlas.textureNamed("walk1"),
+            donnaAtlas.textureNamed("walk2"),
+            donnaAtlas.textureNamed("walk3"),
+            donnaAtlas.textureNamed("walk4")
+        ]
+    }
 }
 

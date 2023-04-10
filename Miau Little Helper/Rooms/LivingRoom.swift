@@ -37,6 +37,13 @@ extension GameScene {
         return lampada
     }
     
+    var chair : SKSpriteNode {
+        let chair = SKSpriteNode(color: .brown, size: CGSize(width: 600, height: 600))
+        chair.position = CGPoint(x: 5300 + lamp.frame.width/2, y: chair.frame.height/2 + 260)
+        chair.name = "chair"
+        return chair
+    }
+    
     var doorLivingRoom : SKSpriteNode {
         let doorLivingRoom = SKSpriteNode(color: .red, size: CGSize(width: 900, height: 1800))
         doorLivingRoom.position = CGPoint(x: 4500 + doorLivingRoom.frame.width/2, y: doorLivingRoom.frame.height/2 + 260)
@@ -50,6 +57,7 @@ extension GameScene {
         addChild(sofaTop)
         addChild(tv)
         addChild(lamp)
+        addChild(chair)
     }
     
 }

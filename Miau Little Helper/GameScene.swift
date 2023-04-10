@@ -17,6 +17,7 @@ class GameScene: SKScene {
     var background2 = SKSpriteNode()
     var background3 = SKSpriteNode()
     var nina = SKSpriteNode()
+    var donna = SKSpriteNode()
 
     var ninaPosition = "shelfWall"
     var interationDisabled = false
@@ -39,9 +40,10 @@ class GameScene: SKScene {
         setupCamera()
         setupBackground()
         setupNina()
+        setupDonna()
         setupRoom()
         setupLivingRoom()
-        setupKitchen()
+//        setupKitchen()
         setupSounds()
     }
     
@@ -78,6 +80,14 @@ class GameScene: SKScene {
         nina.position = CGPoint(x: 400, y: shelfWall.position.y + shelfWall.frame.height/2 + nina.frame.height/2)
         addChild(nina)
         nina.zPosition = 100
+    }
+    
+    func setupDonna() {
+        donna = SKSpriteNode(imageNamed: "iddleFront")
+        donna.size = CGSize(width: 1000, height: 1000)
+        donna.position = CGPoint(x: chair.position.x, y: chair.position.y + chair.frame.height/2 + donna.frame.height/2 - 50)
+        addChild(donna)
+        donna.zPosition = 99
     }
     
     func setupSounds() {

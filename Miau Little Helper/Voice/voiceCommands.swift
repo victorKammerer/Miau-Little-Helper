@@ -33,8 +33,10 @@ extension GameScene {
                 voiceRecognizer.command = ""
                 goToObstacle()
             } else if voiceRecognizer.command == "porta" || voiceRecognizer.command == "portinha" || voiceRecognizer.command == "andar" || voiceRecognizer.command == "ande" || voiceRecognizer.command == "direita" {
+                voiceRecognizer.command = ""
                 goToDoorRoom()
-            } else if voiceRecognizer.command == "prateleira" || voiceRecognizer.command == "começo"{
+            } else if voiceRecognizer.command == "prateleira" || voiceRecognizer.command == "começo" {
+                voiceRecognizer.command = ""
                 goToShelfWall()
             }
             
