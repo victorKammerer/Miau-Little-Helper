@@ -13,26 +13,50 @@ extension GameScene {
         for touch: UITouch in touches {
             let location = touch.location(in: self)
             let touchedNode = atPoint(location)
-            if interationDisabled == false {
-                if touchedNode.name == "bed" {
-                    goToBed()
-                } else if touchedNode.name == "floor" {
-                    goToFloor()
-                } else if touchedNode.name == "shelfWall" {
-                    goToShelfWall()
-                } else if touchedNode.name == "obstacle" {
-                    goToObstacle()
-                } else if touchedNode.name == "door" {
-                    goToDoorRoom()
-                } else if touchedNode.name == "sofa" {
-                    nina.run(SKAction.sequence([
-                    floorToSofa,
-                    SKAction.wait(forDuration: 2),
-                    sofaToFloor,
-                    SKAction.wait(forDuration: 2),
-                    floorToKitchen
-                    ]))
+            var nodeName = touchedNode.name
+            
+            if textIsShowing {
+                textIsShowing = false
+            }
+            else {
+                textIsShowing = true
+                if isInteractive(node: nodeName ?? "") {
+                    if canInteract() {
+                        interaction(nodeName: nodeName ?? "")
+                    }
+                    else {
+                        var scriptText = scriptNotInteractive(node: nodeName ?? "")
+                        chatLabel.text = scriptText
+                    }
                 }
+                else {
+                    var scriptText = scriptNotInteractive(node: nodeName ?? "")
+                    chatLabel.text = scriptText
+                }
+            }
+        }
+    }
+    
+    func interaction(nodeName: String) {
+        if interationDisabled == false {
+            if nodeName == "bed" {
+                goToBed()
+            } else if nodeName == "floor" {
+                goToFloor()
+            } else if nodeName == "shelfWall" {
+                goToShelfWall()
+            } else if nodeName == "obstacle" {
+                goToObstacle()
+            } else if nodeName == "door" {
+                goToDoorRoom()
+            } else if nodeName == "sofa" {
+                nina.run(SKAction.sequence([
+                floorToSofa,
+                SKAction.wait(forDuration: 2),
+                sofaToFloor,
+                SKAction.wait(forDuration: 2),
+                floorToKitchen
+                ]))
             }
         }
     }

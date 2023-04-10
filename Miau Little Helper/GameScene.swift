@@ -21,8 +21,10 @@ class GameScene: SKScene {
     var background2 = SKSpriteNode()
     var background3 = SKSpriteNode()
     var nina = SKSpriteNode()
+    
     var chatBox = SKSpriteNode()
     var chatLabel = SKLabelNode()
+    var textIsShowing = false
 
     var ninaPosition = "shelfWall"
     var interationDisabled = false
@@ -48,6 +50,7 @@ class GameScene: SKScene {
         setupLivingRoom()
         setupKitchen()
         setupSounds()
+        setupChatBox()
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -65,6 +68,21 @@ class GameScene: SKScene {
             stepsSound2.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
             jumpSound.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
             landedSound.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
+            if nina.position.y > self.frame.midY {
+                chatBox.position.y = self.frame.minY + 600
+            }
+            else {
+                chatBox.position.y = self.frame.maxY - 800
+            }
+            
+            if textIsShowing {
+                chatBox.isHidden = true
+                chatLabel.isHidden = true
+            }
+            else {
+                chatBox.isHidden = false
+                chatLabel.isHidden = false
+            }
         }
     }
     
@@ -118,4 +136,13 @@ class GameScene: SKScene {
         nina.addChild(landedSound)
         
     }
+    
+    func setupChatBox() {
+        chatBox = SKSpriteNode(imageNamed: "buttonBgWide")
+        chatBox.position.x = cameraNode.position.x
+        chatBox.size = CGSize(width: 3750, height: 800)
+        addChild(chatBox)
+        
+    }
+    
 }
