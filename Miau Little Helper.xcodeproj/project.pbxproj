@@ -111,10 +111,7 @@
 		64C9F5BA29D776710066CC51 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-=======
 				64F1485729E43F9100F43BBC /* landed.wav */,
->>>>>>> soundsEffects
 				64C9F5B529D776690066CC51 /* steps.wav */,
 				64C9F5B329D776690066CC51 /* jump.wav */,
 				64C9F5BB29D9CCD00066CC51 /* backgroundMusic.wav */,
@@ -307,10 +304,7 @@
 				D3D6E82F29E1B9B600582054 /* Greybeard-22px-Bold(LICENSE).txt in Resources */,
 				D3D6E82129E0CFEC00582054 /* Greybeard-22px-Bold.ttf in Resources */,
 				6C19473929C88F940067C180 /* Assets.xcassets in Resources */,
-<<<<<<< HEAD
-=======
 				64F1485829E43F9100F43BBC /* landed.wav in Resources */,
->>>>>>> soundsEffects
 				64C9F5B929D776690066CC51 /* steps.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,12 +344,9 @@
 				D34EB6A629DE128300914CC7 /* HelpView.swift in Sources */,
 				64C9F5C829DA1BED0066CC51 /* SKActionsLivingRoom.swift in Sources */,
 				6C19473529C88F930067C180 /* Miau_Little_HelperApp.swift in Sources */,
-<<<<<<< HEAD
 				D34EB6A229DE106000914CC7 /* CreditsView.swift in Sources */,
 				D39853C029E45B5100C1E850 /* Script.swift in Sources */,
-=======
 				64F1485D29E4754200F43BBC /* SKActionsDonna.swift in Sources */,
->>>>>>> soundsEffects
 				D3AF28E329D47A9D000780D3 /* Kitchen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,11 +472,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Miau Little Helper/Preview Content\"";
-<<<<<<< HEAD
 				DEVELOPMENT_TEAM = B6XWN7H84M;
-=======
 				DEVELOPMENT_TEAM = QJZZNXUZ63;
->>>>>>> soundsEffects
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -527,11 +515,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Miau Little Helper/Preview Content\"";
-<<<<<<< HEAD
 				DEVELOPMENT_TEAM = B6XWN7H84M;
-=======
 				DEVELOPMENT_TEAM = QJZZNXUZ63;
->>>>>>> soundsEffects
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

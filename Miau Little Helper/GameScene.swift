@@ -21,14 +21,11 @@ class GameScene: SKScene {
     var background2 = SKSpriteNode()
     var background3 = SKSpriteNode()
     var nina = SKSpriteNode()
-<<<<<<< HEAD
     
     var chatBox = SKSpriteNode()
     var chatLabel = SKLabelNode()
     var textIsShowing = true
-=======
     var donna = SKSpriteNode()
->>>>>>> soundsEffects
 
     var ninaPosition = "shelfWall"
     var interationDisabled = false
