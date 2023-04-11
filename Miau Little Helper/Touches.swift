@@ -19,7 +19,6 @@ extension GameScene {
                 textIsShowing = false
             }
             else {
-                textIsShowing = true
                 if isInteractive(node: nodeName ?? "") {
                     if canInteract() {
                         interaction(nodeName: nodeName ?? "")
@@ -27,11 +26,17 @@ extension GameScene {
                     else {
                         let scriptText = scriptNotInteractive(node: nodeName ?? "")
                         chatLabel.text = scriptText
+                        if scriptText != "" {
+                            textIsShowing = true
+                        }
                     }
                 }
                 else {
                     let scriptText = scriptNotInteractive(node: nodeName ?? "")
                     chatLabel.text = scriptText
+                    if scriptText != "" {
+                        textIsShowing = true
+                    }
                 }
             }
         }

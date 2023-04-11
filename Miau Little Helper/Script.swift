@@ -14,8 +14,8 @@ extension GameScene {
 
         switch node {
             
-        case "sofa":
-            isInteractive = true
+        case "bed":
+            isInteractive = false
         case "shelf":
             isInteractive = true
         case "tv":
@@ -32,14 +32,14 @@ extension GameScene {
 
         switch node {
             
-        case "sofa":
-            scriptNotInteractive = "que sofá bonito"
+        case "bed":
+            scriptNotInteractive = "Que cama bonita"
         case "shelf":
             scriptNotInteractive = "que estante bonita"
         case "tv":
             scriptNotInteractive = "que tv bonita"
         default:
-            scriptNotInteractive = "..."
+            scriptNotInteractive = ""
         }
         
         return scriptNotInteractive
@@ -48,7 +48,7 @@ extension GameScene {
     func canInteract() -> Bool {
         return ((ninaPosition == "floor" && currentRoom == 1) ||
                 (ninaPosition == "sofaTop" && currentRoom == 2) ||
-                (ninaPosition == "kitchenShelfTop" && currentRoom == 2))
+                (ninaPosition == "kitchenShelfTop" && currentRoom == 3))
     }
     
 }

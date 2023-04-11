@@ -24,7 +24,7 @@ class GameScene: SKScene {
     
     var chatBox = SKSpriteNode()
     var chatLabel = SKLabelNode()
-    var textIsShowing = false
+    var textIsShowing = true
 
     var ninaPosition = "shelfWall"
     var interationDisabled = false
@@ -70,18 +70,20 @@ class GameScene: SKScene {
             landedSound.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
             if nina.position.y > self.frame.midY {
                 chatBox.position.y = self.frame.minY + 600
+                chatLabel.position = chatBox.position
             }
             else {
                 chatBox.position.y = self.frame.maxY - 800
+                chatLabel.position = chatBox.position
             }
             
             if textIsShowing {
-                chatBox.isHidden = true
-                chatLabel.isHidden = true
-            }
-            else {
                 chatBox.isHidden = false
                 chatLabel.isHidden = false
+            }
+            else {
+                chatBox.isHidden = true
+                chatLabel.isHidden = true
             }
         }
     }
@@ -141,7 +143,19 @@ class GameScene: SKScene {
         chatBox = SKSpriteNode(imageNamed: "buttonBgWide")
         chatBox.position.x = cameraNode.position.x
         chatBox.size = CGSize(width: 3750, height: 800)
+        
+        chatLabel.position.x = chatBox.position.x
+        chatLabel = SKLabelNode(fontNamed: "Greybeard22pxBold")
+        chatLabel.horizontalAlignmentMode = .center
+        chatLabel.fontSize = 180
+        chatLabel.zPosition = 10
+        chatLabel.numberOfLines = 0
+        chatLabel.preferredMaxLayoutWidth = 3600
+        chatLabel.lineBreakMode = .byCharWrapping
+        chatLabel.verticalAlignmentMode = .center
+
         addChild(chatBox)
+        addChild(chatLabel)
         
     }
     
