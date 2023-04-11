@@ -30,6 +30,7 @@ class GameScene: SKScene {
     var ninaPosition = "shelfWall"
     var interationDisabled = false
     var voiceCommandAllowed = false
+    var isListening = SKLabelNode(text: "!")
     
     var currentRoom = 1
     var cameraNode = Camera()
@@ -113,10 +114,17 @@ class GameScene: SKScene {
     
     func setupNina() {
         nina = SKSpriteNode(imageNamed: "waking1")
+        nina.run(SKAction.repeatForever(sleeping), withKey: "ninaSleeping")
         nina.size = CGSize(width: 400, height: 300)
         nina.position = CGPoint(x: 500, y: shelfWall3.position.y + shelfWall3.frame.height/2 + nina.frame.height/2)
         addChild(nina)
         nina.zPosition = 100
+        
+        isListening.fontColor = .clear
+        isListening.fontName = "Greybeard22pxBold"
+        isListening.fontSize = 150
+        
+        addChild(isListening)
     }
     
     func setupDonna() {

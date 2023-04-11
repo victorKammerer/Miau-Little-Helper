@@ -76,6 +76,10 @@ extension GameScene {
         ])
     }
     
+    var sleeping: SKAction {
+        return SKAction.animate(with: ninaSleepingTexture, timePerFrame: 0.2)
+    }
+    
     var wakingUp: SKAction {
         return SKAction.animate(with: ninaWakingTexture, timePerFrame: 0.1)
     }

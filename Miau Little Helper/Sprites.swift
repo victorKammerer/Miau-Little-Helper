@@ -57,6 +57,17 @@ extension GameScene {
         return ninaWakingTexture
     }
     
+    var ninaSleepingAtlas: SKTextureAtlas {
+        return SKTextureAtlas(named: "ninaSleeping")
+    }
+    
+    var ninaSleepingTexture: [SKTexture] {
+        return  [
+            ninaSleepingAtlas.textureNamed("sleeping1"),
+            ninaSleepingAtlas.textureNamed("sleeping2")
+        ]
+    }
+    
     var donnaAtlas : SKTextureAtlas {
         return SKTextureAtlas(named: "donna")
     }
