@@ -33,7 +33,8 @@ class GameScene: SKScene {
     
     var currentRoom = 1
     var cameraNode = Camera()
-    var clothesObstacle = SKSpriteNode(color: .cyan, size: CGSize(width: 400, height: 400))
+//    var clothesObstacle = SKSpriteNode(color: .cyan, size: CGSize(width: 400, height: 400))
+    var clothesObstacle = SKSpriteNode(texture: SKTexture(imageNamed: "obstacle.png"), size: CGSize(width: 588, height: 426))
     
     var backgroundMusic = SKAudioNode(fileNamed: "backgroundMusic.wav")
     var stepsSound1 = SKAudioNode(fileNamed: "steps.wav")
@@ -111,7 +112,7 @@ class GameScene: SKScene {
     }
     
     func setupNina() {
-        nina = SKSpriteNode(imageNamed: "nina1")
+        nina = SKSpriteNode(imageNamed: "waking1")
         nina.size = CGSize(width: 400, height: 300)
         nina.position = CGPoint(x: 500, y: shelfWall3.position.y + shelfWall3.frame.height/2 + nina.frame.height/2)
         addChild(nina)

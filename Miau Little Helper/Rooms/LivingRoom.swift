@@ -38,9 +38,10 @@ extension GameScene {
     }
     
     var chair : SKSpriteNode {
-        let chair = SKSpriteNode(color: .clear, size: CGSize(width: 600, height: 600))
-        chair.position = CGPoint(x: 5300 + lamp.frame.width/2, y: chair.frame.height/2 + 260)
+        let chair = SKSpriteNode(texture: SKTexture(imageNamed: "chair"))
+        chair.position = CGPoint(x: 5300 + lamp.frame.width/2, y: chair.frame.height/2 + 300)
         chair.name = "chair"
+        chair.size = CGSize(width: chair.size.width * 1.5, height: chair.size.height * 1.5)
         return chair
     }
     
@@ -52,7 +53,7 @@ extension GameScene {
     }
     
     var kitchenNode : SKSpriteNode {
-        let kitchenNode = SKSpriteNode(color: .red, size: CGSize(width: 800, height: 2500))
+        let kitchenNode = SKSpriteNode(color: .clear, size: CGSize(width: 800, height: 2500))
         kitchenNode.position = CGPoint(x: 7200 + kitchenNode.frame.width/2, y: kitchenNode.frame.height/2 + 100)
         kitchenNode.name = "kitchenNode"
         return kitchenNode

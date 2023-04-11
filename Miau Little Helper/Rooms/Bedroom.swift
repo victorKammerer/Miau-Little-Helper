@@ -11,7 +11,8 @@ extension GameScene {
 
     
     var floor : SKSpriteNode {
-        let floor = SKSpriteNode(color: .clear, size: CGSize(width: 12000, height: 100))
+        let floor = SKSpriteNode(color: .clear
+                                 , size: CGSize(width: 12000, height: 100))
         floor.position = CGPoint(x:floor.frame.width/2, y: floor.frame.height/2)
         floor.name = "floor"
         return floor
@@ -65,7 +66,7 @@ extension GameScene {
     
     func setupRoom() {
 //        bed.position = CGPoint(x: CGRectGetMaxX(self.frame), y: CGRectGetMaxY(self.frame))
-        clothesObstacle.position = CGPoint(x: clothesObstacle.frame.width/2 + 3300, y: clothesObstacle.frame.height/2 + 100)
+        clothesObstacle.position = CGPoint(x: clothesObstacle.frame.width/2 + 2800, y: clothesObstacle.frame.height/2 + 100)
         clothesObstacle.name = "obstacle"
         addChild(bed)
 //        addChild(shelfWall)

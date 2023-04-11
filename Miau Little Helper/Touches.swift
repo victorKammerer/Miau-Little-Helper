@@ -14,55 +14,7 @@ extension GameScene {
             let location = touch.location(in: self)
             let touchedNode = atPoint(location)
             let nodeName = touchedNode.name
-            
-            if textIsShowing {
-                textIsShowing = false
-            }
-            else {
-                if isInteractive(node: nodeName ?? "") {
-                    if canInteract() {
-                        interaction(nodeName: nodeName ?? "")
-                    }
-                    else {
-                        let scriptText = scriptNotInteractive(node: nodeName ?? "")
-                        chatLabel.text = scriptText
-                        if scriptText != "" {
-                            textIsShowing = true
-                        }
-                    }
-                }
-                else {
-                    let scriptText = scriptNotInteractive(node: nodeName ?? "")
-                    chatLabel.text = scriptText
-                    if scriptText != "" {
-                        textIsShowing = true
-                    }
-                }
-            }
-        }
-    }
-    
-    func interaction(nodeName: String) {
-        if interationDisabled == false {
-            if nodeName == "bed" {
-                goToBed()
-            } else if nodeName == "floor" {
-                goToFloor()
-            } else if nodeName == "shelfWall" {
-                goToShelfWall()
-            } else if nodeName == "obstacle" {
-                goToObstacle()
-            } else if nodeName == "door" {
-                goToDoorRoom()
-            } else if nodeName == "sofa" {
-                nina.run(SKAction.sequence([
-                floorToSofa,
-                SKAction.wait(forDuration: 2),
-                sofaToFloor,
-                SKAction.wait(forDuration: 2),
-                floorToKitchen
-                ]))
-            }
+            findNode(nodeName ?? "")
         }
     }
     

@@ -28,6 +28,12 @@ extension GameScene {
             }
             ]))
             ninaPosition = "bed"
+        } else if currentRoom == 1 {
+            let scriptText = scriptNotInteractive(node: "bed")
+            chatLabel.text = scriptText
+            if scriptText != "" {
+                textIsShowing = true
+            }
         }
     }
     
@@ -50,6 +56,12 @@ extension GameScene {
                 }
             ]))
             ninaPosition = "shelfWall"
+        } else if currentRoom == 1 {
+            let scriptText = scriptNotInteractive(node: "shelfWall")
+            chatLabel.text = scriptText
+            if scriptText != "" {
+                textIsShowing = true
+            }
         }
     }
     
@@ -65,6 +77,13 @@ extension GameScene {
                 }
             ]))
             ninaPosition =  "floor"
+        }
+        else if currentRoom == 1 {
+            let scriptText = scriptNotInteractive(node: "obstacle")
+            chatLabel.text = scriptText
+            if scriptText != "" {
+                textIsShowing = true
+            }
         }
     }
     
@@ -101,6 +120,13 @@ extension GameScene {
                     }
                 ]))
                 ninaPosition = "floor2"
+            }
+        }
+        else if currentRoom == 1 {
+            let scriptText = scriptNotInteractive(node: "door")
+            chatLabel.text = scriptText
+            if scriptText != "" {
+                textIsShowing = true
             }
         }
     }

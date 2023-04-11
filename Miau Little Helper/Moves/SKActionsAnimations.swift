@@ -75,4 +75,8 @@ extension GameScene {
             SKAction.setTexture(ninaAtlas.textureNamed("nina1"))
         ])
     }
+    
+    var wakingUp: SKAction {
+        return SKAction.animate(with: ninaWakingTexture, timePerFrame: 0.1)
+    }
 }
