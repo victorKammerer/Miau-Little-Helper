@@ -17,12 +17,16 @@ var scene: SKScene {
 
 
 struct ContentView: View {
+    
+    @ObservedObject var viewModel: WeatherViewModel
+    
     var body: some View {
         GeometryReader{
             geo in
             ZStack{
                 SpriteView(scene: scene)
                     .ignoresSafeArea()
+                    .onAppear(perform: viewModel.refresh)
                 VStack{
                     HStack{
                         Spacer()
@@ -48,6 +52,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().previewInterfaceOrientation(.landscapeRight)
+        ContentView(viewModel: WeatherViewModel(weatherService: WeatherService())).previewInterfaceOrientation(.landscapeRight)
     }
 }

@@ -12,6 +12,9 @@ struct Miau_Little_HelperApp: App {
     var body: some Scene {
         WindowGroup {
             StartView()
+            let weatherService = WeatherService()
+            let viewModel = WeatherViewModel(weatherService: weatherService)
+            ContentView(viewModel: viewModel)
         }
     }
 }

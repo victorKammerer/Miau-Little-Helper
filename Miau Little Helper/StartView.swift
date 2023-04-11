@@ -33,7 +33,7 @@ struct StartView: View {
                                 .font(.custom("Pixhobo", size: geo.size.width/18))
                                 .foregroundColor(.white)
                             
-                            NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true)) {
+                            NavigationLink(destination: ContentView(viewModel: WeatherViewModel(weatherService: WeatherService())).navigationBarBackButtonHidden(true)) {
                                 ZStack {
                                     Image("buttonBgWide")
                                         .resizable()
@@ -112,7 +112,7 @@ struct StartView: View {
                                 .font(.custom("Pixhobo", size: geo.size.width/18))
                                 .foregroundColor(.white)
                             
-                            NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true)) {
+                            NavigationLink(destination: ContentView(viewModel: WeatherViewModel(weatherService: WeatherService())).navigationBarBackButtonHidden(true)) {
                                 ZStack {
                                     Image("buttonBgWide")
                                         .resizable()
