@@ -21,10 +21,14 @@ class GameScene: SKScene {
     var background2 = SKSpriteNode()
     var background3 = SKSpriteNode()
     var nina = SKSpriteNode()
+<<<<<<< HEAD
     
     var chatBox = SKSpriteNode()
     var chatLabel = SKLabelNode()
     var textIsShowing = true
+=======
+    var donna = SKSpriteNode()
+>>>>>>> soundsEffects
 
     var ninaPosition = "shelfWall"
     var interationDisabled = false
@@ -46,6 +50,7 @@ class GameScene: SKScene {
         setupCamera()
         setupBackground()
         setupNina()
+        setupDonna()
         setupRoom()
         setupLivingRoom()
         setupKitchen()
@@ -111,9 +116,17 @@ class GameScene: SKScene {
     func setupNina() {
         nina = SKSpriteNode(imageNamed: "nina1")
         nina.size = CGSize(width: 400, height: 300)
-        nina.position = CGPoint(x: 400, y: shelfWall.position.y + shelfWall.frame.height/2 + nina.frame.height/2)
+        nina.position = CGPoint(x: 500, y: shelfWall3.position.y + shelfWall3.frame.height/2 + nina.frame.height/2)
         addChild(nina)
         nina.zPosition = 100
+    }
+    
+    func setupDonna() {
+        donna = SKSpriteNode(imageNamed: "iddleFront")
+        donna.size = CGSize(width: 1000, height: 1000)
+        donna.position = CGPoint(x: chair.position.x, y: chair.position.y + chair.frame.height/2 + donna.frame.height/2 - 50)
+        addChild(donna)
+        donna.zPosition = 99
     }
     
     func setupSounds() {

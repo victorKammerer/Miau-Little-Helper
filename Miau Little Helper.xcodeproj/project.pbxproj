@@ -23,6 +23,9 @@
 		64C9F5CA29DA1C540066CC51 /* SKActionsKitchen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9F5C929DA1C540066CC51 /* SKActionsKitchen.swift */; };
 		64C9F5CC29DA1C7E0066CC51 /* LivingRoomFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9F5CB29DA1C7E0066CC51 /* LivingRoomFunctions.swift */; };
 		64C9F5CE29DA1C8A0066CC51 /* KitchenFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C9F5CD29DA1C8A0066CC51 /* KitchenFunctions.swift */; };
+		64F1485829E43F9100F43BBC /* landed.wav in Resources */ = {isa = PBXBuildFile; fileRef = 64F1485729E43F9100F43BBC /* landed.wav */; };
+		64F1485B29E44EB900F43BBC /* FloorFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F1485A29E44EB900F43BBC /* FloorFunction.swift */; };
+		64F1485D29E4754200F43BBC /* SKActionsDonna.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F1485C29E4754200F43BBC /* SKActionsDonna.swift */; };
 		6C19473529C88F930067C180 /* Miau_Little_HelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C19473429C88F930067C180 /* Miau_Little_HelperApp.swift */; };
 		6C19473729C88F930067C180 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C19473629C88F930067C180 /* ContentView.swift */; };
 		6C19473929C88F940067C180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C19473829C88F940067C180 /* Assets.xcassets */; };
@@ -64,6 +67,10 @@
 		64C9F5C929DA1C540066CC51 /* SKActionsKitchen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKActionsKitchen.swift; sourceTree = "<group>"; };
 		64C9F5CB29DA1C7E0066CC51 /* LivingRoomFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingRoomFunctions.swift; sourceTree = "<group>"; };
 		64C9F5CD29DA1C8A0066CC51 /* KitchenFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenFunctions.swift; sourceTree = "<group>"; };
+		64F1485729E43F9100F43BBC /* landed.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = landed.wav; sourceTree = "<group>"; };
+		64F1485929E446B800F43BBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = "Miau-Little-Helper/Info.plist"; sourceTree = SOURCE_ROOT; };
+		64F1485A29E44EB900F43BBC /* FloorFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorFunction.swift; sourceTree = "<group>"; };
+		64F1485C29E4754200F43BBC /* SKActionsDonna.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKActionsDonna.swift; sourceTree = "<group>"; };
 		6C19473129C88F930067C180 /* Miau Little Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Miau Little Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C19473429C88F930067C180 /* Miau_Little_HelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miau_Little_HelperApp.swift; sourceTree = "<group>"; };
 		6C19473629C88F930067C180 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +111,10 @@
 		64C9F5BA29D776710066CC51 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+=======
+				64F1485729E43F9100F43BBC /* landed.wav */,
+>>>>>>> soundsEffects
 				64C9F5B529D776690066CC51 /* steps.wav */,
 				64C9F5B329D776690066CC51 /* jump.wav */,
 				64C9F5BB29D9CCD00066CC51 /* backgroundMusic.wav */,
@@ -130,6 +141,7 @@
 		6C19473329C88F930067C180 /* Miau Little Helper */ = {
 			isa = PBXGroup;
 			children = (
+				64F1485929E446B800F43BBC /* Info.plist */,
 				6C19473A29C88F940067C180 /* Miau_Little_Helper.entitlements */,
 				6C19473429C88F930067C180 /* Miau_Little_HelperApp.swift */,
 				6C19473629C88F930067C180 /* ContentView.swift */,
@@ -193,6 +205,7 @@
 		D3384DE929D6091D00C0CB8C /* Moves */ = {
 			isa = PBXGroup;
 			children = (
+				64F1485C29E4754200F43BBC /* SKActionsDonna.swift */,
 				64C9F5BD29DA184C0066CC51 /* SKActionsSounds.swift */,
 				64C9F5BF29DA18970066CC51 /* SKActionsAnimations.swift */,
 				64C9F5C129DA18E90066CC51 /* SKActions1D.swift */,
@@ -200,6 +213,7 @@
 				64C9F5C529DA1B480066CC51 /* SKActionsBedroom.swift */,
 				64C9F5C729DA1BED0066CC51 /* SKActionsLivingRoom.swift */,
 				64C9F5C929DA1C540066CC51 /* SKActionsKitchen.swift */,
+				64F1485A29E44EB900F43BBC /* FloorFunction.swift */,
 				64C9F5AC29D3D4530066CC51 /* BedroomFunctions.swift */,
 				64C9F5CB29DA1C7E0066CC51 /* LivingRoomFunctions.swift */,
 				64C9F5CD29DA1C8A0066CC51 /* KitchenFunctions.swift */,
@@ -293,6 +307,10 @@
 				D3D6E82F29E1B9B600582054 /* Greybeard-22px-Bold(LICENSE).txt in Resources */,
 				D3D6E82129E0CFEC00582054 /* Greybeard-22px-Bold.ttf in Resources */,
 				6C19473929C88F940067C180 /* Assets.xcassets in Resources */,
+<<<<<<< HEAD
+=======
+				64F1485829E43F9100F43BBC /* landed.wav in Resources */,
+>>>>>>> soundsEffects
 				64C9F5B929D776690066CC51 /* steps.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64C9F5B129D3D6750066CC51 /* voiceCommands.swift in Sources */,
+				64F1485B29E44EB900F43BBC /* FloorFunction.swift in Sources */,
 				64C9F5C429DA19430066CC51 /* SKActions2D.swift in Sources */,
 				D34492FA29C895DE00C80685 /* GameScene.swift in Sources */,
 				D34EB6A029DE105400914CC7 /* PauseView.swift in Sources */,
@@ -331,8 +350,12 @@
 				D34EB6A629DE128300914CC7 /* HelpView.swift in Sources */,
 				64C9F5C829DA1BED0066CC51 /* SKActionsLivingRoom.swift in Sources */,
 				6C19473529C88F930067C180 /* Miau_Little_HelperApp.swift in Sources */,
+<<<<<<< HEAD
 				D34EB6A229DE106000914CC7 /* CreditsView.swift in Sources */,
 				D39853C029E45B5100C1E850 /* Script.swift in Sources */,
+=======
+				64F1485D29E4754200F43BBC /* SKActionsDonna.swift in Sources */,
+>>>>>>> soundsEffects
 				D3AF28E329D47A9D000780D3 /* Kitchen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,7 +481,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Miau Little Helper/Preview Content\"";
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = B6XWN7H84M;
+=======
+				DEVELOPMENT_TEAM = QJZZNXUZ63;
+>>>>>>> soundsEffects
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -500,7 +527,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Miau Little Helper/Preview Content\"";
+<<<<<<< HEAD
 				DEVELOPMENT_TEAM = B6XWN7H84M;
+=======
+				DEVELOPMENT_TEAM = QJZZNXUZ63;
+>>>>>>> soundsEffects
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
