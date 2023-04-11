@@ -19,9 +19,9 @@ extension GameScene {
         case "shelf":
             isInteractive = true
         case "tv":
-            isInteractive = true
+            isInteractive = false
         default:
-            isInteractive = true
+            isInteractive = false
         }
         
         return isInteractive
@@ -47,8 +47,8 @@ extension GameScene {
     
     func canInteract() -> Bool {
         return ((ninaPosition == "floor" && currentRoom == 1) ||
-                (ninaPosition == "sofa" && currentRoom == 2) ||
-                (ninaPosition == "shelf" && currentRoom == 2))
+                (ninaPosition == "sofaTop" && currentRoom == 2) ||
+                (ninaPosition == "kitchenShelfTop" && currentRoom == 2))
     }
     
 }

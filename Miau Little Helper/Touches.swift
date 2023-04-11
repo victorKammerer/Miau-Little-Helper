@@ -13,7 +13,7 @@ extension GameScene {
         for touch: UITouch in touches {
             let location = touch.location(in: self)
             let touchedNode = atPoint(location)
-            var nodeName = touchedNode.name
+            let nodeName = touchedNode.name
             
             if textIsShowing {
                 textIsShowing = false
@@ -25,12 +25,12 @@ extension GameScene {
                         interaction(nodeName: nodeName ?? "")
                     }
                     else {
-                        var scriptText = scriptNotInteractive(node: nodeName ?? "")
+                        let scriptText = scriptNotInteractive(node: nodeName ?? "")
                         chatLabel.text = scriptText
                     }
                 }
                 else {
-                    var scriptText = scriptNotInteractive(node: nodeName ?? "")
+                    let scriptText = scriptNotInteractive(node: nodeName ?? "")
                     chatLabel.text = scriptText
                 }
             }
