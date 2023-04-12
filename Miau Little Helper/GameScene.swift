@@ -50,8 +50,8 @@ class GameScene: SKScene {
         voiceRecognizer.requestPermission()
         setupCamera()
         setupBackground()
-        setupNina()
         setupDonna()
+        setupNina()
         setupRoom()
         setupLivingRoom()
         setupKitchen()
@@ -76,6 +76,8 @@ class GameScene: SKScene {
             stepsSound2.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
             jumpSound.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
             landedSound.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
+            chatBox.position.x = cameraNode.position.x
+            chatLabel.position = chatBox.position
             if nina.position.y > self.frame.midY {
                 chatBox.position.y = self.frame.minY + 600
                 chatLabel.position = chatBox.position
@@ -122,7 +124,7 @@ class GameScene: SKScene {
         nina.size = CGSize(width: 400, height: 300)
         nina.position = CGPoint(x: 500, y: shelfWall3.position.y + shelfWall3.frame.height/2 + nina.frame.height/2)
         addChild(nina)
-        nina.zPosition = 100
+        nina.zPosition = 99
         
         isListening.fontColor = .clear
         isListening.fontName = "Greybeard22pxBold"
@@ -133,8 +135,9 @@ class GameScene: SKScene {
     
     func setupDonna() {
         donna = SKSpriteNode(imageNamed: "iddleFront")
+        donna.name = "donna"
         donna.size = CGSize(width: 1000, height: 1000)
-        donna.position = CGPoint(x: chair.position.x, y: chair.position.y + chair.frame.height/2 + donna.frame.height/2 - 50)
+        donna.position = CGPoint(x: chair.position.x, y: chair.position.y + chair.frame.height/2 + donna.frame.height/2 - 100)
         addChild(donna)
         donna.zPosition = 99
     }
