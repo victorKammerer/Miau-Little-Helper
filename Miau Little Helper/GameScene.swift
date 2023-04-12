@@ -31,6 +31,7 @@ class GameScene: SKScene {
     var interationDisabled = false
     var voiceCommandAllowed = false
     var isNinaAwake = false
+    var onboarding = false
     var isListening = SKLabelNode(text: "!")
     
     var currentRoom = 1

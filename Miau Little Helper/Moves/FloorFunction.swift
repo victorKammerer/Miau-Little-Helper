@@ -17,9 +17,14 @@ extension GameScene {
                     bedToFloor,
                     SKAction.run {
                         self.interationDisabled = false
+                    },
+                    SKAction.run {
+                        self.textIsShowing = true
+                        self.chatLabel.text = "Onde será que a Donna está?"
                     }
                 ]))
                 ninaPosition = "floor"
+                textIsShowing = false
             } else if ninaPosition == "bed" {
                 self.interationDisabled = true
                 nina.run(SKAction.sequence([
