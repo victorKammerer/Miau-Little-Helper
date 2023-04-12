@@ -92,6 +92,10 @@ extension GameScene {
         return SKAction.animate(with: panTexture, timePerFrame: 0.1)
     }
     
+    var pan: SKAction {
+        return SKAction.animate(with: panSolvedTexture, timePerFrame: 0.1)
+    }
+    
     var zzAnimation: SKAction {
         return SKAction.animate(with: zzTexture, timePerFrame: 0.1)
     }

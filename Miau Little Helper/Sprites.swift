@@ -94,6 +94,19 @@ extension GameScene {
         return panTexture
     }
     
+    var panSolvedAtlas: SKTextureAtlas {
+        return SKTextureAtlas(named: "panSolved")
+    }
+    
+    var panSolvedTexture: [SKTexture] {
+        var panSolvedTexture : [SKTexture] = []
+        for i in 1...panSolvedAtlas.textureNames.count {
+            let textureName = "panSolved\(i)"
+            panSolvedTexture.append(panSolvedAtlas.textureNamed(textureName))
+        }
+        return panSolvedTexture
+    }
+    
     var zzAtlas: SKTextureAtlas {
         return SKTextureAtlas(named: "zz")
     }
