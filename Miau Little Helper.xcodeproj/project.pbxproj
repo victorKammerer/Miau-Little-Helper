@@ -70,6 +70,7 @@
 		64F1485729E43F9100F43BBC /* landed.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = landed.wav; sourceTree = "<group>"; };
 		64F1485A29E44EB900F43BBC /* FloorFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorFunction.swift; sourceTree = "<group>"; };
 		64F1485C29E4754200F43BBC /* SKActionsDonna.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKActionsDonna.swift; sourceTree = "<group>"; };
+		64F148B129E7252F00F43BBC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C19473129C88F930067C180 /* Miau Little Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Miau Little Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C19473429C88F930067C180 /* Miau_Little_HelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Miau_Little_HelperApp.swift; sourceTree = "<group>"; };
 		6C19473629C88F930067C180 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -137,6 +138,7 @@
 		6C19473329C88F930067C180 /* Miau Little Helper */ = {
 			isa = PBXGroup;
 			children = (
+				64F148B129E7252F00F43BBC /* Info.plist */,
 				6C19473A29C88F940067C180 /* Miau_Little_Helper.entitlements */,
 				6C19473429C88F930067C180 /* Miau_Little_HelperApp.swift */,
 				6C19473629C88F930067C180 /* ContentView.swift */,
