@@ -46,6 +46,15 @@ extension GameScene {
                 goToKitchen()
             } else if nodeName == "kitchenShelf" {
                 goToStove()
+            } else if nodeName == "cooker" {
+                // colocar isso em uma função
+                if ninaPosition != "kitchenShelf" {
+                    let scriptText = scriptNotInteractive(node: nodeName)
+                    chatLabel.text = scriptText
+                    if scriptText != "" {
+                        textIsShowing = true
+                    }
+                }
             }
         }
     }
@@ -89,7 +98,7 @@ extension GameScene {
             isInteractive = true
         case "sofaTop":
             isInteractive = true
-        case "dona":
+        case "donna":
             isInteractive = false
         case "doorLivingRoom":
             isInteractive = false
@@ -104,6 +113,8 @@ extension GameScene {
         case "lightswitch":
             isInteractive = true
         case "cactus":
+            isInteractive = false
+        case "livingChelf":
             isInteractive = false
 //      Kitchen
         case "kitchenNode":
@@ -137,7 +148,7 @@ extension GameScene {
         switch node {
 //      Bedroom
         case "obstacle":
-            scriptNotInteractive = "Olha quanta bagunça, seu eu tivesse patas como a dela"
+            scriptNotInteractive = "Olha quanta bagunça, seu eu tivesse patas como a dela limparia essa jossa."
         case "door":
             scriptNotInteractive = "Oxe, tem umas roupas na frente da minha portinha! Como eu faço pra tirar esses troços daí?"
 //      ainda n tem node
@@ -148,17 +159,17 @@ extension GameScene {
         case "plant":
             scriptNotInteractive = "Essas plantinhas tem uma terra cheirosa! É bem melhor que a da minha caixa de areia…"
         case "plant2":
-            scriptNotInteractive = ""
+            scriptNotInteractive = "Quando eu tenho dor de barriga vou direto mastigar uma folhinha dessas. É tiro e queda!"
         case "window":
             scriptNotInteractive = "O dia está sempre lindo enquanto eu estiver dentro de casa."
         case "perfume":
             scriptNotInteractive = "Argh, devia quebrar esse negócio! Cheiro horroroso!"
         case "ditto":
             scriptNotInteractive = "Já vi a Donna louca por esses negócio. É sobre humano que bota bicho pra lutar… Bizarro…"
-        case "cothes":
+        case "clothes":
             scriptNotInteractive = "Pelo menos tem que ter alguma coisa arrumada nesse quarto, né?"
 //      Livingroom
-        case "dona":
+        case "donna":
             scriptNotInteractive = "Ela é muito distraída! Nem me notou aqui!"
         case "lightswitch":
             scriptNotInteractive = "Não consigo alcançar ele daqui! Tenho que usar o sofá."
@@ -175,6 +186,8 @@ extension GameScene {
 //      ainda n tem node
         case "cactus":
             scriptNotInteractive = "Essa daí fura! Não gosto dela."
+        case "livingChelf":
+            scriptNotInteractive = "MMmMIiIIiAaAAaUuUUuUu!!!!"
 //      Kitchen
         case "washMachine":
             scriptNotInteractive = "Adoro ver esse troço rodando."

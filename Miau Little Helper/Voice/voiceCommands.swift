@@ -11,7 +11,7 @@ extension GameScene {
     
     func voiceCommand() {
         
-        if voiceRecognizer.command == "nina" || voiceRecognizer.command == "menina" || voiceRecognizer.command == "mina" {
+        if voiceRecognizer.command == "nina" || voiceRecognizer.command == "menina" || voiceRecognizer.command == "mina" || voiceRecognizer.command == "linda" {
             voiceRecognizer.command = ""
             nina.run(SKAction.sequence([
                 SKAction.run {

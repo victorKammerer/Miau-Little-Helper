@@ -32,14 +32,21 @@ extension GameScene {
     
     var lamp : SKSpriteNode {
         let lampada = SKSpriteNode(color: .clear, size: CGSize(width: 200, height: 400))
-        lampada.position = CGPoint(x: 5300 + lampada.frame.width/2, y: lampada.frame.height/2 + 1900)
-        lampada.name = "lampada"
+        lampada.position = CGPoint(x: 5500 + lampada.frame.width/2, y: lampada.frame.height/2 + 1900)
+        lampada.name = "lamp"
         return lampada
+    }
+    
+    var livingChelf : SKSpriteNode {
+        let livingChelf = SKSpriteNode(color: .clear, size: CGSize(width: 700, height: 600))
+        livingChelf.position = CGPoint(x: 5700 + livingChelf.frame.width/2, y: livingChelf.frame.height/2 + 1400)
+        livingChelf.name = "livingChelf"
+        return livingChelf
     }
     
     var chair : SKSpriteNode {
         let chair = SKSpriteNode(texture: SKTexture(imageNamed: "chair"))
-        chair.position = CGPoint(x: 5300 + lamp.frame.width/2, y: chair.frame.height/2 + 300)
+        chair.position = CGPoint(x: 5500 + lamp.frame.width/2, y: chair.frame.height/2 + 400)
         chair.name = "chair"
         chair.size = CGSize(width: chair.size.width * 1.5, height: chair.size.height * 1.5)
         return chair
@@ -53,10 +60,41 @@ extension GameScene {
     }
     
     var kitchenNode : SKSpriteNode {
-        let kitchenNode = SKSpriteNode(color: .clear, size: CGSize(width: 800, height: 2500))
-        kitchenNode.position = CGPoint(x: 7200 + kitchenNode.frame.width/2, y: kitchenNode.frame.height/2 + 100)
+        let kitchenNode = SKSpriteNode(color: .clear, size: CGSize(width: 500, height: 2500))
+        kitchenNode.position = CGPoint(x: 7500 + kitchenNode.frame.width/2, y: kitchenNode.frame.height/2 + 100)
+        kitchenNode.zPosition = 2
         kitchenNode.name = "kitchenNode"
         return kitchenNode
+    }
+    
+    var cactus : SKSpriteNode {
+        let cactus = SKSpriteNode(color: .clear, size: CGSize(width: 200, height: 250))
+        cactus.position = CGPoint(x: 3850 + tv.frame.width/2, y: cactus.frame.height/2 + 600)
+        cactus.name = "cactus"
+        return cactus
+    }
+    
+    var lightSwitch: SKSpriteNode {
+        let lightSwitch = SKSpriteNode(imageNamed: "lightswitch1")
+        lightSwitch.texture!.filteringMode = SKTextureFilteringMode.nearest
+        lightSwitch.size = CGSize(width: 100, height: 270)
+        lightSwitch.position = CGPoint(x: 6800 + lightSwitch.frame.width/2, y: lightSwitch.frame.height/2 + 1400)
+        lightSwitch.name = "lightswitch"
+        return lightSwitch
+    }
+    
+        var freezer : SKSpriteNode {
+            let freezer = SKSpriteNode(color: .clear, size: CGSize(width: 890, height: 1700))
+            freezer.position = CGPoint(x: 7000 + freezer.frame.width/2, y: freezer.frame.height/2 + 260)
+            freezer.name = "freezer"
+            return freezer
+        }
+    
+    var cabinet : SKSpriteNode {
+        let cabinet = SKSpriteNode(color: .clear, size: CGSize(width: 1660, height: 600))
+        cabinet.position = CGPoint(x: 7030 + cabinet.frame.width/2, y: cabinet.frame.height/2 + 2050)
+        cabinet.name = "cabinet"
+        return cabinet
     }
     
     func setupLivingRoom() {
@@ -66,7 +104,12 @@ extension GameScene {
         addChild(tv)
         addChild(lamp)
         addChild(chair)
+        addChild(lightSwitch)
+        addChild(cactus)
+        addChild(freezer)
+        addChild(cabinet)
         addChild(kitchenNode)
+        addChild(livingChelf)
     }
     
 }

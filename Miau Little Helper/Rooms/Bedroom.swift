@@ -11,7 +11,7 @@ extension GameScene {
 
     
     var floor : SKSpriteNode {
-        let floor = SKSpriteNode(color: .red
+        let floor = SKSpriteNode(color: .clear
                                  , size: CGSize(width: 12000, height: 100))
         floor.position = CGPoint(x:floor.frame.width/2, y: floor.frame.height/2)
         floor.name = "floor"
@@ -19,8 +19,17 @@ extension GameScene {
     }
     
     var door : SKSpriteNode {
-        let door = SKSpriteNode(color: .red, size: CGSize(width: 300, height: 2800))
-        door.position = CGPoint(x: 3950 - door.frame.width/2, y: door.frame.height/2 + 100)
+        let door = SKSpriteNode(color: .clear, size: CGSize(width: 700, height: 2800))
+        door.position = CGPoint(x: 4000 - door.frame.width/2, y: door.frame.height/2 + 100)
+        door.name = "door"
+        return door
+    }
+    
+    var doorAsset : SKSpriteNode {
+        let door = SKSpriteNode(imageNamed: "door")
+        door.size = CGSize(width: 250, height: backgroundCompleto.size.height)
+        door.position = CGPoint(x: 3750 - door.frame.width/2, y: door.frame.height/2)
+        door.zPosition = 99
         door.name = "door"
         return door
     }
@@ -62,42 +71,42 @@ extension GameScene {
     }
     
     var toy : SKSpriteNode {
-        let toy = SKSpriteNode(color: .blue, size: CGSize(width: 650, height: 280))
+        let toy = SKSpriteNode(color: .clear, size: CGSize(width: 650, height: 280))
         toy.position = CGPoint(x: 950, y: toy.frame.height/2 + 1600)
         toy.name = "toy"
         return toy
     }
     
     var plant : SKSpriteNode {
-        let plant = SKSpriteNode(color: .red, size: CGSize(width: 650, height: 280))
+        let plant = SKSpriteNode(color: .clear, size: CGSize(width: 650, height: 280))
         plant.position = CGPoint(x: 650, y: plant.frame.height/2 + 1900)
         plant.name = "plant"
         return plant
     }
     
     var ditto : SKSpriteNode {
-        let ditto = SKSpriteNode(color: .blue, size: CGSize(width: 280, height: 250))
+        let ditto = SKSpriteNode(color: .clear, size: CGSize(width: 280, height: 250))
         ditto.position = CGPoint(x: 3080, y: ditto.frame.height/2 + 1300)
         ditto.name = "ditto"
         return ditto
     }
     
     var perfume : SKSpriteNode {
-        let perfume = SKSpriteNode(color: .red, size: CGSize(width: 200, height: 200))
+        let perfume = SKSpriteNode(color: .clear, size: CGSize(width: 200, height: 200))
         perfume.position = CGPoint(x: 2800, y: perfume.frame.height/2 + 1300)
         perfume.name = "perfume"
         return perfume
     }
     
     var clothes : SKSpriteNode {
-        let clothes = SKSpriteNode(color: .red, size: CGSize(width: 290, height: 230))
+        let clothes = SKSpriteNode(color: .clear, size: CGSize(width: 290, height: 230))
         clothes.position = CGPoint(x: 3000, y: clothes.frame.height/2 + 950)
         clothes.name = "clothes"
         return clothes
     }
     
     var plant2 : SKSpriteNode {
-        let plant = SKSpriteNode(color: .blue, size: CGSize(width: 290, height: 230))
+        let plant = SKSpriteNode(color: .clear, size: CGSize(width: 290, height: 230))
         plant.position = CGPoint(x: 2800, y: plant.frame.height/2 + 700)
         plant.name = "plant2"
         return plant
@@ -129,5 +138,6 @@ extension GameScene {
         addChild(ditto)
         addChild(clothes)
         addChild(plant2)
+        addChild(doorAsset)
     }
 }

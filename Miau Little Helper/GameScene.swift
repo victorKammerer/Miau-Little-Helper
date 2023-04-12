@@ -72,6 +72,8 @@ class GameScene: SKScene {
             stepsSound2.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
             jumpSound.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
             landedSound.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
+            
+            chatBox.position.x = cameraNode.position.x
             if nina.position.y > self.frame.midY {
                 chatBox.position.y = self.frame.minY + 600
                 chatLabel.position = chatBox.position
@@ -118,7 +120,7 @@ class GameScene: SKScene {
         nina.size = CGSize(width: 400, height: 300)
         nina.position = CGPoint(x: 500, y: shelfWall3.position.y + shelfWall3.frame.height/2 + nina.frame.height/2)
         addChild(nina)
-        nina.zPosition = 100
+        nina.zPosition = 98
         
         isListening.fontColor = .clear
         isListening.fontName = "Greybeard22pxBold"
@@ -129,8 +131,9 @@ class GameScene: SKScene {
     
     func setupDonna() {
         donna = SKSpriteNode(imageNamed: "iddleFront")
+        donna.name = "donna"
         donna.size = CGSize(width: 1000, height: 1000)
-        donna.position = CGPoint(x: chair.position.x, y: chair.position.y + chair.frame.height/2 + donna.frame.height/2 - 50)
+        donna.position = CGPoint(x: chair.position.x, y: chair.position.y + chair.frame.height/2 + donna.frame.height/2 - 100)
         addChild(donna)
         donna.zPosition = 99
     }
@@ -162,12 +165,13 @@ class GameScene: SKScene {
         chatBox = SKSpriteNode(imageNamed: "buttonBgWide")
         chatBox.position.x = cameraNode.position.x
         chatBox.size = CGSize(width: 3750, height: 800)
+        chatBox.zPosition = 101
         
         chatLabel.position.x = chatBox.position.x
         chatLabel = SKLabelNode(fontNamed: "Greybeard22pxBold")
         chatLabel.horizontalAlignmentMode = .center
         chatLabel.fontSize = 180
-        chatLabel.zPosition = 10
+        chatLabel.zPosition = 102
         chatLabel.numberOfLines = 0
         chatLabel.preferredMaxLayoutWidth = 3600
         chatLabel.lineBreakMode = .byCharWrapping
