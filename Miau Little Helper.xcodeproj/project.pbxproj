@@ -88,7 +88,6 @@
 		D356D3D129E1FEEF00FDE473 /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 		D36AB6CA29E1E3EA005C0B88 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D39853BF29E45B5100C1E850 /* Script.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Script.swift; sourceTree = "<group>"; };
-		D39853C229E5A15800C1E850 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = "Miau-Little-Helper/Info.plist"; sourceTree = SOURCE_ROOT; };
 		D3AF28E229D47A9D000780D3 /* Kitchen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kitchen.swift; sourceTree = "<group>"; };
 		D3AF28E429D47AC2000780D3 /* LivingRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingRoom.swift; sourceTree = "<group>"; };
 		D3D6E82029E0CFEC00582054 /* Greybeard-22px-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Greybeard-22px-Bold.ttf"; sourceTree = "<group>"; };
@@ -138,7 +137,6 @@
 		6C19473329C88F930067C180 /* Miau Little Helper */ = {
 			isa = PBXGroup;
 			children = (
-				D39853C229E5A15800C1E850 /* Info.plist */,
 				6C19473A29C88F940067C180 /* Miau_Little_Helper.entitlements */,
 				6C19473429C88F930067C180 /* Miau_Little_HelperApp.swift */,
 				6C19473629C88F930067C180 /* ContentView.swift */,
