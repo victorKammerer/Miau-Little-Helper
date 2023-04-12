@@ -72,6 +72,10 @@ extension GameScene {
             isInteractive = false
         case "play":
             isInteractive = false
+        case "plant":
+            isInteractive = false
+        case "plant2":
+            isInteractive = false
         case "perfume":
             isInteractive = false
         case "ditto":
@@ -143,6 +147,8 @@ extension GameScene {
             scriptNotInteractive = "A Donna tirou minha caminha lá de cima pra botar esses bonecos de herói… Qualquer dia eles somem, hehehe!"
         case "plant":
             scriptNotInteractive = "Essas plantinhas tem uma terra cheirosa! É bem melhor que a da minha caixa de areia…"
+        case "plant2":
+            scriptNotInteractive = ""
         case "window":
             scriptNotInteractive = "O dia está sempre lindo enquanto eu estiver dentro de casa."
         case "perfume":

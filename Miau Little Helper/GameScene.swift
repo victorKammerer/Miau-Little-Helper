@@ -35,7 +35,7 @@ class GameScene: SKScene {
     var currentRoom = 1
     var cameraNode = Camera()
 //    var clothesObstacle = SKSpriteNode(color: .cyan, size: CGSize(width: 400, height: 400))
-    var clothesObstacle = SKSpriteNode(texture: SKTexture(imageNamed: "obstacle.png"), size: CGSize(width: 588, height: 426))
+    var clothesObstacle = SKSpriteNode(color: .cyan, size: CGSize(width: 588, height: 426))
     
     var backgroundMusic = SKAudioNode(fileNamed: "backgroundMusic.wav")
     var stepsSound1 = SKAudioNode(fileNamed: "steps.wav")

@@ -54,11 +54,57 @@ extension GameScene {
     }
     
     var mess : SKSpriteNode {
-        return SKSpriteNode(color: .cyan, size: CGSize(width: 200, height: 200))
+        let mess = SKSpriteNode(imageNamed: "obstacle")
+        mess.size = CGSize(width: 600, height: 400)
+        mess.position = CGPoint(x: 650, y: mess.frame.height/2 + 150)
+        mess.name = "pile"
+        return mess
+    }
+    
+    var toy : SKSpriteNode {
+        let toy = SKSpriteNode(color: .blue, size: CGSize(width: 650, height: 280))
+        toy.position = CGPoint(x: 950, y: toy.frame.height/2 + 1600)
+        toy.name = "toy"
+        return toy
+    }
+    
+    var plant : SKSpriteNode {
+        let plant = SKSpriteNode(color: .red, size: CGSize(width: 650, height: 280))
+        plant.position = CGPoint(x: 650, y: plant.frame.height/2 + 1900)
+        plant.name = "plant"
+        return plant
+    }
+    
+    var ditto : SKSpriteNode {
+        let ditto = SKSpriteNode(color: .blue, size: CGSize(width: 280, height: 250))
+        ditto.position = CGPoint(x: 3080, y: ditto.frame.height/2 + 1300)
+        ditto.name = "ditto"
+        return ditto
+    }
+    
+    var perfume : SKSpriteNode {
+        let perfume = SKSpriteNode(color: .red, size: CGSize(width: 200, height: 200))
+        perfume.position = CGPoint(x: 2800, y: perfume.frame.height/2 + 1300)
+        perfume.name = "perfume"
+        return perfume
+    }
+    
+    var clothes : SKSpriteNode {
+        let clothes = SKSpriteNode(color: .red, size: CGSize(width: 290, height: 230))
+        clothes.position = CGPoint(x: 3000, y: clothes.frame.height/2 + 950)
+        clothes.name = "clothes"
+        return clothes
+    }
+    
+    var plant2 : SKSpriteNode {
+        let plant = SKSpriteNode(color: .blue, size: CGSize(width: 290, height: 230))
+        plant.position = CGPoint(x: 2800, y: plant.frame.height/2 + 700)
+        plant.name = "plant2"
+        return plant
     }
     
     var window : SKSpriteNode {
-        let window = SKSpriteNode(color: .red, size: CGSize(width: 1200, height: 1200))
+        let window = SKSpriteNode(color: .clear, size: CGSize(width: 1200, height: 1200))
         window.position = CGPoint(x: 1850, y: window.frame.height/2 + 1400)
         window.name = "window"
         return window
@@ -76,5 +122,12 @@ extension GameScene {
         addChild(door)
         addChild(floor)
         addChild(clothesObstacle)
+        addChild(mess)
+        addChild(toy)
+        addChild(plant)
+        addChild(perfume)
+        addChild(ditto)
+        addChild(clothes)
+        addChild(plant2)
     }
 }
