@@ -55,6 +55,8 @@ class GameScene: SKScene {
         setupKitchen()
         setupSounds()
         setupChatBox()
+        
+        chatLabel.text = "O gatinho Nina caiu no sono! Fale ‘Nina, acorde!’ ou toque nele para fazê-lo levantar!"
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -170,10 +172,10 @@ class GameScene: SKScene {
         chatLabel.position.x = chatBox.position.x
         chatLabel = SKLabelNode(fontNamed: "Greybeard22pxBold")
         chatLabel.horizontalAlignmentMode = .center
-        chatLabel.fontSize = 180
+        chatLabel.fontSize = 150
         chatLabel.zPosition = 102
         chatLabel.numberOfLines = 0
-        chatLabel.preferredMaxLayoutWidth = 3600
+        chatLabel.preferredMaxLayoutWidth = 3400
         chatLabel.lineBreakMode = .byCharWrapping
         chatLabel.verticalAlignmentMode = .center
 
