@@ -11,7 +11,7 @@ extension GameScene {
     
     func voiceCommand() {
         
-        if voiceRecognizer.command == "nina" || voiceRecognizer.command == "menina" || voiceRecognizer.command == "mina" || voiceRecognizer.command == "linda" {
+        if voiceRecognizer.command == "nina" || voiceRecognizer.command == "menina" || voiceRecognizer.command == "mina" {
             voiceRecognizer.command = ""
             nina.run(SKAction.sequence([
                 SKAction.run {
@@ -27,7 +27,10 @@ extension GameScene {
             ]))
         }
         if voiceCommandAllowed == true {
-            if voiceRecognizer.command == "cama" || voiceRecognizer.command == "colchão" || (voiceRecognizer.command == "desça" && ninaPosition == "shelfWall") {
+            if voiceRecognizer.command == "acorda" {
+                voiceRecognizer.command = ""
+                wakeUp()
+            } else if voiceRecognizer.command == "cama" || voiceRecognizer.command == "colchão" || (voiceRecognizer.command == "desça" && ninaPosition == "shelfWall") {
                 voiceRecognizer.command = ""
                 self.isListening.fontColor = .clear
                 goToBed()
@@ -81,10 +84,6 @@ extension GameScene {
             else if voiceRecognizer.command == "quarto" || voiceRecognizer.command == "deitar" || voiceRecognizer.command == "voltar" || voiceRecognizer.command == "caminha" || voiceRecognizer.command == "dormir" {
                 voiceRecognizer.command = ""
                 //Precisa da função da câmera voltar para o quarta e Nina surgir do canto direito da tela
-            } else if voiceRecognizer.command == "acorda" {
-                voiceRecognizer.command = ""
-                nina.removeAction(forKey: "ninaSleeping")
-                nina.run(wakingUp)
             }
         }
     }

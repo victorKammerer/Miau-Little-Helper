@@ -130,4 +130,17 @@ extension GameScene {
             }
         }
     }
+    
+    func wakeUp() {
+        if isNinaAwake == false {
+            isNinaAwake = true
+            nina.removeAction(forKey: "ninaSleeping")
+            nina.run(SKAction.sequence([
+            wakingUp,
+            SKAction.run {
+                self.isNinaAwake = true
+            }
+            ]))
+        }
+    }
 }

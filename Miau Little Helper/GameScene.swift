@@ -30,12 +30,14 @@ class GameScene: SKScene {
     var ninaPosition = "shelfWall"
     var interationDisabled = false
     var voiceCommandAllowed = false
+    var isNinaAwake = false
     var isListening = SKLabelNode(text: "!")
     
     var currentRoom = 1
     var cameraNode = Camera()
-//    var clothesObstacle = SKSpriteNode(color: .cyan, size: CGSize(width: 400, height: 400))
-    var clothesObstacle = SKSpriteNode(color: .cyan, size: CGSize(width: 588, height: 426))
+    
+    var clothesObstacle = SKSpriteNode(texture: SKTexture(imageNamed: "obstacle.png"), size: CGSize(width: 588, height: 426))
+    var lightSwitch = SKSpriteNode(texture: SKTexture(imageNamed: "lightswitch1"), size: CGSize(width: 40, height: 130))
     
     var backgroundMusic = SKAudioNode(fileNamed: "backgroundMusic.wav")
     var stepsSound1 = SKAudioNode(fileNamed: "steps.wav")
@@ -74,8 +76,6 @@ class GameScene: SKScene {
             stepsSound2.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
             jumpSound.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
             landedSound.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
-            
-            chatBox.position.x = cameraNode.position.x
             if nina.position.y > self.frame.midY {
                 chatBox.position.y = self.frame.minY + 600
                 chatLabel.position = chatBox.position
@@ -122,7 +122,7 @@ class GameScene: SKScene {
         nina.size = CGSize(width: 400, height: 300)
         nina.position = CGPoint(x: 500, y: shelfWall3.position.y + shelfWall3.frame.height/2 + nina.frame.height/2)
         addChild(nina)
-        nina.zPosition = 98
+        nina.zPosition = 100
         
         isListening.fontColor = .clear
         isListening.fontName = "Greybeard22pxBold"
@@ -133,9 +133,8 @@ class GameScene: SKScene {
     
     func setupDonna() {
         donna = SKSpriteNode(imageNamed: "iddleFront")
-        donna.name = "donna"
         donna.size = CGSize(width: 1000, height: 1000)
-        donna.position = CGPoint(x: chair.position.x, y: chair.position.y + chair.frame.height/2 + donna.frame.height/2 - 100)
+        donna.position = CGPoint(x: chair.position.x, y: chair.position.y + chair.frame.height/2 + donna.frame.height/2 - 50)
         addChild(donna)
         donna.zPosition = 99
     }
@@ -167,7 +166,6 @@ class GameScene: SKScene {
         chatBox = SKSpriteNode(imageNamed: "buttonBgWide")
         chatBox.position.x = cameraNode.position.x
         chatBox.size = CGSize(width: 3750, height: 800)
-        chatBox.zPosition = 101
         
         chatLabel.position.x = chatBox.position.x
         chatLabel = SKLabelNode(fontNamed: "Greybeard22pxBold")
