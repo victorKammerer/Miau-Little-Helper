@@ -37,7 +37,6 @@ class GameScene: SKScene {
     var cameraNode = Camera()
     
     var clothesObstacle = SKSpriteNode(texture: SKTexture(imageNamed: "obstacle.png"), size: CGSize(width: 588, height: 426))
-    var lightSwitch = SKSpriteNode(texture: SKTexture(imageNamed: "lightswitch1"), size: CGSize(width: 40, height: 130))
     
     var backgroundMusic = SKAudioNode(fileNamed: "backgroundMusic.wav")
     var stepsSound1 = SKAudioNode(fileNamed: "steps.wav")
@@ -165,6 +164,7 @@ class GameScene: SKScene {
     func setupChatBox() {
         chatBox = SKSpriteNode(imageNamed: "buttonBgWide")
         chatBox.position.x = cameraNode.position.x
+        chatBox.zPosition = 101
         chatBox.size = CGSize(width: 3750, height: 800)
         
         chatLabel.position.x = chatBox.position.x
