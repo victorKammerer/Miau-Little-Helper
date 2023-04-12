@@ -48,7 +48,7 @@ extension GameScene {
     var doorLivingRoom : SKSpriteNode {
         let doorLivingRoom = SKSpriteNode(color: .clear, size: CGSize(width: 900, height: 1800))
         doorLivingRoom.position = CGPoint(x: 4500 + doorLivingRoom.frame.width/2, y: doorLivingRoom.frame.height/2 + 260)
-        doorLivingRoom.name = "lampada"
+        doorLivingRoom.name = "doorLivingRoom"
         return doorLivingRoom
     }
     

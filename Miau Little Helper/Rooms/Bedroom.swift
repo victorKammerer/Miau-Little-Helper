@@ -11,7 +11,7 @@ extension GameScene {
 
     
     var floor : SKSpriteNode {
-        let floor = SKSpriteNode(color: .clear
+        let floor = SKSpriteNode(color: .red
                                  , size: CGSize(width: 12000, height: 100))
         floor.position = CGPoint(x:floor.frame.width/2, y: floor.frame.height/2)
         floor.name = "floor"
@@ -58,8 +58,8 @@ extension GameScene {
     }
     
     var window : SKSpriteNode {
-        let window = SKSpriteNode(color: .clear, size: CGSize(width: 1000, height: 1000))
-        window.position = CGPoint(x: 2000, y: window.frame.height/2 + 1000)
+        let window = SKSpriteNode(color: .red, size: CGSize(width: 1200, height: 1200))
+        window.position = CGPoint(x: 1850, y: window.frame.height/2 + 1400)
         window.name = "window"
         return window
     }
