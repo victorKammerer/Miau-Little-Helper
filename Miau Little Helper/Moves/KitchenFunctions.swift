@@ -30,8 +30,11 @@ extension GameScene {
             SKAction.run {
                 self.pan.removeAction(forKey: "panAnimation")
                 self.pan.name = "panSolved"
+                self.cooker.name = "panSolved"
                 self.pan.run(self.panSolved)
                 self.interationDisabled = false
+                self.textIsShowing = true
+                self.chatLabel.text = "E agora? Cadê a Donna? Vou atrás dela!"
             }
             ]))
         } else if (ninaPosition != "kitchenShelf" && currentRoom == 3) && pan.name! == "pan"  {

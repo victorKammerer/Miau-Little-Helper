@@ -19,7 +19,7 @@ extension GameScene {
     var sofaTop : SKSpriteNode {
         let sofaTop = SKSpriteNode(color: .clear, size: CGSize(width: 400, height: 400))
         sofaTop.position = CGPoint(x: 6450 + sofaTop.frame.width/2, y: sofaTop.frame.height/2 + 850)
-        sofaTop.name = "sofaTop"
+        sofaTop.name = "sofa"
         return sofaTop
     }
     
@@ -30,26 +30,11 @@ extension GameScene {
         return tv
     }
     
-    var lamp : SKSpriteNode {
-        let lampada = SKSpriteNode(color: .clear, size: CGSize(width: 200, height: 400))
-        lampada.position = CGPoint(x: 5500 + lampada.frame.width/2, y: lampada.frame.height/2 + 1900)
-        lampada.name = "lamp"
-        return lampada
-    }
-    
     var livingChelf : SKSpriteNode {
         let livingChelf = SKSpriteNode(color: .clear, size: CGSize(width: 700, height: 600))
         livingChelf.position = CGPoint(x: 5700 + livingChelf.frame.width/2, y: livingChelf.frame.height/2 + 1400)
         livingChelf.name = "livingChelf"
         return livingChelf
-    }
-    
-    var chair : SKSpriteNode {
-        let chair = SKSpriteNode(texture: SKTexture(imageNamed: "chair"))
-        chair.position = CGPoint(x: 5500 + lamp.frame.width/2, y: chair.frame.height/2 + 400)
-        chair.name = "chair"
-        chair.size = CGSize(width: chair.size.width * 1.5, height: chair.size.height * 1.5)
-        return chair
     }
     
     var doorLivingRoom : SKSpriteNode {
@@ -96,6 +81,13 @@ extension GameScene {
     }
     
     func setupLivingRoom() {
+        lampCover.position = CGPoint(x: 5500 + lampCover.frame.width/2, y: lampCover.frame.height/2 + 1750)
+        lampCover.name = "lamp"
+        chair.position = CGPoint(x: 5500 + lamp.frame.width/2, y: chair.frame.height/2 + 400)
+        chair.name = "chair"
+        chair.size = CGSize(width: chair.size.width * 1.5, height: chair.size.height * 1.5)
+        lamp.position = CGPoint(x: 5500 + lamp.frame.width/2, y: lamp.frame.height/2 + 1900)
+        lamp.name = "lamp"
         
         setupLightSwitch()
         addChild(doorLivingRoom)
@@ -110,6 +102,7 @@ extension GameScene {
         addChild(cabinet)
         addChild(kitchenNode)
         addChild(livingChelf)
+        addChild(lampCover)
     }
     
 }

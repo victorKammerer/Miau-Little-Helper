@@ -89,6 +89,8 @@ extension GameScene {
         case "pile":
             isInteractive = false
 //      Livingroom
+        case "solvedLamp":
+            isInteractive = false
         case "sofa":
             isInteractive = true
         case "sofaTop":
@@ -116,6 +118,8 @@ extension GameScene {
             isInteractive = true
         case "kitchenShelf":
             isInteractive = true
+        case "panSolved":
+            isInteractive = false
         case "cooker":
             isInteractive = true
         case "washMashine":
@@ -145,7 +149,7 @@ extension GameScene {
         case "obstacle":
             scriptNotInteractive = "Olha quanta bagunça, seu eu tivesse patas como a dela limparia essa jossa."
         case "door":
-            scriptNotInteractive = "Oxe, tem umas roupas na frente da minha portinha! Como eu faço pra tirar esses troços daí?"
+            scriptNotInteractive = "Oxe, tem uma caixa na frente da minha portinha! Como eu faço pra tirar esses troços daí?"
 //      ainda n tem node
         case "pile":
             scriptNotInteractive = "A Donna não tem jeito mesmo. Esse quarto tá pôdi!"
@@ -164,6 +168,8 @@ extension GameScene {
         case "clothes":
             scriptNotInteractive = "Pelo menos tem que ter alguma coisa arrumada nesse quarto, né?"
 //      Livingroom
+        case "solvedLamp":
+            scriptNotInteractive = "Ufa! Essa foi por pouco."
         case "donna":
             scriptNotInteractive = "Ela é muito distraída! Nem me notou aqui!"
         case "lightswitch":
@@ -192,6 +198,8 @@ extension GameScene {
             scriptNotInteractive = "Não consigo subir ali! Tenho que achar outro caminho."
         case "kitchenWindow":
             scriptNotInteractive = "O dia está sempre lindo enquanto eu estiver dentro de casa."
+        case "panSolved":
+            scriptNotInteractive = "Quase que a Donna botava fogo na casa."
 //      ainda n tem node
         case "rat":
             scriptNotInteractive = "Essa foi minha caça de ontem. Já brinquei demais com isso."

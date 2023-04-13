@@ -30,6 +30,8 @@ extension GameScene {
             floorToKitchen,
             SKAction.run {
                 self.interationDisabled = false
+                self.textIsShowing = true
+                self.chatLabel.text = "Ah, não! Donna esqueceu uma panela no fogão! Preciso desligar o fogo!"
             }
             ]))
             ninaPosition = "floor3"
@@ -39,6 +41,8 @@ extension GameScene {
             floorToKitchen,
             SKAction.run {
                 self.interationDisabled = false
+                self.textIsShowing = true
+                self.chatLabel.text = "Ah, não! Donna esqueceu uma panela no fogão! Preciso desligar o fogo!"
             }
             ]))
             ninaPosition = "floor3"
@@ -53,6 +57,7 @@ extension GameScene {
             SKAction.run {
                 self.lightSwitch.texture = SKTexture(imageNamed: "lightswitch2")
                 self.lightSwitch.name = "solvedLamp"
+
                 self.lamp.name = "solvedLamp"
 //                self.lampCover.name = "solvedLamp"
                 self.chair.name = "solvedLamp"
@@ -81,6 +86,9 @@ extension GameScene {
                     SKAction.wait(forDuration: 0.5),
                     SKAction.run {
                         self.donna.removeFromParent()
+                        self.interationDisabled = false
+                        self.textIsShowing = true
+                        self.chatLabel.text = "Que cheiro é esse? Parece que vem da cozinha!"
                     }
                 ]))
             }

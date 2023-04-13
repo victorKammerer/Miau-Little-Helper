@@ -85,6 +85,8 @@ extension GameScene {
                     self.interationDisabled = false
                     //self.clothesObstacle.removeFromParent()
                     self.clothesObstacle.name = "solved"
+                    self.textIsShowing = true
+                    self.chatLabel.text = "Arrá! Agora sim posso ir atrás dela!"
                 }
             ]))
             ninaPosition =  "floor"
@@ -110,6 +112,8 @@ extension GameScene {
                     obstacleToDoor,
                     SKAction.run {
                         self.interationDisabled = false
+                        self.textIsShowing = true
+                        self.chatLabel.text = "Ah, não! A Dona tá mexendo na lâmpada com tudo ligado! Parece que ela não sabe que só tem uma vida!"
                     }
 
                 ]))
@@ -122,6 +126,8 @@ extension GameScene {
                     obstacleToDoor,
                     SKAction.run {
                         self.interationDisabled = false
+                        self.textIsShowing = true
+                        self.chatLabel.text = "Ah, não! A Dona tá mexendo na lâmpada com tudo ligado! Parece que ela não sabe que só tem uma vida!"
                     }
 
                 ]))
@@ -133,6 +139,8 @@ extension GameScene {
                     obstacleToDoor,
                     SKAction.run {
                         self.interationDisabled = false
+                        self.textIsShowing = true
+                        self.chatLabel.text = "Ah, não! A Dona tá mexendo na lâmpada com tudo ligado! Parece que ela não sabe que só tem uma vida!"
                     }
                 ]))
                 ninaPosition = "floor2"
@@ -160,7 +168,6 @@ extension GameScene {
             SKAction.run {
                 self.interationDisabled = false
                 self.chatLabel.text = "Ah, não! Caí no sono e deixei a Donna sozinha!"
-
             }
             ]))
         }
