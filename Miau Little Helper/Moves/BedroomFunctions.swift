@@ -31,8 +31,6 @@ extension GameScene {
             ]))
             ninaPosition = "bed"
         } else if currentRoom == 1 {
-            self.interationDisabled = true
-            self.isListening.fontColor = .clear
             let scriptText = scriptNotInteractive(node: "bed")
             chatLabel.text = scriptText
             if scriptText != "" {
@@ -64,8 +62,6 @@ extension GameScene {
             ]))
             ninaPosition = "shelfWall"
         } else if currentRoom == 1 {
-            self.interationDisabled = true
-            self.isListening.fontColor = .clear
             let scriptText = scriptNotInteractive(node: "shelfWall")
             chatLabel.text = scriptText
             if scriptText != "" {
@@ -94,8 +90,6 @@ extension GameScene {
             ninaPosition =  "floor"
         }
         else if currentRoom == 1 {
-            self.interationDisabled = true
-            self.isListening.fontColor = .clear
             let scriptText = scriptNotInteractive(node: "obstacle")
             chatLabel.text = scriptText
             if scriptText != "" {
@@ -145,8 +139,6 @@ extension GameScene {
             }
         }
         else if currentRoom == 1 {
-            self.interationDisabled = true
-            self.isListening.fontColor = .clear
             let scriptText = scriptNotInteractive(node: "door")
             chatLabel.text = scriptText
             if scriptText != "" {
