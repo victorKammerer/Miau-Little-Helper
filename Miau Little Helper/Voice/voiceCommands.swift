@@ -46,7 +46,7 @@ extension GameScene {
                       }
         }
 
-        if voiceCommandAllowed == true {
+        if voiceCommandAllowed == true && !textIsShowing {
             if voiceRecognizer.command == "cama" || voiceRecognizer.command == "colchão" || (voiceRecognizer.command == "desça" && ninaPosition == "shelfWall") {
                 voiceRecognizer.command = ""
                 goToBed()

@@ -92,6 +92,7 @@ extension GameScene {
                     },
                     SKAction.wait(forDuration: 2),
                     SKAction.run {
+                        self.didSolveLevel2 = true
                         self.interationDisabled = false
                         self.textIsShowing = true
                         self.isListening.fontColor = .clear
