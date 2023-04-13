@@ -76,9 +76,9 @@ extension GameScene {
     }
     
     func setupPan() {
-        pan.position = CGPoint(x: cooker.position.x - 200, y: cooker.position.y + cooker.frame.height/2 + pan.frame.height/2 - 45)
+        pan.position = CGPoint(x: cooker.position.x + 50, y: cooker.position.y + cooker.frame.height/2 + pan.frame.height/2 - 105)
         pan.run(panAnimation, withKey: "panAnimation")
-        pan.name = "pan"
+        pan.name = "cooker"
         addChild(pan)
     }
     

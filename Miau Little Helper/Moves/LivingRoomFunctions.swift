@@ -13,10 +13,10 @@ extension GameScene {
         if ninaPosition == "floor2" {
             self.interationDisabled = true
             nina.run(SKAction.sequence([
-            floorToSofa,
-            SKAction.run {
-                self.interationDisabled = false
-            }
+                floorToSofa,
+                SKAction.run {
+                    self.interationDisabled = false
+                }
             ]))
             ninaPosition = "sofa"
         }
@@ -26,24 +26,24 @@ extension GameScene {
         if ninaPosition == "sofa" {
             self.interationDisabled = true
             nina.run(SKAction.sequence([
-            sofaToFloor,
-            floorToKitchen,
-            SKAction.run {
-                self.interationDisabled = false
-                self.textIsShowing = true
-                self.chatLabel.text = "Ah, não! Donna esqueceu uma panela no fogão! Preciso desligar o fogo!"
-            }
+                sofaToFloor,
+                floorToKitchen,
+                SKAction.run {
+                    self.interationDisabled = false
+                    self.textIsShowing = true
+                    self.chatLabel.text = "Ah, não! Donna esqueceu uma panela no fogão! Preciso desligar o fogo!"
+                }
             ]))
             ninaPosition = "floor3"
         } else if ninaPosition == "floor2" {
             self.interationDisabled = true
             nina.run(SKAction.sequence([
-            floorToKitchen,
-            SKAction.run {
-                self.interationDisabled = false
-                self.textIsShowing = true
-                self.chatLabel.text = "Ah, não! Donna esqueceu uma panela no fogão! Preciso desligar o fogo!"
-            }
+                floorToKitchen,
+                SKAction.run {
+                    self.interationDisabled = false
+                    self.textIsShowing = true
+                    self.chatLabel.text = "Ah, não! Donna esqueceu uma panela no fogão! Preciso desligar o fogo!"
+                }
             ]))
             ninaPosition = "floor3"
         }
@@ -59,9 +59,9 @@ extension GameScene {
                 self.lightSwitch.name = "solvedLamp"
 
                 self.lamp.name = "solvedLamp"
-//                self.lampCover.name = "solvedLamp"
+                self.lampCover.name = "solvedLamp"
                 self.chair.name = "solvedLamp"
-//                self.lampCover.isHidden = true
+                self.lampCover.isHidden = true
                 self.lightSwitch.texture!.filteringMode = SKTextureFilteringMode.nearest
                 self.donna.run(SKAction.sequence([
                     self.jumpBelowDonna(jumpHeight: 100, destination: self.floor, distance: -450, offset: 100),
@@ -74,9 +74,9 @@ extension GameScene {
                     SKAction.animate(with: [SKTexture(imageNamed: "iddleFront")], timePerFrame: 0.1),
                     SKAction.run {
                         self.textIsShowing = true
-                        self.chatLabel.text = "Eu esqueci! Preciso ir pra festa do Rinaldo!"
+                        self.chatLabel.text = "Eu esqueci de comprar Pão!"
                     },
-                    SKAction.wait(forDuration: 2),
+                    SKAction.wait(forDuration: 4),
                     SKAction.run {
                         self.textIsShowing = false
                         self.donnaAttention.removeFromParent()

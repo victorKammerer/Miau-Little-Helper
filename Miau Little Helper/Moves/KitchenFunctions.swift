@@ -38,7 +38,7 @@ extension GameScene {
             }
             ]))
         } else if (ninaPosition != "kitchenShelf" && currentRoom == 3) && pan.name! == "pan"  {
-            let scriptText = scriptNotInteractive(node: "pan")
+            let scriptText = scriptNotInteractive(node: "cooker")
             chatLabel.text = scriptText
             if scriptText != "" {
                 textIsShowing = true
