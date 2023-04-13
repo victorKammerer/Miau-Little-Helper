@@ -59,9 +59,9 @@ extension GameScene {
                     self.lightSwitch.name = "solvedLamp"
                     
                     self.lamp.name = "solvedLamp"
-                    //                self.lampCover.name = "solvedLamp"
+                    self.lampCover.name = "solvedLamp"
                     self.chair.name = "solvedLamp"
-                    //                self.lampCover.isHidden = true
+                    self.lampCover.isHidden = true
                     self.lightSwitch.texture!.filteringMode = SKTextureFilteringMode.nearest
                     self.donna.run(SKAction.sequence([
                         self.jumpBelowDonna(jumpHeight: 100, destination: self.floor, distance: -450, offset: 100),
