@@ -33,6 +33,7 @@ class GameScene: SKScene {
     var isNinaAwake = false
     var onboarding = false
     var isListening = SKLabelNode(text: "!")
+    var donnaAttention = SKLabelNode(text: "!")
     
     var currentRoom = 1
     var cameraNode = Camera()
@@ -158,9 +159,15 @@ class GameScene: SKScene {
         donna.name = "donna"
         donna.run(donnaLampAnimation, withKey: "donnaLampAnimation")
         donna.size = CGSize(width: 1000, height: 1000)
-        donna.position = CGPoint(x: chair.position.x, y: chair.position.y + chair.frame.height/2 + donna.frame.height/2 - 100)
+        donna.position = CGPoint(x: chair.position.x + 20, y: chair.position.y + chair.frame.height/2 + donna.frame.height/2 - 100)
         addChild(donna)
         donna.zPosition = 99
+        
+        donnaAttention.fontColor = .clear
+        donnaAttention.fontName = "Greybeard22pxBold"
+        donnaAttention.fontSize = 350
+        
+        addChild(donnaAttention)
     }
     
     func setupSounds() {
