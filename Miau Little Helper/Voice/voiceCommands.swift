@@ -46,17 +46,27 @@ extension GameScene {
                       }
         }
 
-        if voiceCommandAllowed == true && !textIsShowing {
+        if voiceCommandAllowed == true && (!textIsShowing || onboarding || !isNinaAwake) {
             if voiceRecognizer.command == "cama" || voiceRecognizer.command == "colchão" || (voiceRecognizer.command == "desça" && ninaPosition == "shelfWall") {
                 voiceRecognizer.command = ""
                 goToBed()
-            } else if voiceRecognizer.command == "chão" || voiceRecognizer.command == "piso" || (voiceRecognizer.command == "desça" && ninaPosition == "bed") {
+
+            }
+            else if voiceRecognizer.command == "acorda"
+            || voiceRecognizer.command == "acorde" || voiceRecognizer.command == "levante" || voiceRecognizer.command == "levanta" ||
+                        voiceRecognizer.command == "levantar"{
+                voiceRecognizer.command = ""
+                wakeUp()
+            }
+            else if voiceRecognizer.command == "chão" || voiceRecognizer.command == "piso" || (voiceRecognizer.command == "desça" && ninaPosition == "bed") {
                 voiceRecognizer.command = ""
                 goToFloor()
-            } else if voiceRecognizer.command == "empurra" || voiceRecognizer.command == "afasta" || voiceRecognizer.command == "puxa" || voiceRecognizer.command == "roupa" {
+            } else if voiceRecognizer.command == "empurra" || voiceRecognizer.command == "afasta" || voiceRecognizer.command == "puxa" || voiceRecognizer.command == "caixa" {
                 voiceRecognizer.command = ""
                 goToObstacle()
-            } else if voiceRecognizer.command == "porta" || voiceRecognizer.command == "portinha" || voiceRecognizer.command == "andar" || voiceRecognizer.command == "ande" || voiceRecognizer.command == "direita" {
+            } else if voiceRecognizer.command == "porta" || voiceRecognizer.command == "portinha" || voiceRecognizer.command == "andar" || voiceRecognizer.command == "ande" || voiceRecognizer.command == "direita" || voiceRecognizer.command == "sai" ||
+                        voiceRecognizer.command == "sair" ||
+                        voiceRecognizer.command == "sala"{
                 voiceRecognizer.command = ""
                 goToDoorRoom()
             } else if voiceRecognizer.command == "prateleira" || voiceRecognizer.command == "começo" || voiceRecognizer.command == "suba" {
@@ -64,42 +74,55 @@ extension GameScene {
                 goToShelfWall()
             }
             else if voiceRecognizer.command == "planta" || voiceRecognizer.command == "vaso" {
+                voiceRecognizer.command = ""
                 findNode("plant2")
             }
             else if voiceRecognizer.command == "boneco" {
+                voiceRecognizer.command = ""
                 findNode("toy")
             }
             else if voiceRecognizer.command == "perfume" {
+                voiceRecognizer.command = ""
                 findNode("perfume")
             }
             else if voiceRecognizer.command == "dito" || voiceRecognizer.command == "ditto" || voiceRecognizer.command == "pokemon" {
+                voiceRecognizer.command = ""
                 findNode("ditto")
             }
             else if voiceRecognizer.command == "janela" && currentRoom == 1 {
+                voiceRecognizer.command = ""
                 findNode("window")
             }
             // MARK: - Comandos da sala
-            else if voiceRecognizer.command == "poltrona" || voiceRecognizer.command == "sofá" || (voiceRecognizer.command == "sobe" && ninaPosition == "floor2")
+            else if voiceRecognizer.command == "poltrona" || voiceRecognizer.command == "sofá" || voiceRecognizer.command == "safa" || (voiceRecognizer.command == "sobe" && ninaPosition == "floor2")
             {
                 voiceRecognizer.command = ""
                 goToSofa()
-            } else if (voiceRecognizer.command == "desligar" || voiceRecognizer.command == "interruptor" || voiceRecognizer.command == "luz") && currentRoom == 2 {
+            } else if (voiceRecognizer.command == "desligar" || voiceRecognizer.command == "interruptor" || voiceRecognizer.command == "desliga" || voiceRecognizer.command == "luz") && currentRoom == 2 {
                 voiceRecognizer.command = ""
                 turnOff()
-            } else if voiceRecognizer.command == "desce" || voiceRecognizer.command == "chão" || voiceRecognizer.command == "cozinha" {
+            } else if voiceRecognizer.command == "desce" || voiceRecognizer.command == "chão" {
                 voiceRecognizer.command = ""
                 goToFloor()
             }
+            else if voiceRecognizer.command == "cozinha" || voiceRecognizer.command == "vai" {
+                voiceRecognizer.command = ""
+                goToKitchen()
+            }
             else if voiceRecognizer.command == "tv" || voiceRecognizer.command == "televisão" {
+                voiceRecognizer.command = ""
                 findNode("tv")
             }
-            else if voiceRecognizer.command == "cacto" {
+            else if voiceRecognizer.command == "cacto" || voiceRecognizer.command == "caquito" || voiceRecognizer.command == "tacacá" {
+                voiceRecognizer.command = ""
                 findNode("cactus")
             }
             else if voiceRecognizer.command == "lampada" {
+                voiceRecognizer.command = ""
                 findNode(lamp.name!)
             }
             else if voiceRecognizer.command == "cadeira" || voiceRecognizer.command == "banco" {
+                voiceRecognizer.command = ""
                 findNode(chair.name!)
             }
             else if voiceRecognizer.command == "dona" || voiceRecognizer.command == "humana" {
@@ -108,16 +131,19 @@ extension GameScene {
                 }
             }
             else if voiceRecognizer.command == "geladeira" {
+                voiceRecognizer.command = ""
                 findNode("freezer")
             }
             else if voiceRecognizer.command == "gato" {
+                voiceRecognizer.command = ""
                 findNode("livingChelf")
             }
             else if voiceRecognizer.command == "armário" {
+                voiceRecognizer.command = ""
                 findNode("cabinet")
             }
             // MARK: - Comandos da cozinha
-            else if voiceRecognizer.command == "desliga" || voiceRecognizer.command == "fogo" || voiceRecognizer.command == "pula" {
+            else if voiceRecognizer.command == "desliga" || voiceRecognizer.command == "fogo" || voiceRecognizer.command == "pula" || voiceRecognizer.command == "fogão" {
                 voiceRecognizer.command = ""
                 //Precisa da função que se Nina estiver no chão é dito que ela não alcança e precisa subir em algo
                 turnOffFire()
@@ -134,16 +160,20 @@ extension GameScene {
                 //Precisa da função de Nina cutucar o botão de controle de boca do fogão e descer para o chão automaticamente
             }
             else if voiceRecognizer.command == "janela" && currentRoom == 3 {
+                voiceRecognizer.command = ""
                 findNode("kitchenWindow")
             }
             else if voiceRecognizer.command == "temperos" || voiceRecognizer.command == "tempero" {
+                voiceRecognizer.command = ""
                 findNode("spices")
             }
             else if voiceRecognizer.command == "maquina" ||
                         voiceRecognizer.command == "lavar" {
+                voiceRecognizer.command = ""
                 findNode("washMachine")
             }
             else if voiceRecognizer.command == "rato" {
+                voiceRecognizer.command = ""
                 findNode("rat")
             }
             else if voiceRecognizer.command == "quarto" || voiceRecognizer.command == "deitar" || voiceRecognizer.command == "voltar" || voiceRecognizer.command == "caminha" || voiceRecognizer.command == "dormir" {

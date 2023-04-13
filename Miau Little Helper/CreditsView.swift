@@ -55,8 +55,9 @@ struct CreditsView: View {
                         Image("ninaReal")
                             .resizable()
                             .scaledToFit()
-                        
-                        Text("  Somos responsáveis por ter uma abordagem honesta sobre nossos produtos, sem exageros ou promesas vazias, tratando com respeito os nossos usuários. \n  Nós mostraremos ao mundo um jogo onde o principal controle é por voz, criando uma possibilidade ampla para a interação em nosso jogo, e o personagem principal é um gatinho fofinho.")
+                            .cornerRadius(50)
+                            .shadow(radius: 10)
+                        Text("  Somos responsáveis por ter uma abordagem honesta sobre nossos produtos, sem exageros ou promesas vazias, tratando com respeito os nossos usuários. \n  Nós mostraremos ao mundo um jogo onde o principal controle é por voz, criando uma possibilidade ampla para a interação em nosso jogo, e o personagem principal é um gatinho fofinho.\n\nTrilha Sonora: Helton Paz")
                             .font(.custom("Greybeard22pxBold", size: geo.size.width/30))
                             .foregroundColor(.white)
                             .padding(.top, geo.size.width/90)
@@ -68,7 +69,7 @@ struct CreditsView: View {
                             .scaledToFit()
                     }.padding(geo.size.width/13.5)
                         .clipped()
-                }
+                }.frame(width: 1200, height: 800)
                 
                 VStack{
                     HStack{
