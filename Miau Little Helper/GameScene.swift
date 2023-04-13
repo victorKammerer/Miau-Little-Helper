@@ -30,16 +30,21 @@ class GameScene: SKScene {
     var ninaPosition = "shelfWall"
     var interationDisabled = false
     var voiceCommandAllowed = false
+    var isNinaAwake = false
     var isListening = SKLabelNode(text: "!")
     
     var currentRoom = 1
     var cameraNode = Camera()
-//    var clothesObstacle = SKSpriteNode(color: .cyan, size: CGSize(width: 400, height: 400))
-    var clothesObstacle = SKSpriteNode(color: .cyan, size: CGSize(width: 588, height: 426))
+    
+    var clothesObstacle = SKSpriteNode(texture: SKTexture(imageNamed: "doorObstacle1.png"), size: CGSize(width: 588, height: 426))
+    var lightSwitch = SKSpriteNode(imageNamed: "lightswitch1")
+    var pan = SKSpriteNode(texture: SKTexture(imageNamed: "pan1"), size: CGSize(width: 576, height: 1728))
+    var zz = SKSpriteNode(texture: SKTexture(imageNamed: "ZZ1"), size: CGSize(width: 200, height: 200))
     
     var backgroundMusic = SKAudioNode(fileNamed: "backgroundMusic.wav")
     var stepsSound1 = SKAudioNode(fileNamed: "steps.wav")
     var stepsSound2 = SKAudioNode(fileNamed:"steps.wav")
+    var interationSound = SKAudioNode(fileNamed: "steps.wav")
     var jumpSound = SKAudioNode(fileNamed: "jump.wav")
     var landedSound = SKAudioNode(fileNamed: "landed.wav")
 
@@ -56,6 +61,8 @@ class GameScene: SKScene {
         setupKitchen()
         setupSounds()
         setupChatBox()
+        
+        chatLabel.text = "O gatinho Nina caiu no sono! Fale ‘Nina, acorde!’ ou toque nele para fazê-lo levantar!"
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -65,6 +72,7 @@ class GameScene: SKScene {
             stepsSound2.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
             jumpSound.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
             landedSound.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
+            interationSound.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
         }
         else {
             voiceCommand()
@@ -73,8 +81,7 @@ class GameScene: SKScene {
             stepsSound2.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
             jumpSound.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
             landedSound.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
-            
-            chatBox.position.x = cameraNode.position.x
+            interationSound.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
             if nina.position.y > self.frame.midY {
                 chatBox.position.y = self.frame.minY + 600
                 chatLabel.position = chatBox.position
@@ -121,20 +128,23 @@ class GameScene: SKScene {
         nina.size = CGSize(width: 400, height: 300)
         nina.position = CGPoint(x: 500, y: shelfWall3.position.y + shelfWall3.frame.height/2 + nina.frame.height/2)
         addChild(nina)
-        nina.zPosition = 98
+        nina.zPosition = 100
         
         isListening.fontColor = .clear
         isListening.fontName = "Greybeard22pxBold"
         isListening.fontSize = 150
         
+        zz.run(zzAnimation, withKey: "zzAnimation")
+        zz.position = CGPoint(x: nina.position.x + 150, y: nina.position.y + nina.frame.height/2)
+        
         addChild(isListening)
+        addChild(zz)
     }
     
     func setupDonna() {
-        donna = SKSpriteNode(imageNamed: "iddleFront")
-        donna.name = "donna"
+        donna.run(donnaLampAnimation, withKey: "donnaLampAnimation")
         donna.size = CGSize(width: 1000, height: 1000)
-        donna.position = CGPoint(x: chair.position.x, y: chair.position.y + chair.frame.height/2 + donna.frame.height/2 - 100)
+        donna.position = CGPoint(x: chair.position.x, y: chair.position.y + chair.frame.height/2 + donna.frame.height/2 - 50)
         addChild(donna)
         donna.zPosition = 99
     }
@@ -160,21 +170,23 @@ class GameScene: SKScene {
         landedSound.autoplayLooped = false
         nina.addChild(landedSound)
         
+        interationSound.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
+        interationSound.autoplayLooped = false
+        nina.addChild(interationSound)
     }
     
     func setupChatBox() {
         chatBox = SKSpriteNode(imageNamed: "buttonBgWide")
         chatBox.position.x = cameraNode.position.x
         chatBox.size = CGSize(width: 3750, height: 800)
-        chatBox.zPosition = 101
         
         chatLabel.position.x = chatBox.position.x
         chatLabel = SKLabelNode(fontNamed: "Greybeard22pxBold")
         chatLabel.horizontalAlignmentMode = .center
-        chatLabel.fontSize = 180
+        chatLabel.fontSize = 150
         chatLabel.zPosition = 102
         chatLabel.numberOfLines = 0
-        chatLabel.preferredMaxLayoutWidth = 3600
+        chatLabel.preferredMaxLayoutWidth = 3400
         chatLabel.lineBreakMode = .byCharWrapping
         chatLabel.verticalAlignmentMode = .center
 

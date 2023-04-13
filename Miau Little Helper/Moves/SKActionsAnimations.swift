@@ -83,4 +83,40 @@ extension GameScene {
     var wakingUp: SKAction {
         return SKAction.animate(with: ninaWakingTexture, timePerFrame: 0.1)
     }
+    
+    var interact: SKAction {
+        return SKAction.sequence([
+            SKAction.animate(with: ninaInteractTexture, timePerFrame: 0.1),
+            SKAction.run {
+                self.interationSound.run(SKAction.play())
+                self.nina.texture = SKTexture(imageNamed: "nina1")
+            }
+        ])
+    }
+    
+    var panAnimation: SKAction {
+        let pan = SKAction.animate(with: panTexture, timePerFrame: 0.1)
+        
+        return SKAction.repeatForever(pan)
+    }
+    
+    var panSolved: SKAction {
+        let panSolved = SKAction.animate(with: panSolvedTexture, timePerFrame: 0.1)
+        
+        return SKAction.repeatForever(panSolved)
+    }
+    
+    var zzAnimation: SKAction {
+        let zzAnimation = SKAction.animate(with: zzTexture, timePerFrame: 0.5)
+        return SKAction.repeatForever(zzAnimation)
+    }
+    
+    var doorObstacleAnimation: SKAction {
+        return SKAction.animate(with: doorObstacleTexture, timePerFrame: 0.1)
+    }
+    
+    var donnaLampAnimation: SKAction {
+        let donnaLampAnimation = SKAction.animate(with: donnaLampTexture, timePerFrame: 1)
+        return SKAction.repeatForever(donnaLampAnimation)
+    }
 }

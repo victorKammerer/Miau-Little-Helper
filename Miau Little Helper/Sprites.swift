@@ -68,6 +68,56 @@ extension GameScene {
         ]
     }
     
+    var ninaInteractAtlas: SKTextureAtlas {
+        return SKTextureAtlas(named: "ninaInteracting")
+    }
+    
+    var ninaInteractTexture: [SKTexture] {
+        var ninaInteractTexture : [SKTexture] = []
+        for i in 1...ninaInteractAtlas.textureNames.count {
+            let textureName = "bulinando\(i)"
+            ninaInteractTexture.append(ninaInteractAtlas.textureNamed(textureName))
+        }
+        return ninaInteractTexture
+    }
+    
+    var panAtlas: SKTextureAtlas {
+        return SKTextureAtlas(named: "pan")
+    }
+    
+    var panTexture: [SKTexture] {
+        var panTexture : [SKTexture] = []
+        for i in 1...panAtlas.textureNames.count {
+            let textureName = "pan\(i)"
+            panTexture.append(panAtlas.textureNamed(textureName))
+        }
+        return panTexture
+    }
+    
+    var panSolvedAtlas: SKTextureAtlas {
+        return SKTextureAtlas(named: "panSolved")
+    }
+    
+    var panSolvedTexture: [SKTexture] {
+        var panSolvedTexture : [SKTexture] = []
+        for i in 1...panSolvedAtlas.textureNames.count {
+            let textureName = "panSolved\(i)"
+            panSolvedTexture.append(panSolvedAtlas.textureNamed(textureName))
+        }
+        return panSolvedTexture
+    }
+    
+    var zzAtlas: SKTextureAtlas {
+        return SKTextureAtlas(named: "zz")
+    }
+    
+    var zzTexture: [SKTexture] {
+        return [
+            zzAtlas.textureNamed("ZZ1"),
+            zzAtlas.textureNamed("ZZ2"),
+        ]
+    }
+    
     var donnaAtlas : SKTextureAtlas {
         return SKTextureAtlas(named: "donna")
     }
@@ -79,6 +129,30 @@ extension GameScene {
             donnaAtlas.textureNamed("walk3"),
             donnaAtlas.textureNamed("walk4")
         ]
+    }
+    
+    var donnaLampAtlas : SKTextureAtlas {
+        return SKTextureAtlas(named: "donnaLamp")
+    }
+    
+    var donnaLampTexture : [SKTexture] {
+        return [
+            donnaLampAtlas.textureNamed("donnaLamp1"),
+            donnaLampAtlas.textureNamed("donnaLamp2")
+        ]
+    }
+    
+    var doorObstacleAtlas: SKTextureAtlas {
+        return SKTextureAtlas(named: "doorObstacle")
+    }
+    
+    var doorObstacleTexture: [SKTexture] {
+        var doorObstacleTexture : [SKTexture] = []
+        for i in 1...doorObstacleAtlas.textureNames.count {
+            let textureName = "doorObstacle\(i)"
+            doorObstacleTexture.append(doorObstacleAtlas.textureNamed(textureName))
+        }
+        return doorObstacleTexture
     }
 }
 

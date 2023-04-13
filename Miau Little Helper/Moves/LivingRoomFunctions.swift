@@ -44,5 +44,25 @@ extension GameScene {
             ninaPosition = "floor3"
         }
     }
+    
+    func turnOff () {
+        if ninaPosition == "sofa" && lightSwitch.name == "lightswitch" {
+            self.interationDisabled = true
+            nina.run(SKAction.sequence([
+            interact,
+            SKAction.run {
+                self.lightSwitch.texture = SKTexture(imageNamed: "lightswitch2")
+                self.lightSwitch.name = "solvedLamp"
+                self.interationDisabled = false
+            }
+            ]))
+        } else if lightSwitch.name == "lightswitch" && currentRoom == 2 {
+            let scriptText = scriptNotInteractive(node: "lightswitch")
+            chatLabel.text = scriptText
+            if scriptText != "" {
+                textIsShowing = true
+            }
+        }
+    }
 }
 
