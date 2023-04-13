@@ -11,6 +11,7 @@ struct StartView: View {
     @AppStorage("pause") var pause: Bool = false
     @AppStorage("volumeMusic") var volumeMusic: Double = 1.0
     @AppStorage("volumeEffects") var volumeEffects: Double = 1.0
+    @AppStorage("showCredit") var showCredit: Bool = false
 
     var body: some View {
         if #available(iOS 16.0, *) {
@@ -89,6 +90,7 @@ struct StartView: View {
                 }
                 .onAppear() {
                     pause = false
+                    showCredit = false
                 }
             }
         }

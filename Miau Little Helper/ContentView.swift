@@ -17,10 +17,12 @@ var scene: SKScene {
 
 
 struct ContentView: View {
+    @AppStorage("showCredit") var showCredit: Bool = false
     var body: some View {
         GeometryReader{
             geo in
             ZStack{
+                NavigationLink("", destination: CreditsView().navigationBarBackButtonHidden(true),isActive: $showCredit)
                 SpriteView(scene: scene)
                     .ignoresSafeArea()
                 VStack{

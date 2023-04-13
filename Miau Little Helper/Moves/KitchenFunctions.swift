@@ -23,7 +23,7 @@ extension GameScene {
     }
     
     func turnOffFire() {
-        if ninaPosition == "kitchenShelf" && pan.name == "pan" {
+        if ninaPosition == "kitchenShelf" && pan.name == "cooker" {
             self.interationDisabled = true
             nina.run(SKAction.sequence([
             interact,
@@ -34,10 +34,10 @@ extension GameScene {
                 self.pan.run(self.panSolved)
                 self.interationDisabled = false
                 self.textIsShowing = true
-                self.chatLabel.text = "E agora? Cadê a Donna? Vou atrás dela!"
+                self.chatLabel.text = "Aii que soninho, vou voltar para o quarto e dormir"
             }
             ]))
-        } else if (ninaPosition != "kitchenShelf" && currentRoom == 3) && pan.name! == "pan"  {
+        } else if (ninaPosition != "kitchenShelf" && currentRoom == 3) && pan.name! == "cooker"  {
             let scriptText = scriptNotInteractive(node: "cooker")
             chatLabel.text = scriptText
             if scriptText != "" {
@@ -56,7 +56,11 @@ extension GameScene {
         } else if ninaPosition == "floor3" && pan.name == "panSolved" {
             self.interationDisabled = true
             nina.run(SKAction.sequence([
-                kitchenFloorToBedroom
+                kitchenFloorToBedroom,
+                SKAction.run {
+                    self.showCredit = true
+                    self.nina.removeAllActions()
+                }
             ]))
         }
     }

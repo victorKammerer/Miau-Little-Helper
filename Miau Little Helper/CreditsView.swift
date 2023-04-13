@@ -73,7 +73,7 @@ struct CreditsView: View {
                 VStack{
                     HStack{
                         Spacer()
-                        Button (action: { presentation.wrappedValue.dismiss() } ){
+                        Button (action: { NavigationUtil.popToRootView() } ){
                             ZStack {
                                 Image("buttonBg")
                                     .resizable()
