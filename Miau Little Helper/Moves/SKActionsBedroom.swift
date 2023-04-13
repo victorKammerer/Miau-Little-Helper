@@ -17,8 +17,8 @@ extension GameScene {
 //            SKAction.wait(forDuration: 1.5),
 //            goLeftandJumpBelow(of: shelfWall2, offset: 0, duration: 1, jumpHeight: 200, destination: shelfWall3, distance: 400),
 //            SKAction.wait(forDuration: 1.5),
-            goRightandJumpBelow(of: shelfWall3, offset: 0, duration: 1, jumpHeight: 200, destination: bed, distance: 300),
-            SKAction.wait(forDuration: 1.5)
+            goRightandJumpBelow(of: shelfWall3, offset: 0, duration: 1, jumpHeight: 200, destination: bed, distance: 680, offsetLand: 18),
+            SKAction.wait(forDuration: 0.5)
         ])
         
         return shelfWalltoBed
@@ -27,10 +27,9 @@ extension GameScene {
     var bedToShelfWall : SKAction {
         
         let bedToShelfWall = SKAction.sequence([
-            rightBorder(of: bed, offset: 700, duration: 1),
+            rightBorder(of: bed, offset: 50, duration: 0.5),
             SKAction.wait(forDuration: 0.5),
-            goLeftandJumpUpward(of: bed, offset: 800, duration: 1, jumpHeight: 50, destination: shelfWall3, distance: 700, slider: 30),
-            SKAction.wait(forDuration: 0.5),
+            goLeftandJumpUpward(of: bed, offset: 1200, duration: 0.2, jumpHeight: 50, destination: shelfWall3, distance: 800, slider: 30, offsetLand: 0),
             leftBorder(of: shelfWall3, offset: 0, duration: 0.5),
 //            SKAction.wait(forDuration: 0.5),
 //            goRightandJumpUpward(of: shelfWall3, offset: 300, duration: 1, jumpHeight: 50, destination: shelfWall2, distance: 300, slider: 30),
@@ -44,21 +43,21 @@ extension GameScene {
     }
     
     var bedToFloor : SKAction {
-        let bedToFloor = goRightandJumpBelow(of: bed, offset: 500, duration: 1, jumpHeight: 200, destination: floor, distance: 500)
+        let bedToFloor = goRightandJumpBelow(of: bed, offset: 100, duration: 0.5, jumpHeight: 200, destination: floor, distance: 500, offsetLand: 0)
 
         return bedToFloor
     }
     
     var floorToBed : SKAction {
         let floorToBed = SKAction.sequence([
-            rightBorder(of: floor, offset: 8700, duration: 1),
-            goLeftandJumpUpward(of: floor, offset: 2700, duration: 1, jumpHeight: 300, destination: bed, distance: 1300, slider: 20)
+            rightBorder(of: floor, offset: 9100, duration: 0.5),
+            goLeftandJumpUpward(of: floor, offset: 2400, duration: 0.2, jumpHeight: 300, destination: bed, distance: 1000, slider: 20, offsetLand: 18)
         ])
         return floorToBed
     }
     
     var floorToObstacle : SKAction {
-        let floorToObstacle = rightBorder(of: clothesObstacle, offset: clothesObstacle.frame.width, duration: 1)
+        let floorToObstacle = rightBorder(of: clothesObstacle, offset: clothesObstacle.frame.width - 150, duration: 1)
         return floorToObstacle
     }
     

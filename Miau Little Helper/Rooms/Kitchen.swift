@@ -82,6 +82,14 @@ extension GameScene {
         addChild(pan)
     }
     
+    var endGame : SKSpriteNode {
+        let endGame = SKSpriteNode(color: .red, size: CGSize(width: 500, height: 2500))
+        endGame.position = CGPoint(x: 8000 + endGame.frame.width/2, y: endGame.frame.height/2 + 100)
+        endGame.zPosition = 2
+        endGame.name = "endGame"
+        return endGame
+    }
+    
     func setupKitchen() {
         cooker.position = CGPoint(x: 9220 + cooker.frame.width/2, y: cooker.frame.height/2 + 260)
         cooker.name = "cooker"
@@ -97,5 +105,6 @@ extension GameScene {
         addChild(kitchenShelf3)
         addChild(cabinet2)
         addChild(spices)
+        addChild(endGame)
     }
 }

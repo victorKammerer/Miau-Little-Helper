@@ -9,7 +9,7 @@ import SpriteKit
 
 extension GameScene {
     
-    func jumpBelow(jumpHeight: CGFloat, destination: SKSpriteNode, distance: CGFloat, leftOrRight: String) -> SKAction {
+    func jumpBelow(jumpHeight: CGFloat, destination: SKSpriteNode, distance: CGFloat, leftOrRight: String, offsetLand: CGFloat) -> SKAction {
         
         
         SKAction.sequence([
@@ -26,14 +26,14 @@ extension GameScene {
             SKAction.moveBy(x: distance/10, y: -jumpHeight/4, duration: 0.05),
             SKAction.moveBy(x: distance/10, y: -(3 * jumpHeight)/10, duration: 0.05),
             SKAction.run {
-                self.nina.run(self.land(on: destination, duration: 0.5))
+                self.nina.run(self.land(on: destination, duration: 0.5, offsetLand: offsetLand))
                 self.nina.run(SKAction.moveBy(x: distance/5, y: 0, duration: 0.5))
             },
             SKAction.wait(forDuration: 0.5)
         ])
     }
     
-    func jumpUpward(of origin: SKSpriteNode,jumpHeight: CGFloat, destination: SKSpriteNode, distance: CGFloat, slider: CGFloat, leftOrRight : String) -> SKAction {
+    func jumpUpward(of origin: SKSpriteNode,jumpHeight: CGFloat, destination: SKSpriteNode, distance: CGFloat, slider: CGFloat, leftOrRight : String, offsetLand: CGFloat) -> SKAction {
         
         let trueHeight = (destination.position.y + destination.frame.height/2 + jumpHeight) - (origin.position.y + origin.frame.height/2)
         
@@ -51,41 +51,41 @@ extension GameScene {
             SKAction.moveBy(x: distance/10, y: -jumpHeight/4, duration: 0.05),
             SKAction.moveBy(x: distance/10, y: -(2 * jumpHeight)/10, duration: 0.05),
             SKAction.run {
-                self.nina.run(self.land(on: destination, duration: 0.05))
+                self.nina.run(self.land(on: destination, duration: 0.05, offsetLand: offsetLand))
                 self.nina.run(SKAction.moveBy(x: distance/20, y: 0, duration: 0.05))
             },
             SKAction.wait(forDuration: 0.05),
-            SKAction.moveBy(x: slider, y: 0, duration: 0.5),
+            SKAction.moveBy(x: slider, y: 0, duration: 0.1),
+            SKAction.wait(forDuration: 0.1)
+        ])
+    }
+    
+    func goRightandJumpUpward(of node: SKSpriteNode, offset: CGFloat, duration: TimeInterval, jumpHeight: CGFloat, destination: SKSpriteNode, distance: CGFloat, slider: CGFloat, offsetLand: CGFloat) -> SKAction {
+        return SKAction.sequence([
+            rightBorder(of: node, offset: offset, duration: duration),
+            jumpUpward(of: node, jumpHeight: jumpHeight, destination: destination, distance: distance, slider: slider, leftOrRight: "right", offsetLand: offsetLand),
             SKAction.wait(forDuration: 0.5)
         ])
     }
     
-    func goRightandJumpUpward(of node: SKSpriteNode, offset: CGFloat, duration: TimeInterval, jumpHeight: CGFloat, destination: SKSpriteNode, distance: CGFloat, slider: CGFloat) -> SKAction {
-        return SKAction.sequence([
-            rightBorder(of: node, offset: offset, duration: duration),
-            jumpUpward(of: node, jumpHeight: jumpHeight, destination: destination, distance: distance, slider: slider, leftOrRight: "right"),
-            SKAction.wait(forDuration: 0.5)
-        ])
-    }
-    
-    func goLeftandJumpUpward(of node: SKSpriteNode, offset: CGFloat, duration: TimeInterval, jumpHeight: CGFloat, destination: SKSpriteNode, distance: CGFloat, slider: CGFloat) -> SKAction {
+    func goLeftandJumpUpward(of node: SKSpriteNode, offset: CGFloat, duration: TimeInterval, jumpHeight: CGFloat, destination: SKSpriteNode, distance: CGFloat, slider: CGFloat, offsetLand: CGFloat) -> SKAction {
         return SKAction.sequence([
             leftBorder(of: node, offset: offset, duration: duration),
-            jumpUpward(of: node, jumpHeight: jumpHeight, destination: destination, distance: -distance, slider: -slider, leftOrRight: "left"),
+            jumpUpward(of: node, jumpHeight: jumpHeight, destination: destination, distance: -distance, slider: -slider, leftOrRight: "left", offsetLand: offsetLand),
         ])
     }
     
-    func goRightandJumpBelow(of node: SKSpriteNode, offset: CGFloat ,duration: TimeInterval, jumpHeight: CGFloat, destination: SKSpriteNode, distance: CGFloat) -> SKAction {
+    func goRightandJumpBelow(of node: SKSpriteNode, offset: CGFloat ,duration: TimeInterval, jumpHeight: CGFloat, destination: SKSpriteNode, distance: CGFloat, offsetLand: CGFloat) -> SKAction {
         return SKAction.sequence([
             rightBorder(of: node, offset: offset, duration: duration),
-            jumpBelow(jumpHeight: jumpHeight, destination: destination, distance: distance, leftOrRight: "right"),
+            jumpBelow(jumpHeight: jumpHeight, destination: destination, distance: distance, leftOrRight: "right", offsetLand: offsetLand),
         ])
     }
     
-    func goLeftandJumpBelow(of node: SKSpriteNode, offset: CGFloat ,duration: TimeInterval, jumpHeight: CGFloat, destination: SKSpriteNode, distance: CGFloat) -> SKAction {
+    func goLeftandJumpBelow(of node: SKSpriteNode, offset: CGFloat ,duration: TimeInterval, jumpHeight: CGFloat, destination: SKSpriteNode, distance: CGFloat, offsetLand: CGFloat) -> SKAction {
         return SKAction.sequence([
             leftBorder(of: node, offset: offset, duration: duration),
-            jumpBelow(jumpHeight: jumpHeight, destination: destination, distance: -distance, leftOrRight: "left"),
+            jumpBelow(jumpHeight: jumpHeight, destination: destination, distance: -distance, leftOrRight: "left", offsetLand: offsetLand),
         ])
     }
     

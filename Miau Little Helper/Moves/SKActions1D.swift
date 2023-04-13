@@ -28,10 +28,10 @@ extension GameScene {
         ])
     }
     
-    func land(on destination: SKSpriteNode, duration: TimeInterval) -> SKAction {
+    func land(on destination: SKSpriteNode, duration: TimeInterval, offsetLand: CGFloat) -> SKAction {
         
         return SKAction.sequence([
-            SKAction.moveTo(y: destination.position.y + destination.frame.height/2 + self.nina.frame.height/2, duration: duration),
+            SKAction.moveTo(y: destination.position.y + destination.frame.height/2 + self.nina.frame.height/2 - offsetLand, duration: duration),
             SKAction.run {
                 self.landedSound.run(SKAction.play())
             },

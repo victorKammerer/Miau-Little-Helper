@@ -46,4 +46,18 @@ extension GameScene {
         }
     }
     
+    func endGameFunc() {
+        if ninaPosition == "kitchenShelf" && pan.name == "panSolved" {
+            self.interationDisabled = true
+            nina.run(SKAction.sequence([
+                kitchenShelfToFloor,
+                kitchenFloorToBedroom
+            ]))
+        } else if ninaPosition == "floor3" && pan.name == "panSolved" {
+            self.interationDisabled = true
+            nina.run(SKAction.sequence([
+                kitchenFloorToBedroom
+            ]))
+        }
+    }
 }
