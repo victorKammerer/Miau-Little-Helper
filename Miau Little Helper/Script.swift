@@ -29,7 +29,7 @@ extension GameScene {
     }
     
     func interaction(nodeName: String) {
-        if interationDisabled == false {
+        if interationDisabled == false && isNinaAwake {
             if nodeName == "bed" {
                 goToBed()
             } else if nodeName == "floor" {

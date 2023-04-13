@@ -167,6 +167,8 @@ extension GameScene {
             SKAction.run {
                 self.isNinaAwake = true
                 self.interationDisabled = false
+                self.chatLabel.text = "Ah, não! Caí no sono e deixei a Donna sozinha!"
+
             }
             ]))
         }
