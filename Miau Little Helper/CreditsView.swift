@@ -26,7 +26,7 @@ struct CreditsView: View {
                             .font(.custom("Greybeard22pxBold", size: geo.size.width/16))
                             .foregroundColor(.white)
                             .minimumScaleFactor(0.01)
-                        Text("App desenvolvido para o challenge inPada na Apple Developers Academy | UFPE 2023\n\nEquipe:\nJoão Pedro Moreira\nGiovanna Paz\nRaphael Prestes\nRinaldo da Silva\n Victor Kammerer")
+                        Text("App desenvolvido para o challenge imPada, na Apple Developers Academy | UFPE 2023\n\nEquipe:\nJoão Pedro Moreira\nGiovanna Paz\nRaphael Prestes\nRinaldo da Silva\n Victor Kammerer")
                             .font(.custom("Greybeard22pxBold", size: geo.size.width/30))
                             .foregroundColor(.white)
                             .padding(.top, geo.size.width/1000)
@@ -46,7 +46,7 @@ struct CreditsView: View {
                                 .lineLimit(10000)
                         }
                         
-                        Text("  Os maiores créditos vão para nossa maior inspiração a Nina")
+                        Text("  Os maiores créditos vão para nossa maior inspiração, a Nina")
                             .font(.custom("Greybeard22pxBold", size: geo.size.width/30))
                             .foregroundColor(.white)
                             .padding(.top, geo.size.width/90)
@@ -55,6 +55,8 @@ struct CreditsView: View {
                         Image("ninaReal")
                             .resizable()
                             .scaledToFit()
+                            .cornerRadius(50)
+                            .shadow(radius: 10)
                         
                         Text("  Somos responsáveis por ter uma abordagem honesta sobre nossos produtos, sem exageros ou promesas vazias, tratando com respeito os nossos usuários. \n  Nós mostraremos ao mundo um jogo onde o principal controle é por voz, criando uma possibilidade ampla para a interação em nosso jogo, e o personagem principal é um gatinho fofinho.")
                             .font(.custom("Greybeard22pxBold", size: geo.size.width/30))
@@ -66,9 +68,10 @@ struct CreditsView: View {
                             .frame(width: geo.size.width/2.5, height:
                                     geo.size.width/3)
                             .scaledToFit()
+                            .padding()
                     }.padding(geo.size.width/13.5)
                         .clipped()
-                }
+                }.frame(width:1200, height: 800)
                 
                 VStack{
                     HStack{
