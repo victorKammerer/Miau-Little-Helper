@@ -157,6 +157,7 @@ extension GameScene {
     
     func wakeUp() {
         if isNinaAwake == false {
+            isNinaAwake = true
             self.interationDisabled = true
             self.isListening.fontColor = .clear
             nina.removeAction(forKey: "ninaSleeping")
@@ -165,7 +166,6 @@ extension GameScene {
             nina.run(SKAction.sequence([
             wakingUp,
             SKAction.run {
-                self.isNinaAwake = true
                 self.interationDisabled = false
                 self.chatLabel.text = "Ah, não! Caí no sono e deixei a Donna sozinha!"
 

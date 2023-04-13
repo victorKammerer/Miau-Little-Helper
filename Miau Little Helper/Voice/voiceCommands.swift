@@ -46,10 +46,7 @@ extension GameScene {
         }
 
         if voiceCommandAllowed == true {
-            if voiceRecognizer.command == "acorda" {
-                voiceRecognizer.command = ""
-                wakeUp()
-            } else if voiceRecognizer.command == "cama" || voiceRecognizer.command == "colchão" || (voiceRecognizer.command == "desça" && ninaPosition == "shelfWall") {
+            if voiceRecognizer.command == "cama" || voiceRecognizer.command == "colchão" || (voiceRecognizer.command == "desça" && ninaPosition == "shelfWall") {
                 voiceRecognizer.command = ""
                 goToBed()
             } else if voiceRecognizer.command == "chão" || voiceRecognizer.command == "piso" || (voiceRecognizer.command == "desça" && ninaPosition == "bed") {

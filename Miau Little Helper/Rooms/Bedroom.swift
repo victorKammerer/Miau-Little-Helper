@@ -13,6 +13,13 @@ extension GameScene {
         floor.name = "floor"
         return floor
     }
+    var floor2 : SKSpriteNode {
+        let floor = SKSpriteNode(color: .clear
+                                 , size: CGSize(width: 12000, height: 300))
+        floor.position = CGPoint(x:floor.frame.width/2, y: floor.frame.height/2)
+        floor.name = "floor"
+        return floor
+    }
     var door : SKSpriteNode {
         let door = SKSpriteNode(color: .clear, size: CGSize(width: 700, height: 2800))
         door.position = CGPoint(x: 4000 - door.frame.width/2, y: door.frame.height/2 + 100)
@@ -110,5 +117,6 @@ extension GameScene {
         addChild(clothes)
         addChild(plant2)
         addChild(doorAsset)
+        addChild(floor2)
     }
 }
