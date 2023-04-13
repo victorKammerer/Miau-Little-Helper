@@ -50,6 +50,8 @@ extension GameScene {
                 turnOffFire()
             } else if nodeName == "lightswitch" {
                 turnOff()
+            } else if nodeName == "endGame" {
+                endGameFunc()
             }
         }
     }
@@ -60,6 +62,8 @@ extension GameScene {
         switch node {
             
 //      Bedroom
+        case "endGame":
+            isInteractive = true
         case "bed":
             isInteractive = true
         case "floor":

@@ -11,8 +11,8 @@ extension GameScene {
     
     var floorToSofa : SKAction {
         let floorToSofa = SKAction.sequence([
-            goRightandJumpUpward(of: floor, offset: 6000, duration: 1, jumpHeight: 300, destination: sofa, distance: 400, slider: 30),
-            goRightandJumpUpward(of: sofa, offset: 100, duration: 1, jumpHeight: 300, destination: sofaTop, distance: 200, slider: 20),
+            goRightandJumpUpward(of: floor, offset: 5800, duration: 1.5, jumpHeight: 300, destination: sofa, distance: 420, slider: 30, offsetLand: 45),
+            goRightandJumpUpward(of: sofa, offset: 130, duration: 0.1, jumpHeight: 300, destination: sofaTop, distance: 200, slider: 20, offsetLand: 0),
         ])
         
         return floorToSofa
@@ -20,8 +20,8 @@ extension GameScene {
     
     var sofaToFloor : SKAction {
         let sofaToFloor = SKAction.sequence([
-            goLeftandJumpBelow(of: sofaTop, offset: 0, duration: 1, jumpHeight: 300, destination: sofa, distance: 100),
-            goLeftandJumpBelow(of: sofa, offset: 0, duration: 1, jumpHeight: 300, destination: floor, distance: 500),
+            goLeftandJumpBelow(of: sofaTop, offset: 0, duration: 0.1, jumpHeight: 300, destination: sofa, distance: 100, offsetLand: 45),
+            goLeftandJumpBelow(of: sofa, offset: 130, duration: 1, jumpHeight: 300, destination: floor, distance: 500, offsetLand: 0),
         ])
         
         return sofaToFloor

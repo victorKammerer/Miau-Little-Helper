@@ -85,9 +85,16 @@ extension GameScene {
                     },
                     SKAction.wait(forDuration: 0.5),
                     SKAction.run {
-                        self.donna.removeFromParent()
+                        self.donna.isHidden = true
+                        self.nina.xScale = -1
+                        self.isListening.fontColor = .red
+                        self.isListening.position = CGPoint(x: self.nina.position.x, y: self.nina.position.y + self.nina.frame.height/2)
+                    },
+                    SKAction.wait(forDuration: 2),
+                    SKAction.run {
                         self.interationDisabled = false
                         self.textIsShowing = true
+                        self.isListening.fontColor = .clear
                         self.chatLabel.text = "Que cheiro é esse? Parece que vem da cozinha!"
                     }
                 ]))
