@@ -37,13 +37,6 @@ extension GameScene {
         shelf.name = "kitchenShelf"
         return shelf
     }
-    
-    var cooker : SKSpriteNode {
-        let cooker = SKSpriteNode(color: .clear, size: CGSize(width: 860, height: 950))
-        cooker.position = CGPoint(x: 9220 + cooker.frame.width/2, y: cooker.frame.height/2 + 260)
-        cooker.name = "cooker"
-        return cooker
-    }
 
     var sink : SKSpriteNode {
         let sink = SKSpriteNode(color: .clear, size: CGSize(width: 1350, height: 1100))
@@ -90,6 +83,9 @@ extension GameScene {
     }
     
     func setupKitchen() {
+        cooker.position = CGPoint(x: 9220 + cooker.frame.width/2, y: cooker.frame.height/2 + 260)
+        cooker.name = "cooker"
+        
         setupPan()
         addChild(washMachine)
         addChild(kitchenShelf)

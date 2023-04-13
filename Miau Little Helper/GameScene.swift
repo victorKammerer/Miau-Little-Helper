@@ -49,18 +49,22 @@ class GameScene: SKScene {
     var interationSound = SKAudioNode(fileNamed: "steps.wav")
     var jumpSound = SKAudioNode(fileNamed: "jump.wav")
     var landedSound = SKAudioNode(fileNamed: "landed.wav")
-
+    
+    var lampCover = SKSpriteNode(color: UIColor(named: "wall")!, size: CGSize(width: 200, height: 200))
+    var chair = SKSpriteNode(texture: SKTexture(imageNamed: "chair"))
+    var lamp = SKSpriteNode(color: .clear, size: CGSize(width: 200, height: 400))
+    var cooker = SKSpriteNode(color: .clear, size: CGSize(width: 860, height: 950))
     
     override func didMove(to view: SKView) {
         voiceRecognizer.requestPermission()
         setupCamera()
         setupWindows()
         setupBackground()
+        setupLivingRoom()
+        setupKitchen()
         setupDonna()
         setupNina()
         setupRoom()
-        setupLivingRoom()
-        setupKitchen()
         setupSounds()
         setupChatBox()
         
@@ -132,6 +136,7 @@ class GameScene: SKScene {
     func setupNina() {
         nina = SKSpriteNode(imageNamed: "waking1")
         nina.run(SKAction.repeatForever(sleeping), withKey: "ninaSleeping")
+        nina.name = "nina"
         nina.size = CGSize(width: 400, height: 300)
         nina.position = CGPoint(x: 500, y: shelfWall3.position.y + shelfWall3.frame.height/2 + nina.frame.height/2)
         addChild(nina)
