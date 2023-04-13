@@ -47,6 +47,7 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         voiceRecognizer.requestPermission()
         setupCamera()
+        setupWindows()
         setupBackground()
         setupNina()
         setupDonna()
@@ -95,9 +96,9 @@ class GameScene: SKScene {
     }
     
     func setupBackground() {
-        background1 = SKSpriteNode(color: .red, size: CGSize(width: self.frame.height * 4 / 3, height: self.frame.height))
-        background2 = SKSpriteNode(color: .blue, size: CGSize(width: self.frame.height * 4 / 3, height: self.frame.height))
-        background3 = SKSpriteNode(color: .green, size: CGSize(width: self.frame.height * 4 / 3, height: self.frame.height))
+        background1 = SKSpriteNode(color: .clear, size: CGSize(width: self.frame.height * 4 / 3, height: self.frame.height))
+        background2 = SKSpriteNode(color: .clear, size: CGSize(width: self.frame.height * 4 / 3, height: self.frame.height))
+        background3 = SKSpriteNode(color: .clear, size: CGSize(width: self.frame.height * 4 / 3, height: self.frame.height))
         
         background1.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
         background2.position = CGPoint(x: background1.frame.maxX + background2.size.width/2, y: self.frame.midY)
