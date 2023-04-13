@@ -42,7 +42,7 @@ extension GameScene {
                 goToDoorRoom()
             } else if nodeName == "sofa" {
                 goToSofa()
-            } else if nodeName == "kitchenNode" {
+            } else if nodeName == "kitchenNode" && didSolveLevel2 {
                 goToKitchen()
             } else if nodeName == "kitchenShelf" {
                 goToStove()

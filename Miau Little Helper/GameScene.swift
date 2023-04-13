@@ -32,6 +32,7 @@ class GameScene: SKScene {
     var voiceCommandAllowed = false
     var isNinaAwake = false
     var onboarding = false
+    var didSolveLevel2 = false
     var isListening = SKLabelNode(text: "!")
     var donnaAttention = SKLabelNode(text: "!")
     
