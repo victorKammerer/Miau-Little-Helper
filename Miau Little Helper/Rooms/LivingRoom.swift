@@ -8,7 +8,7 @@
 import SpriteKit
 
 extension GameScene {
-  
+    
     var sofa : SKSpriteNode {
         let sofa = SKSpriteNode(color: .clear, size: CGSize(width: 790, height: 600))
         sofa.position = CGPoint(x: 6000 + sofa.frame.width/2, y: sofa.frame.height/2 + 260)
@@ -74,21 +74,12 @@ extension GameScene {
         return cactus
     }
     
-    var lightSwitch: SKSpriteNode {
-        let lightSwitch = SKSpriteNode(imageNamed: "lightswitch1")
-        lightSwitch.texture!.filteringMode = SKTextureFilteringMode.nearest
-        lightSwitch.size = CGSize(width: 100, height: 270)
-        lightSwitch.position = CGPoint(x: 6800 + lightSwitch.frame.width/2, y: lightSwitch.frame.height/2 + 1400)
-        lightSwitch.name = "lightswitch"
-        return lightSwitch
+    var freezer : SKSpriteNode {
+        let freezer = SKSpriteNode(color: .clear, size: CGSize(width: 890, height: 1700))
+        freezer.position = CGPoint(x: 7000 + freezer.frame.width/2, y: freezer.frame.height/2 + 260)
+        freezer.name = "freezer"
+        return freezer
     }
-    
-        var freezer : SKSpriteNode {
-            let freezer = SKSpriteNode(color: .clear, size: CGSize(width: 890, height: 1700))
-            freezer.position = CGPoint(x: 7000 + freezer.frame.width/2, y: freezer.frame.height/2 + 260)
-            freezer.name = "freezer"
-            return freezer
-        }
     
     var cabinet : SKSpriteNode {
         let cabinet = SKSpriteNode(color: .clear, size: CGSize(width: 1660, height: 600))
@@ -97,7 +88,16 @@ extension GameScene {
         return cabinet
     }
     
+    func setupLightSwitch() {
+        lightSwitch.texture!.filteringMode = SKTextureFilteringMode.nearest
+        lightSwitch.size = CGSize(width: 100, height: 270)
+        lightSwitch.position = CGPoint(x: 6800 + lightSwitch.frame.width/2, y: lightSwitch.frame.height/2 + 1400)
+        lightSwitch.name = "lightswitch"
+    }
+    
     func setupLivingRoom() {
+        
+        setupLightSwitch()
         addChild(doorLivingRoom)
         addChild(sofa)
         addChild(sofaTop)

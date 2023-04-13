@@ -22,4 +22,25 @@ extension GameScene {
         }
     }
     
+    func turnOffFire() {
+        if ninaPosition == "kitchenShelf" && pan.name == "pan" {
+            self.interationDisabled = true
+            nina.run(SKAction.sequence([
+            interact,
+            SKAction.run {
+                self.pan.removeAction(forKey: "panAnimation")
+                self.pan.name = "panSolved"
+                self.pan.run(self.panSolved)
+                self.interationDisabled = false
+            }
+            ]))
+        } else if (ninaPosition != "kitchenShelf" && currentRoom == 3) && pan.name! == "pan"  {
+            let scriptText = scriptNotInteractive(node: "pan")
+            chatLabel.text = scriptText
+            if scriptText != "" {
+                textIsShowing = true
+            }
+        }
+    }
+    
 }
