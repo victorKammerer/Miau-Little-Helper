@@ -36,7 +36,7 @@ extension GameScene {
                 self.pan.run(self.panSolved)
                 self.interationDisabled = false
                 self.textIsShowing = true
-                self.chatLabel.text = "E agora? Cadê a Donna? Vou atrás dela!"
+                self.chatLabel.text = "Aii que soninho, vou voltar para o quarto e dormir"
             }
             ]))
         } else if (ninaPosition != "kitchenShelf" && currentRoom == 3) && pan.name! == "cooker"  {
@@ -60,7 +60,11 @@ extension GameScene {
             self.interationDisabled = true
             self.isListening.fontColor = .clear
             nina.run(SKAction.sequence([
-                kitchenFloorToBedroom
+                kitchenFloorToBedroom,
+                SKAction.run {
+                    self.showCredit = true
+                    self.nina.removeAllActions()
+                }
             ]))
         }
     }

@@ -50,7 +50,14 @@ extension GameScene {
                 self.zz.position = CGPoint(x: self.nina.position.x + 150, y: self.nina.position.y + self.nina.frame.height/2)
                 self.addChild(self.zz)
             },
-            SKAction.repeatForever(sleeping),
+            SKAction.run {
+                self.nina.run(SKAction.repeatForever(self.sleeping))
+            },
+            SKAction.wait(forDuration: 2),
+            SKAction.run {
+                self.showCredit = true
+                self.nina.removeAllActions()
+            }
         ])
         
         return kitchenFloorToBedroom

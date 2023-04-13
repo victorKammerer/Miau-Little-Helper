@@ -96,18 +96,18 @@ extension GameScene {
     
     var panAnimation: SKAction {
         let pan = SKAction.animate(with: panTexture, timePerFrame: 0.1)
-        
+        self.pan.texture!.filteringMode = SKTextureFilteringMode.nearest
         return SKAction.repeatForever(pan)
     }
     
     var panSolved: SKAction {
         let panSolved = SKAction.animate(with: panSolvedTexture, timePerFrame: 0.1)
-        
         return SKAction.repeatForever(panSolved)
     }
     
     var zzAnimation: SKAction {
         let zzAnimation = SKAction.animate(with: zzTexture, timePerFrame: 0.5)
+        self.zz.texture!.filteringMode = SKTextureFilteringMode.nearest
         return SKAction.repeatForever(zzAnimation)
     }
     

@@ -14,6 +14,7 @@ class GameScene: SKScene {
     @AppStorage("pause") var pause: Bool = false
     @AppStorage("volumeMusic") var volumeMusic: Double = 1.0
     @AppStorage("volumeEffects") var volumeEffects: Double = 1.0
+    @AppStorage("showCredit") var showCredit: Bool = false
 
     var voiceRecognizer = VoiceRecognizer()
     var backgroundCompleto = SKSpriteNode()
