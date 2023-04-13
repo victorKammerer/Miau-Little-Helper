@@ -44,6 +44,7 @@ class GameScene: SKScene {
     var lightSwitch = SKSpriteNode(imageNamed: "lightswitch1")
     var pan = SKSpriteNode(texture: SKTexture(imageNamed: "pan1"), size: CGSize(width: 576, height: 1728))
     var zz = SKSpriteNode(texture: SKTexture(imageNamed: "ZZ1"), size: CGSize(width: 200, height: 200))
+    var eletricity = SKSpriteNode(texture: SKTexture(imageNamed: "eletricity1"), size: CGSize(width: 350, height: 350))
     
     var backgroundMusic = SKAudioNode(fileNamed: "backgroundMusic.wav")
     var stepsSound1 = SKAudioNode(fileNamed: "steps.wav")

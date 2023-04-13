@@ -12,6 +12,7 @@ extension GameScene {
     func goToSofa () {
         if ninaPosition == "floor2" {
             self.interationDisabled = true
+            self.isListening.fontColor = .clear
             nina.run(SKAction.sequence([
                 floorToSofa,
                 SKAction.run {
@@ -25,6 +26,7 @@ extension GameScene {
     func goToKitchen () {
         if ninaPosition == "sofa" {
             self.interationDisabled = true
+            self.isListening.fontColor = .clear
             nina.run(SKAction.sequence([
                 sofaToFloor,
                 floorToKitchen,
@@ -37,6 +39,7 @@ extension GameScene {
             ninaPosition = "floor3"
         } else if ninaPosition == "floor2" {
             self.interationDisabled = true
+            self.isListening.fontColor = .clear
             nina.run(SKAction.sequence([
                 floorToKitchen,
                 SKAction.run {
@@ -52,9 +55,12 @@ extension GameScene {
     func turnOff () {
         if ninaPosition == "sofa" && lightSwitch.name == "lightswitch" {
             self.interationDisabled = true
+            self.isListening.fontColor = .clear
             nina.run(SKAction.sequence([
             interact,
             SKAction.run {
+                self.eletricity.removeFromParent()
+                self.eletricity.removeAllActions()
                 self.lightSwitch.texture = SKTexture(imageNamed: "lightswitch2")
                 self.lightSwitch.name = "solvedLamp"
 
@@ -64,6 +70,7 @@ extension GameScene {
                 self.lampCover.isHidden = true
                 self.lightSwitch.texture!.filteringMode = SKTextureFilteringMode.nearest
                 self.donna.run(SKAction.sequence([
+                    SKAction.wait(forDuration: 0.5),
                     self.jumpBelowDonna(jumpHeight: 100, destination: self.floor, distance: -450, offset: 100),
                     self.leftBorderDonna(of: self.floor, offset: 4300, duration: 0.5),
                     SKAction.run {

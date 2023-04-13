@@ -119,4 +119,9 @@ extension GameScene {
         let donnaLampAnimation = SKAction.animate(with: donnaLampTexture, timePerFrame: 1)
         return SKAction.repeatForever(donnaLampAnimation)
     }
+    
+    var eletricityAnimation: SKAction {
+        let eletricityAnimation = SKAction.animate(with: eletricityTexture, timePerFrame: 0.5)
+        return SKAction.repeatForever(eletricityAnimation)
+    }
 }

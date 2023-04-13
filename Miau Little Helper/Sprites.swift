@@ -89,6 +89,7 @@ extension GameScene {
         var panTexture : [SKTexture] = []
         for i in 1...panAtlas.textureNames.count {
             let textureName = "pan\(i)"
+            panAtlas.textureNamed(textureName).filteringMode = SKTextureFilteringMode.nearest
             panTexture.append(panAtlas.textureNamed(textureName))
         }
         return panTexture
@@ -102,6 +103,7 @@ extension GameScene {
         var panSolvedTexture : [SKTexture] = []
         for i in 1...panSolvedAtlas.textureNames.count {
             let textureName = "panSolved\(i)"
+            panSolvedAtlas.textureNamed(textureName).filteringMode = SKTextureFilteringMode.nearest
             panSolvedTexture.append(panSolvedAtlas.textureNamed(textureName))
         }
         return panSolvedTexture
@@ -153,6 +155,17 @@ extension GameScene {
             doorObstacleTexture.append(doorObstacleAtlas.textureNamed(textureName))
         }
         return doorObstacleTexture
+    }
+    
+    var eletricityAtlas: SKTextureAtlas {
+        return SKTextureAtlas(named: "eletricity")
+    }
+    
+    var eletricityTexture: [SKTexture] {
+        return [
+            eletricityAtlas.textureNamed("eletricity1"),
+            eletricityAtlas.textureNamed("eletricity2"),
+        ]
     }
 }
 

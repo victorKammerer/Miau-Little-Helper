@@ -89,6 +89,11 @@ extension GameScene {
         lamp.position = CGPoint(x: 5500 + lamp.frame.width/2, y: lamp.frame.height/2 + 1900)
         lamp.name = "lamp"
         
+        eletricity.run(eletricityAnimation, withKey: "eletricityAnimation")
+        eletricity.position = CGPoint(x: lampCover.position.x, y: lampCover.position.y + lampCover.frame.height/2 - 50)
+        
+        addChild(eletricity)
+        
         setupLightSwitch()
         addChild(doorLivingRoom)
         addChild(sofa)

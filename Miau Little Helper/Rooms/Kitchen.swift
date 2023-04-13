@@ -83,7 +83,7 @@ extension GameScene {
     }
     
     var endGame : SKSpriteNode {
-        let endGame = SKSpriteNode(color: .red, size: CGSize(width: 500, height: 2500))
+        let endGame = SKSpriteNode(color: .clear, size: CGSize(width: 500, height: 2500))
         endGame.position = CGPoint(x: 8000 + endGame.frame.width/2, y: endGame.frame.height/2 + 100)
         endGame.zPosition = 2
         endGame.name = "endGame"
