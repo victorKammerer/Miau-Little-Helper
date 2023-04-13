@@ -130,5 +130,29 @@ extension GameScene {
             donnaAtlas.textureNamed("walk4")
         ]
     }
+    
+    var donnaLampAtlas : SKTextureAtlas {
+        return SKTextureAtlas(named: "donnaLamp")
+    }
+    
+    var donnaLampTexture : [SKTexture] {
+        return [
+            donnaLampAtlas.textureNamed("donnaLamp1"),
+            donnaLampAtlas.textureNamed("donnaLamp2")
+        ]
+    }
+    
+    var doorObstacleAtlas: SKTextureAtlas {
+        return SKTextureAtlas(named: "doorObstacle")
+    }
+    
+    var doorObstacleTexture: [SKTexture] {
+        var doorObstacleTexture : [SKTexture] = []
+        for i in 1...doorObstacleAtlas.textureNames.count {
+            let textureName = "doorObstacle\(i)"
+            doorObstacleTexture.append(doorObstacleAtlas.textureNamed(textureName))
+        }
+        return doorObstacleTexture
+    }
 }
 

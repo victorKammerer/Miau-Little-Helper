@@ -47,14 +47,9 @@ extension GameScene {
             } else if nodeName == "kitchenShelf" {
                 goToStove()
             } else if nodeName == "cooker" {
-                // colocar isso em uma função
-                if ninaPosition != "kitchenShelf" {
-                    let scriptText = scriptNotInteractive(node: nodeName)
-                    chatLabel.text = scriptText
-                    if scriptText != "" {
-                        textIsShowing = true
-                    }
-                }
+                turnOffFire()
+            } else if nodeName == "lightswitch" {
+                turnOff()
             }
         }
     }

@@ -34,19 +34,7 @@ extension GameScene {
         bed.name = "bed"
         return bed
     }
-    //  var shelfWall : SKSpriteNode {
-    //    let shelfWall = SKSpriteNode(color: .clear, size: CGSize(width: 720, height: 100))
-    //    shelfWall.position = CGPoint(x: shelfWall.frame.width/2 + 300, y: shelfWall.frame.height/2 + 1900)
-    //    shelfWall.name = “shelfWall”
-    //    return shelfWall
-    //  }
-    //
-    //  var shelfWall2 : SKSpriteNode {
-    //    let shelfWall = SKSpriteNode(color: .cyan, size: CGSize(width: 720, height: 100))
-    //    shelfWall.position = CGPoint(x: shelfWall.frame.width/2 + 600, y: shelfWall.frame.height/2 + 1600)
-    //    shelfWall.name = “shelfWall”
-    //    return shelfWall
-    //  }
+    
     var shelfWall3 : SKSpriteNode {
         let shelfWall = SKSpriteNode(color: .clear, size: CGSize(width: 650, height: 85))
         shelfWall.position = CGPoint(x: shelfWall.frame.width/2 + 310, y: shelfWall.frame.height/2 + 1220)
@@ -56,7 +44,7 @@ extension GameScene {
     var mess : SKSpriteNode {
         let mess = SKSpriteNode(imageNamed: "obstacle")
         mess.size = CGSize(width: 600, height: 450)
-        mess.position = CGPoint(x: 650, y: mess.frame.height/2 + 110)
+        mess.position = CGPoint(x: 650, y: mess.frame.height/2 + 70)
         mess.name = "pile"
         return mess
     }

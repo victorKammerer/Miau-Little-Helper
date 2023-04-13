@@ -12,6 +12,7 @@ extension GameScene {
     func goToBed() {
         if ninaPosition == "shelfWall" {
             self.interationDisabled = true
+            self.isListening.fontColor = .clear
             nina.run(SKAction.sequence([
             shelfWallToBed,
             SKAction.run {
@@ -21,6 +22,7 @@ extension GameScene {
             ninaPosition = "bed"
         } else if ninaPosition == "floor" {
             self.interationDisabled = true
+            self.isListening.fontColor = .clear
             nina.run(SKAction.sequence([
             floorToBed,
             SKAction.run {
@@ -29,6 +31,8 @@ extension GameScene {
             ]))
             ninaPosition = "bed"
         } else if currentRoom == 1 {
+            self.interationDisabled = true
+            self.isListening.fontColor = .clear
             let scriptText = scriptNotInteractive(node: "bed")
             chatLabel.text = scriptText
             if scriptText != "" {
@@ -39,6 +43,8 @@ extension GameScene {
     
     func goToShelfWall() {
         if ninaPosition == "floor" {
+            self.interationDisabled = true
+            self.isListening.fontColor = .clear
             nina.run(SKAction.sequence([
                 floorToBed,
                 bedToShelfWall,
@@ -49,6 +55,7 @@ extension GameScene {
             ninaPosition = "shelfWall"
         } else if ninaPosition == "bed" {
             self.interationDisabled = true
+            self.isListening.fontColor = .clear
             nina.run(SKAction.sequence([
                 bedToShelfWall,
                 SKAction.run {
@@ -57,6 +64,8 @@ extension GameScene {
             ]))
             ninaPosition = "shelfWall"
         } else if currentRoom == 1 {
+            self.interationDisabled = true
+            self.isListening.fontColor = .clear
             let scriptText = scriptNotInteractive(node: "shelfWall")
             chatLabel.text = scriptText
             if scriptText != "" {
@@ -68,17 +77,25 @@ extension GameScene {
     func goToObstacle() {
         if ninaPosition == "floor" {
             self.interationDisabled = true
+            self.isListening.fontColor = .clear
             nina.run(SKAction.sequence([
                 floorToObstacle,
+                interact,
+                SKAction.run {
+                    self.clothesObstacle.run(self.doorObstacleAnimation)
+                },
+                SKAction.wait(forDuration: 1),
                 SKAction.run {
                     self.interationDisabled = false
-                    self.clothesObstacle.removeFromParent()
+                    //self.clothesObstacle.removeFromParent()
                     self.clothesObstacle.name = "solved"
                 }
             ]))
             ninaPosition =  "floor"
         }
         else if currentRoom == 1 {
+            self.interationDisabled = true
+            self.isListening.fontColor = .clear
             let scriptText = scriptNotInteractive(node: "obstacle")
             chatLabel.text = scriptText
             if scriptText != "" {
@@ -90,6 +107,7 @@ extension GameScene {
     func goToDoorRoom() {
         if clothesObstacle.name == "solved" {
             self.interationDisabled = true
+            self.isListening.fontColor = .clear
             if ninaPosition == "shelfWall" {
                 nina.run(SKAction.sequence([
                     shelfWallToBed,
@@ -103,6 +121,8 @@ extension GameScene {
                 ]))
                 ninaPosition = "floor2"
             } else if ninaPosition == "bed" {
+                self.interationDisabled = true
+                self.isListening.fontColor = .clear
                 nina.run(SKAction.sequence([
                     bedToFloor,
                     obstacleToDoor,
@@ -113,6 +133,8 @@ extension GameScene {
                 ]))
                 ninaPosition = "floor2"
             } else if ninaPosition == "floor" {
+                self.interationDisabled = true
+                self.isListening.fontColor = .clear
                 nina.run(SKAction.sequence([
                     obstacleToDoor,
                     SKAction.run {
@@ -123,6 +145,8 @@ extension GameScene {
             }
         }
         else if currentRoom == 1 {
+            self.interationDisabled = true
+            self.isListening.fontColor = .clear
             let scriptText = scriptNotInteractive(node: "door")
             chatLabel.text = scriptText
             if scriptText != "" {
@@ -133,13 +157,18 @@ extension GameScene {
     
     func wakeUp() {
         if isNinaAwake == false {
-            isNinaAwake = true
+            self.interationDisabled = true
+            self.isListening.fontColor = .clear
             nina.removeAction(forKey: "ninaSleeping")
+            zz.removeFromParent()
+            zz.removeAllActions()
             nina.run(SKAction.sequence([
             wakingUp,
             SKAction.run {
                 self.isNinaAwake = true
+                self.interationDisabled = false
                 self.chatLabel.text = "Ah, não! Caí no sono e deixei a Donna sozinha!"
+
             }
             ]))
         }

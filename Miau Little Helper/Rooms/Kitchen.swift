@@ -82,7 +82,15 @@ extension GameScene {
         return spices
     }
     
+    func setupPan() {
+        pan.position = CGPoint(x: cooker.position.x - 200, y: cooker.position.y + cooker.frame.height/2 + pan.frame.height/2 - 45)
+        pan.run(panAnimation, withKey: "panAnimation")
+        pan.name = "pan"
+        addChild(pan)
+    }
+    
     func setupKitchen() {
+        setupPan()
         addChild(washMachine)
         addChild(kitchenShelf)
         addChild(cooker)

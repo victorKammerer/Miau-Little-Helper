@@ -12,6 +12,7 @@ extension GameScene {
     func goToFloor() {
             if ninaPosition == "shelfWall" {
                 self.interationDisabled = true
+                self.isListening.fontColor = .clear
                 nina.run(SKAction.sequence([
                     shelfWallToBed,
                     bedToFloor,
@@ -27,6 +28,7 @@ extension GameScene {
                 textIsShowing = false
             } else if ninaPosition == "bed" {
                 self.interationDisabled = true
+                self.isListening.fontColor = .clear
                 nina.run(SKAction.sequence([
                     bedToFloor,
                     SKAction.run {
@@ -36,6 +38,7 @@ extension GameScene {
                 ninaPosition = "floor"
             } else if ninaPosition == "sofa" {
                 self.interationDisabled = true
+                self.isListening.fontColor = .clear
                 nina.run(SKAction.sequence([
                 sofaToFloor,
                 SKAction.run {
@@ -45,6 +48,7 @@ extension GameScene {
                 ninaPosition = "floor2"
             } else if ninaPosition == "kitchenShelf" {
                 self.interationDisabled = true
+                self.isListening.fontColor = .clear
                 nina.run(SKAction.sequence([
                 kitchenShelfToFloor,
                 SKAction.run {
