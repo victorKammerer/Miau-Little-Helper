@@ -29,6 +29,24 @@ extension GameScene {
             
         }
 
+        var DoorWindowDay: SKSpriteNode {
+            let doorWindowDay = SKSpriteNode(imageNamed: "doorWindowDay")
+            doorWindowDay.size = CGSize(width: 605, height: 605)
+            doorWindowDay.position = CGPoint(x: 5000, y: 1600)
+            doorWindowDay.name = "doorWindowDay"
+            return doorWindowDay
+            
+        }
+        
+        var DoorWindowNight: SKSpriteNode {
+            let doorWindowNight = SKSpriteNode(imageNamed: "doorWindowNight")
+            doorWindowNight.size = CGSize(width: 605, height: 605)
+            doorWindowNight.position = CGPoint(x: 5000, y: 1600)
+            doorWindowNight.name = "doorWindowNight"
+            return doorWindowNight
+            
+        }
+        
         var KitchenWindowDay: SKSpriteNode {
             let kitchenWindowDay = SKSpriteNode(imageNamed: "kitchenWindowDay")
             kitchenWindowDay.size = CGSize(width: 1210, height: 1210)
@@ -55,12 +73,15 @@ extension GameScene {
         if ((Int(formatter.string(from: today)) ?? 0) <= 6) {
             addChild(BedWindowNight)
             addChild(KitchenWindowNight)
+            addChild(DoorWindowNight)
         } else if ((Int(formatter.string(from: today)) ?? 0) >= 18){
             addChild(BedWindowNight)
             addChild(KitchenWindowNight)
+            addChild(DoorWindowNight)
         } else {
             addChild(BedWindowDay)
             addChild(KitchenWindowDay)
+            addChild(DoorWindowDay)
         }
         
     }
