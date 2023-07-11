@@ -18,6 +18,10 @@ var scene: SKScene {
 
 struct ContentView: View {
     @AppStorage("showCredit") var showCredit: Bool = false
+    
+    var font = UIFont()
+    var fontTitle = UIFont()
+    
     var body: some View {
         GeometryReader{
             geo in
@@ -45,6 +49,16 @@ struct ContentView: View {
                 }
             }
         }
+    }
+    init() {
+        let cfURL = Bundle.main.url(forResource: "Greybeard-22px-Bold", withExtension: "ttf")! as CFURL
+        let phURL = Bundle.main.url(forResource: "pixhobo", withExtension: "otf")! as CFURL
+        
+        CTFontManagerRegisterFontsForURL(cfURL, CTFontManagerScope.process, nil)
+        CTFontManagerRegisterFontsForURL(phURL, CTFontManagerScope.process, nil)
+        
+        font = UIFont(name: "Greybeard22pxBold", size: 40)!
+        fontTitle = UIFont(name: "pixhobo", size: 60)!
     }
 }
 

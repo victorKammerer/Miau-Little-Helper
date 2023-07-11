@@ -78,7 +78,13 @@ extension GameScene {
         lightSwitch.size = CGSize(width: 100, height: 270)
         lightSwitch.position = CGPoint(x: 6800 + lightSwitch.frame.width/2, y: lightSwitch.frame.height/2 + 1400)
         lightSwitch.name = "lightswitch"
+        
+        lightSwitchHit = SKSpriteNode(color: .clear, size: CGSize(width: 100, height: 270))
+        lightSwitchHit.position = CGPoint(x: 6800 + lightSwitch.frame.width/2, y: lightSwitch.frame.height/2 + 1400)
+        lightSwitchHit.zPosition = 1
+        lightSwitchHit.name = "lightswitch"
     }
+    
     
     func setupLivingRoom() {
         lampCover.position = CGPoint(x: 5500 + lampCover.frame.width/2, y: lampCover.frame.height/2 + 1750)

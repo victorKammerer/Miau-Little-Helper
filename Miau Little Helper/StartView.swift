@@ -13,6 +13,9 @@ struct StartView: View {
     @AppStorage("volumeEffects") var volumeEffects: Double = 1.0
     @AppStorage("showCredit") var showCredit: Bool = false
 
+    var font = UIFont()
+    var fontTitle = UIFont()
+    
     var body: some View {
         if #available(iOS 16.0, *) {
             // if IPad has the current version updated
@@ -31,7 +34,7 @@ struct StartView: View {
                             .opacity(0.5)
                         VStack{
                             Text("Miau Little Helper")
-                                .font(.custom("Pixhobo", size: geo.size.width/18))
+                                .font(.custom("pixhobo", size: geo.size.width/18))
                                 .foregroundColor(.white)
                             
                             NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true)) {
@@ -174,17 +177,8 @@ struct StartView: View {
             }
         }
     }
-    
-//    init() {
-//        for familyName in UIFont.familyNames {
-//            print(familyName)
-//
-//            for fontName in UIFont.fontNames(forFamilyName: familyName){
-//                print("-- \(fontName)")
-//            }
-//        }
-//    }
-}
+        
+    }
 
 struct StartView_Previews: PreviewProvider {
     static var previews: some View {

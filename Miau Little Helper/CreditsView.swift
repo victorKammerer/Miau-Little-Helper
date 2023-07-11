@@ -11,7 +11,7 @@ struct CreditsView: View {
     
     @Environment(\.presentationMode) var presentation
     
-    var body: some View {
+    var body: some View { 
         GeometryReader{
             geo in
             ZStack{

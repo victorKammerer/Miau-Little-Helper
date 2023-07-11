@@ -2,10 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>pixhobo.otf</string>
-		<string>Greybeard-22px-Bold.ttf</string>
-	</array>
+	<key>UIRequiresFullScreen</key>
+	<true/>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Our game is speech based. Which means it&apos;s controlled by your voice, please allow the app to use your Microphone, so you can have full experience.</string>
 </dict>
 </plist>

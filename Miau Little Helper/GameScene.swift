@@ -43,6 +43,7 @@ class GameScene: SKScene {
 
     var clothesObstacle = SKSpriteNode(texture: SKTexture(imageNamed: "doorObstacle1.png"), size: CGSize(width: 588, height: 426))
     var lightSwitch = SKSpriteNode(imageNamed: "lightswitch1")
+    var lightSwitchHit = SKSpriteNode(imageNamed: "lightswitch1")
     var pan = SKSpriteNode(texture: SKTexture(imageNamed: "pan1"), size: CGSize(width: 576, height: 1728))
     var zz = SKSpriteNode(texture: SKTexture(imageNamed: "ZZ1"), size: CGSize(width: 200, height: 200))
     var eletricity = SKSpriteNode(texture: SKTexture(imageNamed: "eletricity1"), size: CGSize(width: 350, height: 350))
@@ -76,6 +77,9 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
+        if currentTime%10 == 0 {
+            voiceRecognizer.
+        }
         if pause {
             backgroundMusic.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
             stepsSound1.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
