@@ -77,9 +77,9 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        if currentTime%10 == 0 {
-            voiceRecognizer.
-        }
+//        if currentTime%10 == 0 {
+//            
+//        }
         if pause {
             backgroundMusic.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
             stepsSound1.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
