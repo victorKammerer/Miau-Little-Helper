@@ -68,7 +68,6 @@ extension GameScene {
         let today  = Date.now
         let formatter = DateFormatter()
         formatter.dateFormat = "HH"
-        print(Int(formatter.string(from: today)))
      
         if ((Int(formatter.string(from: today)) ?? 0) <= 6) {
             addChild(BedWindowNight)

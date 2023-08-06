@@ -6,8 +6,11 @@
 //
 
 import Speech
+import SwiftUI
 
 class VoiceRecognizer : NSObject, SFSpeechRecognizerDelegate {
+    
+    @AppStorage("aceptedVoice") var aceptedVoice: Bool = false
 
     //MARK: - variaveis pra fazer rolar
     let audioEngine = AVAudioEngine()
@@ -25,6 +28,7 @@ class VoiceRecognizer : NSObject, SFSpeechRecognizerDelegate {
                 if authState == .authorized {
                     print("The authorization was granted")
                     self.startSpeechRecognization()
+                    self.aceptedVoice = true
                 } else if authState == .denied {
                     print("The user denied the authorization")
                 } else if authState == .notDetermined {
@@ -60,6 +64,7 @@ class VoiceRecognizer : NSObject, SFSpeechRecognizerDelegate {
         
         if myRecognization.isAvailable {
             print ("Speech recognizer is available")
+            aceptedVoice = true
         }
         
         task = speechRecognizer?.recognitionTask(with: request, resultHandler: { (response, error) in
@@ -79,7 +84,6 @@ class VoiceRecognizer : NSObject, SFSpeechRecognizerDelegate {
                 self.command = String(message[indexTo...]).lowercased()
             }
             message = ""
-            print(self.command)
         })
     }
     

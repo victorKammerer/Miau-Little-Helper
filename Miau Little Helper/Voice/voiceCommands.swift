@@ -31,10 +31,10 @@ extension GameScene {
                 }
             ]), withKey: "voiceTriggered")
         }
-
+        
         else if (voiceRecognizer.command == "ok" || voiceRecognizer.command == "beleza" || voiceRecognizer.command == "passar" ||
-            voiceRecognizer.command == "fechar" ||
-            voiceRecognizer.command == "sair") && isNinaAwake {
+                 voiceRecognizer.command == "fechar" ||
+                 voiceRecognizer.command == "sair") && isNinaAwake {
             voiceRecognizer.command = ""
             if !onboarding {
                 onboarding = true
@@ -42,18 +42,17 @@ extension GameScene {
             }
             else {
                 textIsShowing = false
-                print(onboarding)
-                      }
+            }
         }
-
+        
         if voiceCommandAllowed == true && (!textIsShowing || onboarding || !isNinaAwake) {
             if voiceRecognizer.command == "cama" || voiceRecognizer.command == "colchão" || (voiceRecognizer.command == "desça" && ninaPosition == "shelfWall") {
                 voiceRecognizer.command = ""
                 goToBed()
-
+                
             }
             else if voiceRecognizer.command == "acorda"
-            || voiceRecognizer.command == "acorde" || voiceRecognizer.command == "levante" || voiceRecognizer.command == "levanta" ||
+                        || voiceRecognizer.command == "acorde" || voiceRecognizer.command == "levante" || voiceRecognizer.command == "levanta" ||
                         voiceRecognizer.command == "levantar"{
                 voiceRecognizer.command = ""
                 wakeUp()
@@ -182,5 +181,8 @@ extension GameScene {
                 endGameFunc()
             }
         }
+        
+        print(voiceRecognizer.command)
+        voiceRecognizer.command = ""
     }
 }

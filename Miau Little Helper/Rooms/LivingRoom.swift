@@ -73,20 +73,21 @@ extension GameScene {
         return cabinet
     }
     
-    func setupLightSwitch() {
+    var lightSwitchHit : SKSpriteNode  {
+        let lightSwitchHit = SKSpriteNode(color: .clear, size: CGSize(width: 100, height: 270))
+        lightSwitchHit.position = CGPoint(x: 6800 + lightSwitchHit.frame.width/2, y: lightSwitchHit.frame.height/2 + 1400)
+        lightSwitchHit.zPosition = 100
+        lightSwitchHit.name = "lightswitch"
+        return lightSwitchHit
+    }
+    
+    
+    func setupLivingRoom() {
         lightSwitch.texture!.filteringMode = SKTextureFilteringMode.nearest
         lightSwitch.size = CGSize(width: 100, height: 270)
         lightSwitch.position = CGPoint(x: 6800 + lightSwitch.frame.width/2, y: lightSwitch.frame.height/2 + 1400)
         lightSwitch.name = "lightswitch"
         
-        lightSwitchHit = SKSpriteNode(color: .clear, size: CGSize(width: 100, height: 270))
-        lightSwitchHit.position = CGPoint(x: 6800 + lightSwitch.frame.width/2, y: lightSwitch.frame.height/2 + 1400)
-        lightSwitchHit.zPosition = 1
-        lightSwitchHit.name = "lightswitch"
-    }
-    
-    
-    func setupLivingRoom() {
         lampCover.position = CGPoint(x: 5500 + lampCover.frame.width/2, y: lampCover.frame.height/2 + 1750)
         lampCover.name = "lamp"
         chair.position = CGPoint(x: 5500 + lamp.frame.width/2, y: chair.frame.height/2 + 400)
@@ -100,7 +101,6 @@ extension GameScene {
         
         addChild(eletricity)
         
-        setupLightSwitch()
         addChild(doorLivingRoom)
         addChild(sofa)
         addChild(sofaTop)
@@ -114,6 +114,7 @@ extension GameScene {
         addChild(kitchenNode)
         addChild(livingChelf)
         addChild(lampCover)
+        addChild(lightSwitchHit)
     }
     
 }

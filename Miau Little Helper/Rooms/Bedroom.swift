@@ -5,6 +5,7 @@
 // Created by Jpsmor on 28/03/23.
 //
 import SpriteKit
+
 extension GameScene {
     var floor : SKSpriteNode {
         let floor = SKSpriteNode(color: .clear
@@ -108,7 +109,6 @@ extension GameScene {
         addChild(window)
         addChild(door)
         addChild(floor)
-        addChild(clothesObstacle)
         addChild(mess)
         addChild(toy)
         addChild(plant)
@@ -118,5 +118,6 @@ extension GameScene {
         addChild(plant2)
         addChild(doorAsset)
         addChild(floor2)
+        addChild(clothesObstacle)
     }
 }

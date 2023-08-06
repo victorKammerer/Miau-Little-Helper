@@ -15,7 +15,8 @@ class GameScene: SKScene {
     @AppStorage("volumeMusic") var volumeMusic: Double = 1.0
     @AppStorage("volumeEffects") var volumeEffects: Double = 1.0
     @AppStorage("showCredit") var showCredit: Bool = false
-
+    @AppStorage("aceptedVoice") var aceptedVoice: Bool = false
+    
     var voiceRecognizer = VoiceRecognizer()
     var backgroundCompleto = SKSpriteNode()
     var background1 = SKSpriteNode()
@@ -23,11 +24,14 @@ class GameScene: SKScene {
     var background3 = SKSpriteNode()
     var nina = SKSpriteNode()
     
+    var isDetecting = SKSpriteNode(imageNamed: "captando")
+    var detect = true
+    
     var chatBox = SKSpriteNode()
     var chatLabel = SKLabelNode()
     var textIsShowing = true
     var donna = SKSpriteNode()
-
+    
     var ninaPosition = "shelfWall"
     var interationDisabled = false
     var voiceCommandAllowed = false
@@ -40,10 +44,9 @@ class GameScene: SKScene {
     var currentRoom = 1
     var cameraNode = Camera()
     
-
+    
     var clothesObstacle = SKSpriteNode(texture: SKTexture(imageNamed: "doorObstacle1.png"), size: CGSize(width: 588, height: 426))
     var lightSwitch = SKSpriteNode(imageNamed: "lightswitch1")
-    var lightSwitchHit = SKSpriteNode(imageNamed: "lightswitch1")
     var pan = SKSpriteNode(texture: SKTexture(imageNamed: "pan1"), size: CGSize(width: 576, height: 1728))
     var zz = SKSpriteNode(texture: SKTexture(imageNamed: "ZZ1"), size: CGSize(width: 200, height: 200))
     var eletricity = SKSpriteNode(texture: SKTexture(imageNamed: "eletricity1"), size: CGSize(width: 350, height: 350))
@@ -76,48 +79,62 @@ class GameScene: SKScene {
         chatLabel.text = "O gatinho Nina caiu no sono! Fale ‘Nina, acorde!’ ou toque nele para fazê-lo levantar!"
     }
     
+    override func willMove(from view: SKView){
+        backgroundMusic.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
+        stepsSound1.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
+        stepsSound2.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
+        jumpSound.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
+        landedSound.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
+        interationSound.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
+    }
+    
     override func update(_ currentTime: TimeInterval) {
-//        if currentTime%10 == 0 {
-//            
-//        }
-        if pause {
-            backgroundMusic.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
-            stepsSound1.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
-            stepsSound2.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
-            jumpSound.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
-            landedSound.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
-            interationSound.run(SKAction.changeVolume(to: 0.0, duration: 0.0))
+        //        if currentTime%10 == 0 {
+        //
+        //        }
+        
+        if voiceRecognizer.command == "" {
+            if detect {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) { [self] in
+                    if !detect{
+                        isDetecting.isHidden = true
+                    }
+                }
+            }
+            detect = false
         }
         else {
-            voiceCommand()
-            backgroundMusic.run(SKAction.changeVolume(to: Float(volumeMusic), duration: 0.0))
-            stepsSound1.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
-            stepsSound2.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
-            jumpSound.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
-            landedSound.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
-
-            chatBox.position.x = cameraNode.position.x
+            isDetecting.isHidden = false
+            detect = true
+        }
+        
+        voiceCommand()
+        backgroundMusic.run(SKAction.changeVolume(to: Float(volumeMusic), duration: 0.0))
+        stepsSound1.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
+        stepsSound2.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
+        jumpSound.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
+        landedSound.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
+        interationSound.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
+        
+        chatBox.position.x = cameraNode.position.x
+        chatLabel.position = chatBox.position
+        
+        if nina.position.y > self.frame.midY {
+            chatBox.position.y = self.frame.minY + 600
             chatLabel.position = chatBox.position
-
-            interationSound.run(SKAction.changeVolume(to: Float(volumeEffects), duration: 0.0))
-
-            if nina.position.y > self.frame.midY {
-                chatBox.position.y = self.frame.minY + 600
-                chatLabel.position = chatBox.position
-            }
-            else {
-                chatBox.position.y = self.frame.maxY - 800
-                chatLabel.position = chatBox.position
-            }
-            
-            if textIsShowing {
-                chatBox.isHidden = false
-                chatLabel.isHidden = false
-            }
-            else {
-                chatBox.isHidden = true
-                chatLabel.isHidden = true
-            }
+        }
+        else {
+            chatBox.position.y = self.frame.maxY - 800
+            chatLabel.position = chatBox.position
+        }
+        
+        if textIsShowing {
+            chatBox.isHidden = false
+            chatLabel.isHidden = false
+        }
+        else {
+            chatBox.isHidden = true
+            chatLabel.isHidden = true
         }
     }
     
@@ -139,6 +156,11 @@ class GameScene: SKScene {
         backgroundCompleto.size = CGSize(width: self.frame.height * 4, height: self.frame.height)
         backgroundCompleto.position = background2.position
         addChild(backgroundCompleto)
+        
+        isDetecting.size = CGSize(width: 277 * 3.5, height: 20 * 3.5)
+        isDetecting.position = CGPoint(x: frame.minX + 600, y: frame.maxY - 200)
+        isDetecting.zPosition = 10000
+        addChild(isDetecting)
     }
     
     func setupNina() {
@@ -162,7 +184,7 @@ class GameScene: SKScene {
     }
     
     func setupDonna() {
-
+        
         donna.name = "donna"
         donna.run(donnaLampAnimation, withKey: "donnaLampAnimation")
         donna.size = CGSize(width: 1000, height: 1000)
@@ -218,7 +240,7 @@ class GameScene: SKScene {
         chatLabel.preferredMaxLayoutWidth = 3400
         chatLabel.lineBreakMode = .byCharWrapping
         chatLabel.verticalAlignmentMode = .center
-
+        
         addChild(chatBox)
         addChild(chatLabel)
         
