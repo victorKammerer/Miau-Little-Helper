@@ -18,7 +18,9 @@ var scene: SKScene {
 
 struct ContentView: View {
     @AppStorage("showCredit") var showCredit: Bool = false
+    @AppStorage("recording") var recording: Bool = false
     
+    @State private var record = false
     var font = UIFont()
     var fontTitle = UIFont()
     
@@ -32,24 +34,49 @@ struct ContentView: View {
                 VStack{
                     HStack{
                         Spacer()
-                        NavigationLink(destination: PauseView().navigationBarBackButtonHidden(true)) {
-                            ZStack {
-                                Image("buttonBg")
-                                    .resizable()
-                                Image("pause")
-                                    .resizable()
-                                    .frame(width: geo.size.width/28, height: geo.size.width/28)
+                        ZStack{
+                            NavigationLink(destination: PauseView().navigationBarBackButtonHidden(true)) {
+                                ZStack {
+                                    Image("buttonBg")
+                                        .resizable()
+                                    Image("pause")
+                                        .resizable()
+                                        .frame(width: geo.size.width/28, height: geo.size.width/28)
+                                }
                             }
+                            .frame(width: geo.size.width/14, height: geo.size.height/10)
+                            .padding(.trailing, geo.size.width/40)
+                            .padding(.top, geo.size.width/40)
                         }
-                        .frame(width: geo.size.width/14, height: geo.size.height/10)
-                        .padding(.trailing, geo.size.width/40)
-                        .padding(.top, geo.size.width/40)
+                        
                     }
                     Spacer()
+                    HStack{
+                        Spacer()
+                        ZStack{
+                            Button("aaaaaaa", action: {
+                                if recording == false {
+                                    record.toggle()
+                                    
+                                    recording = true
+                                    
+                                    VoiceRecognizer().startSpeechRecognization()
+                                } else {
+                                    record.toggle()
+                                    
+                                    recording = false
+                                    
+                                    VoiceRecognizer().cancelSpeechRecognization()
+                                }
+                            })
+//                            Image("recordingButton")
+                        }
+                    }
                 }
             }
         }
     }
+    
     init() {
         let cfURL = Bundle.main.url(forResource: "Greybeard-22px-Bold", withExtension: "ttf")! as CFURL
         let phURL = Bundle.main.url(forResource: "pixhobo", withExtension: "otf")! as CFURL

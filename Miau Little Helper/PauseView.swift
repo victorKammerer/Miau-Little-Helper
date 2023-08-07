@@ -12,6 +12,7 @@ struct PauseView: View {
     @AppStorage("pause") var pause: Bool = false
     @AppStorage("volumeMusic") var volumeMusic: Double = 1.0
     @AppStorage("volumeEffects") var volumeEffects: Double = 1.0
+    @AppStorage("recording") var recording: Bool = false
     @Environment(\.presentationMode) var presentation
     
     var body: some View {
@@ -96,6 +97,10 @@ struct PauseView: View {
         }
         .onAppear() {
             pause = true
+            
+            recording = false
+            
+            VoiceRecognizer().cancelSpeechRecognization()
         }
     }
 }

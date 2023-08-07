@@ -24,7 +24,6 @@ class VoiceRecognizer : NSObject, SFSpeechRecognizerDelegate {
             OperationQueue.main.addOperation {
                 if authState == .authorized {
                     print("The authorization was granted")
-                    self.startSpeechRecognization()
                 } else if authState == .denied {
                     print("The user denied the authorization")
                 } else if authState == .notDetermined {
@@ -59,7 +58,7 @@ class VoiceRecognizer : NSObject, SFSpeechRecognizerDelegate {
         }
         
         if myRecognization.isAvailable {
-            print ("Speech recognizer is available")
+//            print ("Speech recognizer is available")
         }
         
         task = speechRecognizer?.recognitionTask(with: request, resultHandler: { (response, error) in
@@ -84,14 +83,29 @@ class VoiceRecognizer : NSObject, SFSpeechRecognizerDelegate {
     }
     
     //MARK: - função de finalizar o reconhecimento de fala por hora em desuso.
-//    func cancelSpeechRecognization() {
+    func cancelSpeechRecognization() {
+        
+        task = speechRecognizer?.recognitionTask(with: request, resultHandler: { (response, error) in
+            guard response != nil else {
+                if error != nil {
+                    self.request.endAudio()
+                    self.audioEngine.stop()
+                    self.audioEngine.inputNode.removeTap(onBus: 0)
+                    print (error.debugDescription)
+                } else {
+                    print ("There was an error in a task")
+                }
+                return
+            }
+        })
+        
+//
+//
 //        task.finish()
 //        task.cancel()
 //        task = nil
-//
-//        request.endAudio()
-//        audioEngine.stop()
-//        audioEngine.inputNode.removeTap(onBus: 0)
-//    }
+
+       
+    }
 
 }
