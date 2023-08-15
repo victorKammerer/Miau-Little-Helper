@@ -69,7 +69,7 @@ struct CreditsView: View {
                             .scaledToFit()
                     }.padding(geo.size.width/13.5)
                         .clipped()
-                }.frame(width: 1200, height: 800)
+                }.frame(width: geo.size.width * 0.8, height: 800)
                 
                 VStack{
                     HStack{
@@ -89,7 +89,9 @@ struct CreditsView: View {
                         .padding(.top, geo.size.width/20)
                     }
                     Spacer()
-                }.ignoresSafeArea()
+                }
+                .frame(width: geo.size.width, height: geo.size.height)
+                .ignoresSafeArea()
             }
         }
     }

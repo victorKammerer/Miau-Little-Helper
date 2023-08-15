@@ -51,7 +51,7 @@ struct HelpView: View {
                         .padding(.top, geo.size.width/90)
                         .multilineTextAlignment(.center)
                         .lineLimit(10000)
-                }.padding(geo.size.width/13.5)
+                }.padding(geo.size.width/8)
             }
         }
     }
